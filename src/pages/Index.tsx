@@ -1,8 +1,9 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
-import FeaturedCollections from '@/components/FeaturedCollections';
 import NewArrivals from '@/components/NewArrivals';
+import Heritage from '@/components/Heritage';
+import Journal from '@/components/Journal';
 import Newsletter from '@/components/Newsletter';
 import Footer from '@/components/Footer';
 
@@ -12,8 +13,9 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
-        <FeaturedCollections />
         <NewArrivals />
+        <Heritage />
+        <Journal />
         <Newsletter />
       </main>
       <Footer />
