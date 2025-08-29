@@ -100,7 +100,7 @@ const SignatureScents = () => {
           <Button 
             variant="outline" 
             size="lg"
-            className="border-text-primary text-text-primary hover:bg-text-primary hover:text-background transition-all duration-300 nav-link px-12 py-4 rounded-none"
+            className="border-foreground text-foreground hover:bg-foreground hover:text-background transition-all duration-300 nav-link px-12 py-4 rounded-none"
           >
             Explore Full Collection
           </Button>
