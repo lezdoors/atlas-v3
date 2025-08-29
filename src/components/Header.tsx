@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Search, User, ShoppingBag, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import MegaMenu from './MegaMenu';
-import CartDrawer from './CartDrawer';
+import { FragranceMegaMenu } from './FragranceMegaMenu';
+import { LuxuryCartDrawer } from './LuxuryCartDrawer';
 
 const Header = () => {
-  const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
+  const [isFragranceMegaMenuOpen, setIsFragranceMegaMenuOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -69,14 +69,25 @@ const Header = () => {
           {/* Navigation - Desktop */}
           <nav className="hidden lg:block border-t border-border/30">
             <div className="flex items-center justify-center space-x-12 py-4">
-              <button
-                onMouseEnter={() => setIsMegaMenuOpen(true)}
-                onMouseLeave={() => setIsMegaMenuOpen(false)}
-                className="font-inter text-sm text-foreground hover:text-accent transition-colors duration-300 tracking-wide uppercase relative group"
-              >
-                Fragrances
-                <span className="absolute -bottom-1 left-0 w-0 h-px bg-accent transition-all duration-300 group-hover:w-full"></span>
-              </button>
+              <div className="relative">
+                <button
+                  onMouseEnter={() => setIsFragranceMegaMenuOpen(true)}
+                  onMouseLeave={() => setIsFragranceMegaMenuOpen(false)}
+                  className="font-inter text-sm text-foreground hover:text-accent transition-colors duration-300 tracking-wide uppercase relative group"
+                >
+                  Fragrances
+                  <span className="absolute -bottom-1 left-0 w-0 h-px bg-accent transition-all duration-300 group-hover:w-full"></span>
+                </button>
+                <div
+                  onMouseEnter={() => setIsFragranceMegaMenuOpen(true)}
+                  onMouseLeave={() => setIsFragranceMegaMenuOpen(false)}
+                >
+                  <FragranceMegaMenu 
+                    isOpen={isFragranceMegaMenuOpen} 
+                    onClose={() => setIsFragranceMegaMenuOpen(false)} 
+                  />
+                </div>
+              </div>
               <a
                 href="#"
                 className="font-inter text-sm text-foreground hover:text-accent transition-colors duration-300 tracking-wide uppercase relative group"
@@ -138,19 +149,10 @@ const Header = () => {
           )}
         </div>
 
-        {/* Mega Menu */}
-        {isMegaMenuOpen && (
-          <div
-            onMouseEnter={() => setIsMegaMenuOpen(true)}
-            onMouseLeave={() => setIsMegaMenuOpen(false)}
-          >
-            <MegaMenu isOpen={isMegaMenuOpen} onClose={() => setIsMegaMenuOpen(false)} />
-          </div>
-        )}
       </header>
 
       {/* Cart Drawer */}
-      <CartDrawer isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
+      <LuxuryCartDrawer isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
     </>
   );
 };
