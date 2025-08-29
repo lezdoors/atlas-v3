@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, ShoppingBag, User } from 'lucide-react';
+import { Search, User, ShoppingBag, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import MegaMenu from './MegaMenu';
 import CartDrawer from './CartDrawer';
@@ -7,99 +7,149 @@ import CartDrawer from './CartDrawer';
 const Header = () => {
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <>
-      {/* Top Banner */}
-      <div className="bg-primary text-primary-foreground py-2 text-center text-sm font-inter">
-        Complimentary samples with any $75+ order using code: ATLAS25
+      {/* Promotional Banner */}
+      <div className="bg-primary text-primary-foreground py-2 text-center">
+        <p className="font-inter text-sm tracking-wide">
+          Complimentary samples with every order • Free shipping on orders over $150
+        </p>
       </div>
 
-      <header className="bg-background border-b border-border sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="flex h-20 items-center justify-between">
-            
-            {/* Search */}
-            <div className="flex-1 max-w-sm">
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                <input
-                  type="text"
-                  placeholder="Search for a scent"
-                  className="w-full pl-10 pr-4 py-2 border border-border rounded-moroccan bg-background text-foreground placeholder:text-muted-foreground font-inter text-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
-                />
-              </div>
+      {/* Main Header */}
+      <header className="sticky top-0 z-40 bg-background/95 backdrop-blur-md border-b border-border/50">
+        <div className="max-w-7xl mx-auto px-8 lg:px-16">
+          {/* Top Row - Search, Logo, Icons */}
+          <div className="flex items-center justify-between py-6">
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="lg:hidden p-2"
+            >
+              {isMobileMenuOpen ? (
+                <X className="w-5 h-5 text-foreground" strokeWidth={1.5} />
+              ) : (
+                <Menu className="w-5 h-5 text-foreground" strokeWidth={1.5} />
+              )}
+            </button>
+
+            {/* Search Icon - Hidden on mobile */}
+            <div className="hidden lg:flex">
+              <button className="p-2 hover:bg-muted/50 rounded-none transition-colors duration-300">
+                <Search className="w-5 h-5 text-foreground" strokeWidth={1.5} />
+              </button>
             </div>
-            
+
             {/* Logo */}
-            <div className="absolute left-1/2 transform -translate-x-1/2">
-              <h1 className="text-2xl font-playfair font-bold text-foreground tracking-luxury">
-                PERLE DE L'ATLAS
+            <div className="flex-1 lg:flex-none text-center">
+              <h1 className="font-playfair text-2xl lg:text-3xl text-foreground font-normal tracking-luxury">
+                Perle de l'Atlas
               </h1>
-              <p className="text-xs font-inter text-muted-foreground text-center tracking-wide">
-                MARRAKECH
-              </p>
             </div>
-            
-            {/* User & Cart */}
-            <div className="flex items-center space-x-4 flex-1 justify-end">
-              <Button variant="ghost" size="icon" className="hover:bg-muted">
-                <User className="h-5 w-5" />
-              </Button>
-              <Button 
-                variant="ghost" 
-                size="icon" 
-                className="hover:bg-muted relative"
+
+            {/* User & Cart Icons */}
+            <div className="flex items-center space-x-2">
+              <button className="p-2 hover:bg-muted/50 rounded-none transition-colors duration-300">
+                <User className="w-5 h-5 text-foreground" strokeWidth={1.5} />
+              </button>
+              <button
                 onClick={() => setIsCartOpen(true)}
+                className="p-2 hover:bg-muted/50 rounded-none transition-colors duration-300 relative"
               >
-                <ShoppingBag className="h-5 w-5" />
-                <span className="absolute -top-1 -right-1 bg-secondary text-secondary-foreground text-xs rounded-full w-5 h-5 flex items-center justify-center font-medium">
-                  0
+                <ShoppingBag className="w-5 h-5 text-foreground" strokeWidth={1.5} />
+                <span className="absolute -top-1 -right-1 bg-accent text-accent-foreground text-xs rounded-full w-5 h-5 flex items-center justify-center font-inter">
+                  2
                 </span>
-              </Button>
+              </button>
             </div>
           </div>
 
-          {/* Navigation */}
-          <nav className="flex items-center justify-center space-x-12 py-4 border-t border-border">
-            <a href="#" className="text-foreground hover:text-secondary transition-smooth font-poppins font-medium tracking-wide text-sm">
-              NEW & TRENDING
-            </a>
-            <div 
-              className="relative"
-              onMouseEnter={() => setIsMegaMenuOpen(true)}
-              onMouseLeave={() => setIsMegaMenuOpen(false)}
-            >
-              <button className="text-foreground hover:text-secondary transition-smooth font-poppins font-medium tracking-wide text-sm">
-                FRAGRANCES
+          {/* Navigation - Desktop */}
+          <nav className="hidden lg:block border-t border-border/30">
+            <div className="flex items-center justify-center space-x-12 py-4">
+              <button
+                onMouseEnter={() => setIsMegaMenuOpen(true)}
+                onMouseLeave={() => setIsMegaMenuOpen(false)}
+                className="font-inter text-sm text-foreground hover:text-accent transition-colors duration-300 tracking-wide uppercase relative group"
+              >
+                Fragrances
+                <span className="absolute -bottom-1 left-0 w-0 h-px bg-accent transition-all duration-300 group-hover:w-full"></span>
               </button>
-              <MegaMenu 
-                isOpen={isMegaMenuOpen} 
-                onClose={() => setIsMegaMenuOpen(false)} 
-              />
+              <a
+                href="#"
+                className="font-inter text-sm text-foreground hover:text-accent transition-colors duration-300 tracking-wide uppercase relative group"
+              >
+                Skincare
+                <span className="absolute -bottom-1 left-0 w-0 h-px bg-accent transition-all duration-300 group-hover:w-full"></span>
+              </a>
+              <a
+                href="#"
+                className="font-inter text-sm text-foreground hover:text-accent transition-colors duration-300 tracking-wide uppercase relative group"
+              >
+                Collections
+                <span className="absolute -bottom-1 left-0 w-0 h-px bg-accent transition-all duration-300 group-hover:w-full"></span>
+              </a>
+              <a
+                href="#"
+                className="font-inter text-sm text-foreground hover:text-accent transition-colors duration-300 tracking-wide uppercase relative group"
+              >
+                Heritage
+                <span className="absolute -bottom-1 left-0 w-0 h-px bg-accent transition-all duration-300 group-hover:w-full"></span>
+              </a>
+              <a
+                href="#"
+                className="font-inter text-sm text-foreground hover:text-accent transition-colors duration-300 tracking-wide uppercase relative group"
+              >
+                Journal
+                <span className="absolute -bottom-1 left-0 w-0 h-px bg-accent transition-all duration-300 group-hover:w-full"></span>
+              </a>
             </div>
-            <a href="#" className="text-foreground hover:text-secondary transition-smooth font-poppins font-medium tracking-wide text-sm">
-              CANDLES & HOME
-            </a>
-            <a href="#" className="text-foreground hover:text-secondary transition-smooth font-poppins font-medium tracking-wide text-sm">
-              BATH & BODY
-            </a>
-            <a href="#" className="text-foreground hover:text-secondary transition-smooth font-poppins font-medium tracking-wide text-sm">
-              HOME DÉCOR
-            </a>
-            <a href="#" className="text-foreground hover:text-secondary transition-smooth font-poppins font-medium tracking-wide text-sm">
-              GIFTS
-            </a>
-            <a href="#" className="text-foreground hover:text-secondary transition-smooth font-poppins font-medium tracking-wide text-sm">
-              SERVICES
-            </a>
-            <a href="#" className="text-foreground hover:text-secondary transition-smooth font-poppins font-medium tracking-wide text-sm">
-              ABOUT PERLE DE L'ATLAS
-            </a>
           </nav>
+
+          {/* Mobile Navigation */}
+          {isMobileMenuOpen && (
+            <div className="lg:hidden border-t border-border/30 py-6">
+              <div className="flex flex-col space-y-4">
+                <a href="#" className="font-inter text-sm text-foreground tracking-wide uppercase">
+                  Fragrances
+                </a>
+                <a href="#" className="font-inter text-sm text-foreground tracking-wide uppercase">
+                  Skincare
+                </a>
+                <a href="#" className="font-inter text-sm text-foreground tracking-wide uppercase">
+                  Collections
+                </a>
+                <a href="#" className="font-inter text-sm text-foreground tracking-wide uppercase">
+                  Heritage
+                </a>
+                <a href="#" className="font-inter text-sm text-foreground tracking-wide uppercase">
+                  Journal
+                </a>
+                <div className="pt-4 border-t border-border/30">
+                  <button className="w-full flex items-center justify-center space-x-2 p-2">
+                    <Search className="w-4 h-4 text-foreground" />
+                    <span className="font-inter text-sm text-foreground">Search</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
+
+        {/* Mega Menu */}
+        {isMegaMenuOpen && (
+          <div
+            onMouseEnter={() => setIsMegaMenuOpen(true)}
+            onMouseLeave={() => setIsMegaMenuOpen(false)}
+          >
+            <MegaMenu isOpen={isMegaMenuOpen} onClose={() => setIsMegaMenuOpen(false)} />
+          </div>
+        )}
       </header>
 
+      {/* Cart Drawer */}
       <CartDrawer isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
     </>
   );

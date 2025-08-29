@@ -8,13 +8,13 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* LUXURY MINIMALIST DESIGN SYSTEM */
+    /* LUXURY FRAGRANCE BRAND IDENTITY */
     
-    /* PRIMARY PALETTE - MAISON LOUIS MARIE INSPIRED */
-    --background: 48 9% 98%; /* #FAF9F6 - Cream white */
+    /* PRIMARY PALETTE */
+    --background: 48 9% 98%; /* #FAF9F6 - Warm white */
     --foreground: 0 0% 17%; /* #2C2C2C - Charcoal */
     
-    --card: 48 9% 98%; /* #FAF9F6 */
+    --card: 48 9% 98%; /* #FAF9F6 - Warm white */
     --card-foreground: 0 0% 17%;
     
     --popover: 48 9% 98%;
@@ -22,13 +22,17 @@ All colors MUST be HSL.
     
     /* BRAND COLORS */
     --primary: 0 0% 17%; /* #2C2C2C - Charcoal */
-    --primary-foreground: 48 9% 98%; /* #FAF9F6 - Cream white */
+    --primary-foreground: 48 9% 98%; /* #FAF9F6 - Warm white */
     
     --secondary: 45 8% 96%; /* #F5F2EE - Soft beige */
     --secondary-foreground: 0 0% 17%;
     
     --muted: 45 8% 96%; /* #F5F2EE - Soft beige */
     --muted-foreground: 0 0% 45%; /* Warm gray */
+    
+    /* LUXURY ACCENT */
+    --accent: 39 25% 77%; /* #D4B996 - Muted gold */
+    --accent-foreground: 0 0% 17%;
     
     /* MOROCCAN ACCENT PALETTE */
     --atlas-emerald: 154 49% 35%; /* Atlas Emerald #2E8B57 */
@@ -116,6 +120,7 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground font-inter;
+    line-height: 1.6;
   }
 }
 

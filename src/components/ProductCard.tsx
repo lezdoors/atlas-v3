@@ -17,7 +17,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   description = "Handcrafted with Moroccan botanicals"
 }) => {
   return (
-    <div className="group relative bg-background overflow-hidden transition-all duration-500 hover:-translate-y-2">
+    <div className="group relative bg-card overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:-translate-y-1">
       {/* Product Image */}
       <div className="relative aspect-[3/4] overflow-hidden bg-muted/10">
         <img
@@ -54,19 +54,19 @@ const ProductCard: React.FC<ProductCardProps> = ({
         
         {/* Price and Action */}
         <div className="flex items-center justify-between">
-          <span className="font-inter text-lg text-foreground font-medium">
+          <span className="font-inter text-base text-foreground font-medium tracking-wide">
             {price}
           </span>
           
-          <button className="font-inter text-sm text-amber-700 hover:text-amber-600 transition-colors duration-300 relative group/link">
+          <button className="font-inter text-sm text-gold-muted hover:text-accent transition-colors duration-300 relative group/link tracking-wide">
             View Details
-            <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-amber-700 transition-all duration-300 group-hover/link:w-full"></span>
+            <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-gold-muted transition-all duration-300 group-hover/link:w-full"></span>
           </button>
         </div>
       </div>
       
       {/* Subtle shadow */}
-      <div className="absolute inset-0 -z-10 bg-background shadow-[0_4px_20px_rgba(44,44,44,0.04)] group-hover:shadow-[0_8px_40px_rgba(44,44,44,0.08)] transition-shadow duration-500"></div>
+      <div className="absolute inset-0 -z-10 bg-card shadow-[0_2px_12px_rgba(44,44,44,0.06)] group-hover:shadow-[0_6px_30px_rgba(44,44,44,0.12)] transition-shadow duration-500"></div>
     </div>
   );
 };

@@ -24,10 +24,10 @@ export default {
 				'poppins': ['Poppins', 'sans-serif'],
 			},
 			fontSize: {
-				'hero': ['72px', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
-				'hero-mobile': ['48px', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
-				'display': ['48px', { lineHeight: '1.2', letterSpacing: '-0.01em' }],
-				'display-mobile': ['32px', { lineHeight: '1.2', letterSpacing: '-0.01em' }],
+				'hero': ['72px', { lineHeight: '1.1', letterSpacing: '0.02em' }],
+				'hero-mobile': ['48px', { lineHeight: '1.1', letterSpacing: '0.02em' }],
+				'display': ['48px', { lineHeight: '1.2', letterSpacing: '0.01em' }],
+				'display-mobile': ['32px', { lineHeight: '1.2', letterSpacing: '0.01em' }],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -63,10 +63,10 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				// Luxury accent colors
-				amber: {
-					700: "#B45309",
-					600: "#D97706",
+				// Luxury brand colors
+				gold: {
+					muted: "#D4B996",
+					DEFAULT: "#D4B996",
 				},
 			},
 			backgroundImage: {
@@ -89,8 +89,9 @@ export default {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			letterSpacing: {
-				'luxury': '0.05em',
-				'wide': '0.1em'
+				'luxury': '0.025em',
+				'wide': '0.05em',
+				'wider': '0.1em'
 			},
 			spacing: {
 				'18': '4.5rem',
