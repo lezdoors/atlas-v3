@@ -71,7 +71,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
           {/* Quick Shop Overlay */}
           {isHovered && (
             <div className="absolute inset-0 bg-primary/60 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <Button variant="moroccan-primary" size="lg" className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+              <Button variant="luxury" size="lg" className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                 <ShoppingBag className="w-4 h-4 mr-2" />
                 Quick Shop
               </Button>
@@ -103,7 +103,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
               )}
             </div>
             
-            <Button variant="moroccan-ghost" size="sm">
+            <Button variant="luxury-ghost" size="sm">
               View Details
             </Button>
           </div>

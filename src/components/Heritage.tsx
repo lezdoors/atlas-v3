@@ -30,7 +30,7 @@ const Heritage = () => {
               </p>
             </div>
             <div className="mt-8">
-              <Button variant="moroccan-outline" size="lg">
+              <Button variant="luxury-outline" size="lg">
                 Read Our Story
               </Button>
             </div>

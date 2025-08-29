@@ -35,7 +35,7 @@ const Newsletter = () => {
             />
             <Button 
               type="submit" 
-              variant="moroccan-primary" 
+              variant="luxury" 
               size="lg"
               className="sm:w-auto w-full"
             >

@@ -56,13 +56,17 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				// Moroccan Luxury Palette
-				moroccan: {
-					amber: 'hsl(var(--moroccan-amber))',
-					emerald: 'hsl(var(--accent))',
-					indigo: 'hsl(var(--moroccan-indigo))',
-					terracotta: 'hsl(var(--moroccan-terracotta))',
-					cream: 'hsl(var(--background))'
+				rose: {
+					DEFAULT: 'hsl(var(--rose))',
+					foreground: 'hsl(var(--rose-foreground))'
+				},
+				luxury: {
+					gold: 'hsl(var(--luxury-gold))',
+					charcoal: 'hsl(var(--luxury-charcoal))',
+					cream: 'hsl(var(--luxury-cream))',
+					beige: 'hsl(var(--luxury-beige))',
+					rose: 'hsl(var(--luxury-rose))',
+					forest: 'hsl(var(--luxury-forest))'
 				}
 			},
 			backgroundImage: {
@@ -71,20 +75,17 @@ export default {
 				'gradient-elegant': 'var(--gradient-elegant)'
 			},
 			boxShadow: {
-				elegant: 'var(--shadow-elegant)',
-				luxury: 'var(--shadow-luxury)', 
-				premium: 'var(--shadow-premium)'
+				luxury: 'var(--shadow-luxury)',
+				gold: 'var(--shadow-gold)'
 			},
 			borderRadius: {
-				luxury: 'var(--luxury-border-radius)',
+				luxury: '8px',
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			letterSpacing: {
-				'luxury': '0.05em',
-				'wide-luxury': '0.1em',
-				'ultra-wide': '0.15em'
+				'luxury': '0.05em'
 			},
 			keyframes: {
 				'fade-in': {
@@ -116,11 +117,7 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out'
 			},
 			transitionTimingFunction: {
-				'luxury': 'cubic-bezier(0.4, 0, 0.2, 1)',
-				'smooth': 'cubic-bezier(0.23, 1, 0.32, 1)'
-			},
-			spacing: {
-				'luxury': 'var(--luxury-spacing)'
+				'luxury': 'cubic-bezier(0.4, 0, 0.2, 1)'
 			}
 		}
 	},
