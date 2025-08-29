@@ -1,88 +1,169 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import collectionHero from '@/assets/collection-hero.jpg';
+import OptimizedImage from '@/components/ui/OptimizedImage';
+import HandDrawnElements, { BotanicalDivider } from './HandDrawnElements';
+import { getImage, getImagesByCategory, getFallbackImage } from '@/lib/imageAssets';
 
 const FeaturedCollections = () => {
+  // Get images from assets
+  const backgroundImages = getImagesByCategory('backgrounds');
+  const productImages = getImagesByCategory('products');
+  
   const collections = [
     {
       id: 1,
-      title: "Signature Collection",
-      description: "Timeless fragrances that define elegance",
-      image: collectionHero,
-      featured: true
+      title: "Atlas Heritage",
+      subtitle: "Traditional Fragrances",
+      description: "Discover scents inspired by ancient Moroccan traditions, crafted with rare ingredients from the Atlas Mountains.",
+      image: backgroundImages.atlasHeritage?.src || '/src/assets/collection-hero.jpg',
+      alt: backgroundImages.atlasHeritage?.alt || "Atlas Heritage Collection",
+      cta: "Explore Heritage"
     },
     {
       id: 2,
-      title: "Limited Edition",
-      description: "Exclusive scents for the distinguished",
-      image: collectionHero,
-      featured: false
+      title: "Royal Oud Collection",
+      subtitle: "Luxury Oriental Scents",
+      description: "Experience the depth and richness of precious oud wood, blended with exotic spices and rare florals.",
+      image: productImages.amberOud?.src || '/src/assets/collection-hero.jpg',
+      alt: productImages.amberOud?.alt || "Royal Oud Collection",
+      cta: "Discover Oud"
     },
     {
       id: 3,
-      title: "Artisan Series",
-      description: "Handcrafted perfumes by master perfumers",
-      image: collectionHero,
-      featured: false
+      title: "Garden of Roses",
+      subtitle: "Floral Elegance",
+      description: "Delicate rose compositions celebrating the beauty of Moroccan gardens and the art of floral perfumery.",
+      image: productImages.atlasRose?.src || '/src/assets/collection-hero.jpg',
+      alt: productImages.atlasRose?.alt || "Garden of Roses Collection",
+      cta: "Smell the Roses"
     }
   ];
 
   return (
-    <section className="py-24 bg-background">
-      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 bg-muted/30 relative overflow-hidden">
+      {/* Background Botanical Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-10 left-10 opacity-4">
+          <HandDrawnElements type="eucalyptus" size={220} opacity={0.2} rotation={-10} />
+        </div>
+        <div className="absolute bottom-16 right-16 opacity-4">
+          <HandDrawnElements type="olive" size={180} opacity={0.2} rotation={30} />
+        </div>
+        <div className="absolute top-1/2 left-1/3 opacity-3">
+          <HandDrawnElements type="jasmine" size={140} opacity={0.15} rotation={-25} />
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-8 lg:px-16 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-playfair font-bold text-foreground mb-6 tracking-luxury">
-            Curated Collections
+          <div className="flex justify-center mb-6">
+            <BotanicalDivider className="text-muted-foreground opacity-60" width={200} />
+          </div>
+          
+          <h2 className="font-playfair text-4xl lg:text-5xl text-foreground mb-6 font-light tracking-tight">
+            Signature Collections
           </h2>
-          <p className="text-xl text-muted-foreground font-inter max-w-2xl mx-auto leading-relaxed">
-            Discover our carefully curated collections, each telling a unique olfactory story
+          
+          <p className="font-inter text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Three distinct olfactory journeys, each telling the story of Morocco's 
+            rich heritage through the art of fine fragrance.
           </p>
         </div>
 
         {/* Collections Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="space-y-16">
           {collections.map((collection, index) => (
-            <Card
+            <div
               key={collection.id}
-              className={`group cursor-pointer border-0 shadow-luxury hover:shadow-gold transition-all duration-500 overflow-hidden ${
-                collection.featured ? 'md:col-span-2 lg:col-span-1' : ''
+              className={`grid lg:grid-cols-2 gap-12 lg:gap-16 items-center ${
+                index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
               }`}
             >
-              <CardContent className="p-0 relative">
-                <div className="relative overflow-hidden">
-                  <img
+              {/* Image */}
+              <div className={`relative ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
+                <div className="aspect-[4/3] overflow-hidden">
+                  <OptimizedImage
                     src={collection.image}
-                    alt={collection.title}
-                    className={`w-full object-cover transition-transform duration-700 group-hover:scale-105 ${
-                      collection.featured ? 'h-96' : 'h-80'
-                    }`}
+                    alt={collection.alt}
+                    aspectRatio="4/3"
+                    className="transition-transform duration-700 hover:scale-105"
+                    fallbackSrc={getFallbackImage('backgrounds')}
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                   />
-                  
-                  {/* Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent" />
-                  
-                  {/* Content */}
-                  <div className="absolute bottom-0 left-0 right-0 p-8">
-                    <h3 className="text-2xl md:text-3xl font-playfair font-bold text-primary-foreground mb-3 tracking-luxury">
-                      {collection.title}
-                    </h3>
-                    <p className="text-primary-foreground/90 font-inter mb-6 leading-relaxed">
-                      {collection.description}
-                    </p>
-                    <Button 
-                      variant="moroccan-outline" 
-                      size="lg"
-                      className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
-                    >
-                      Explore Collection
-                    </Button>
-                  </div>
                 </div>
-              </CardContent>
-            </Card>
+                
+                {/* Floating botanical element */}
+                <div className={`absolute ${index % 2 === 0 ? '-top-4 -right-4' : '-top-4 -left-4'} opacity-20`}>
+                  <HandDrawnElements 
+                    type={index === 0 ? 'rose' : index === 1 ? 'eucalyptus' : 'lavender'} 
+                    size={100} 
+                    opacity={0.5}
+                    animate={true}
+                  />
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className={`space-y-6 ${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
+                <div className="space-y-3">
+                  <p className="font-inter text-sm text-muted-foreground uppercase tracking-wider">
+                    {collection.subtitle}
+                  </p>
+                  <h3 className="font-playfair text-3xl lg:text-4xl text-foreground font-light tracking-tight">
+                    {collection.title}
+                  </h3>
+                </div>
+                
+                <p className="font-inter text-muted-foreground leading-relaxed text-lg">
+                  {collection.description}
+                </p>
+                
+                <div className="pt-4">
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="border-foreground text-foreground hover:bg-foreground hover:text-background transition-all duration-300 font-inter font-medium tracking-wide px-8 py-4 rounded-none"
+                  >
+                    {collection.cta}
+                  </Button>
+                </div>
+
+                {/* Decorative element */}
+                <div className="absolute -left-8 top-1/2 -translate-y-1/2 opacity-10 hidden lg:block">
+                  <HandDrawnElements 
+                    type="citrus" 
+                    size={80} 
+                    opacity={0.4} 
+                    rotation={index * 15}
+                  />
+                </div>
+              </div>
+            </div>
           ))}
+        </div>
+
+        {/* Call to Action */}
+        <div className="text-center mt-20">
+          <div className="mb-8">
+            <HandDrawnElements type="jasmine" size={60} opacity={0.4} className="mx-auto" />
+          </div>
+          
+          <h3 className="font-playfair text-2xl text-foreground mb-4 tracking-tight">
+            Discover Your Signature Scent
+          </h3>
+          
+          <p className="font-inter text-muted-foreground mb-8 max-w-lg mx-auto leading-relaxed">
+            Take our fragrance quiz to find the perfect scent that matches your personality and style.
+          </p>
+          
+          <Button
+            variant="outline"
+            size="lg"
+            className="border-accent text-accent hover:bg-accent hover:text-accent-foreground transition-all duration-300 font-inter font-medium tracking-wide px-10 py-4 rounded-none"
+          >
+            Take Fragrance Quiz
+          </Button>
         </div>
       </div>
     </section>

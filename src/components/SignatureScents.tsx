@@ -1,49 +1,53 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { BotanicalDivider, EucalyptusBranch, CitrusLeaves } from './BotanicalElements';
+import HandDrawnElements, { BotanicalDivider } from './HandDrawnElements';
 import ProductCard from './ProductCard';
+import { getImagesByCategory } from '@/lib/imageAssets';
 
 const SignatureScents = () => {
+  // Get product images from assets
+  const productImages = getImagesByCategory('products');
+
   const products = [
     {
       name: "Atlas Rose",
       price: "From $185",
-      image: "/src/assets/product-sample.jpg",
+      image: productImages.atlasRose?.src,
       category: "Eau de Parfum",
       description: "Damask rose petals kissed by mountain air"
     },
     {
       name: "Amber Oud",
       price: "From $220",
-      image: "/src/assets/product-sample.jpg",
+      image: productImages.amberOud?.src,
       category: "Parfum",
       description: "Rich amber with precious oud wood"
     },
     {
       name: "Fig & Cassis",
       price: "From $165",
-      image: "/src/assets/product-sample.jpg",
+      image: productImages.figCassis?.src,
       category: "Eau de Toilette",
       description: "Mediterranean fig with blackcurrant notes"
     },
     {
       name: "Neroli Garden",
       price: "From $195",
-      image: "/src/assets/product-sample.jpg",
+      image: productImages.neroliGarden?.src,
       category: "Eau de Parfum",
       description: "Orange blossom in full bloom"
     },
     {
       name: "Santal Mystique",
       price: "From $240",
-      image: "/src/assets/product-sample.jpg",
+      image: productImages.santalMystique?.src,
       category: "Parfum",
       description: "Creamy sandalwood with spiced incense"
     },
     {
       name: "Cedrat Lumière",
       price: "From $155",
-      image: "/src/assets/product-sample.jpg",
+      image: productImages.cedratLumiere?.src,
       category: "Eau Fraîche",
       description: "Luminous citron with fresh herbs"
     }
@@ -54,10 +58,16 @@ const SignatureScents = () => {
       {/* Background Botanical Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 -left-10 opacity-5">
-          <EucalyptusBranch size={180} strokeWidth={0.8} className="text-muted-foreground" />
+          <HandDrawnElements type="eucalyptus" size={180} opacity={0.3} rotation={-15} />
         </div>
         <div className="absolute bottom-32 -right-16 opacity-5">
-          <CitrusLeaves size={160} strokeWidth={0.8} className="text-muted-foreground rotate-45" />
+          <HandDrawnElements type="citrus" size={160} opacity={0.3} rotation={45} />
+        </div>
+        <div className="absolute top-1/2 left-1/4 opacity-4">
+          <HandDrawnElements type="olive" size={140} opacity={0.25} rotation={-30} />
+        </div>
+        <div className="absolute bottom-20 left-1/3 opacity-4">
+          <HandDrawnElements type="jasmine" size={100} opacity={0.3} rotation={60} />
         </div>
       </div>
 

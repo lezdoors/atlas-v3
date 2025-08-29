@@ -1,11 +1,30 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import heroImage from '@/assets/hero-fragrance.jpg';
+import OptimizedImage from '@/components/ui/OptimizedImage';
+import HandDrawnElements from './HandDrawnElements';
+import { getImage, getFallbackImage } from '@/lib/imageAssets';
 
 const Hero = () => {
+  // Get hero background image from assets
+  const heroBackground = getImage('backgrounds', 'heroFragrance');
+  const heroProduct = getImage('products', 'atlasRose');
+  
   return (
-    <section className="min-h-screen bg-background flex items-center">
-      <div className="max-w-7xl mx-auto px-8 lg:px-16 grid lg:grid-cols-2 gap-16 lg:gap-24 items-center py-20">
+    <section className="min-h-screen bg-background flex items-center relative overflow-hidden">
+      {/* Background Botanical Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-16 left-8 opacity-5">
+          <HandDrawnElements type="eucalyptus" size={200} opacity={0.3} rotation={-15} />
+        </div>
+        <div className="absolute bottom-20 right-12 opacity-5">
+          <HandDrawnElements type="olive" size={180} opacity={0.3} rotation={25} />
+        </div>
+        <div className="absolute top-1/2 left-1/4 opacity-3">
+          <HandDrawnElements type="jasmine" size={120} opacity={0.2} rotation={45} />
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-8 lg:px-16 grid lg:grid-cols-2 gap-16 lg:gap-24 items-center py-20 relative z-10">
         {/* Left Content - Typography focused */}
         <div className="order-2 lg:order-1 space-y-8">
           {/* Subtle botanical decoration */}
@@ -31,35 +50,36 @@ const Hero = () => {
               Discover Collection
             </Button>
           </div>
+
+          {/* Decorative botanical element */}
+          <div className="absolute -left-4 top-1/2 -translate-y-1/2 opacity-10">
+            <HandDrawnElements type="rose" size={100} opacity={0.4} animate={true} />
+          </div>
         </div>
 
         {/* Right Content - Product Hero */}
-        <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
+        <div className="order-1 lg:order-2 flex justify-center lg:justify-end relative">
           <div className="relative">
             {/* Subtle background botanical element */}
-            <div className="absolute -top-8 -left-8 w-32 h-32 opacity-5">
-              <svg viewBox="0 0 100 100" className="w-full h-full text-muted-foreground">
-                <path d="M20,50 Q40,20 60,50 Q80,80 100,50" stroke="currentColor" strokeWidth="0.5" fill="none" />
-                <circle cx="30" cy="40" r="2" fill="currentColor" opacity="0.3" />
-                <circle cx="70" cy="60" r="1.5" fill="currentColor" opacity="0.3" />
-              </svg>
+            <div className="absolute -top-8 -left-8 opacity-5">
+              <HandDrawnElements type="citrus" size={140} opacity={0.3} rotation={-20} />
             </div>
             
             {/* Product Image with luxury shadow */}
-            <div className="relative">
-              <img
-                src={heroImage}
-                alt="Perle de l'Atlas Signature Fragrance"
-                className="w-80 lg:w-96 h-auto object-contain filter drop-shadow-[0_20px_40px_rgba(44,44,44,0.1)]"
+            <div className="relative w-80 lg:w-96">
+              <OptimizedImage
+                src={heroProduct?.src || '/src/assets/hero-fragrance.jpg'}
+                alt={heroProduct?.alt || "Perle de l'Atlas Signature Fragrance"}
+                aspectRatio="auto"
+                priority={true}
+                className="filter drop-shadow-[0_20px_40px_rgba(44,44,44,0.1)]"
+                fallbackSrc={getFallbackImage('products')}
               />
             </div>
             
             {/* Floating accent element */}
-            <div className="absolute -bottom-4 -right-4 w-24 h-24 opacity-5">
-              <svg viewBox="0 0 100 100" className="w-full h-full text-muted-foreground">
-                <circle cx="50" cy="50" r="30" stroke="currentColor" strokeWidth="0.5" fill="none" />
-                <path d="M35,50 Q50,35 65,50 Q50,65 35,50" fill="currentColor" opacity="0.2" />
-              </svg>
+            <div className="absolute -bottom-4 -right-4 opacity-10">
+              <HandDrawnElements type="lavender" size={80} opacity={0.5} animate={true} />
             </div>
           </div>
         </div>

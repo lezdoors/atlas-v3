@@ -1,10 +1,12 @@
 import React from 'react';
-import { LavenderSprig } from './BotanicalElements';
+import OptimizedImage from '@/components/ui/OptimizedImage';
+import HandDrawnElements from './HandDrawnElements';
+import { getImage, getFallbackImage } from '@/lib/imageAssets';
 
 interface ProductCardProps {
   name: string;
   price: string;
-  image: string;
+  image?: string;
   category?: string;
   description?: string;
 }
@@ -16,19 +18,31 @@ const ProductCard: React.FC<ProductCardProps> = ({
   category = "Eau de Parfum",
   description = "Handcrafted with Moroccan botanicals"
 }) => {
+  // Use provided image or try to get from assets, fallback to placeholder
+  const productImage = image || '/src/assets/product-sample.jpg';
+  const fallbackImage = getFallbackImage('products');
+
   return (
     <div className="group relative bg-card overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:-translate-y-1">
       {/* Product Image */}
-      <div className="relative aspect-[3/4] overflow-hidden bg-muted/10">
-        <img
-          src={image}
-          alt={name}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+      <div className="relative overflow-hidden">
+        <OptimizedImage
+          src={productImage}
+          alt={`${name} - ${category}`}
+          aspectRatio="3/4"
+          fallbackSrc={fallbackImage}
+          className="transition-transform duration-700 group-hover:scale-105"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
         
         {/* Botanical Overlay - appears on hover */}
-        <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-30 transition-opacity duration-500">
-          <LavenderSprig size={60} strokeWidth={1} className="text-foreground" />
+        <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-40 transition-opacity duration-500">
+          <HandDrawnElements 
+            type="lavender" 
+            size={60} 
+            opacity={0.6}
+            animate={true}
+          />
         </div>
         
         {/* Subtle gradient overlay */}
