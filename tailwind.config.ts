@@ -63,17 +63,11 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				moroccan: {
-					amber: 'hsl(var(--amber-gold))',
-					emerald: 'hsl(var(--atlas-emerald-var))',
-					indigo: 'hsl(var(--royal-indigo-var))',
-					terracotta: 'hsl(var(--terracotta-var))',
-					gold: 'hsl(var(--burnished-gold-var))',
-					cream: 'hsl(var(--cream-white))',
-					ivory: 'hsl(var(--soft-ivory))',
-					black: 'hsl(var(--rich-black))',
-					charcoal: 'hsl(var(--charcoal))'
-				}
+				// Luxury accent colors
+				amber: {
+					700: "#B45309",
+					600: "#D97706",
+				},
 			},
 			backgroundImage: {
 				'gradient-amber': 'var(--gradient-amber)',

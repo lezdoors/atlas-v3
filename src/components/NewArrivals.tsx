@@ -7,23 +7,35 @@ const NewArrivals = () => {
   const products = [
     {
       name: "Golden Argan Oil",
-      price: 48.00,
-      scentFamily: "Natural"
+      price: "From $48",
+      scentFamily: "Natural",
+      image: "/src/assets/product-sample.jpg",
+      category: "Body Oil",
+      description: "Pure Moroccan argan oil for radiant skin"
     },
     {
       name: "Rose Damascus Serum",
-      price: 62.00,
-      scentFamily: "Floral"
+      price: "From $62",
+      scentFamily: "Floral",
+      image: "/src/assets/product-sample.jpg",
+      category: "Face Serum",
+      description: "Luxurious rose serum for luminous complexion"
     },
     {
       name: "Atlas Clay Mask",
-      price: 38.00,
-      scentFamily: "Earth"
+      price: "From $38",
+      scentFamily: "Earth",
+      image: "/src/assets/product-sample.jpg",
+      category: "Face Mask",
+      description: "Purifying clay from the Atlas Mountains"
     },
     {
       name: "Oud Royal Perfume",
-      price: 125.00,
-      scentFamily: "Oriental"
+      price: "From $125",
+      scentFamily: "Oriental",
+      image: "/src/assets/product-sample.jpg",
+      category: "Parfum",
+      description: "Precious oud with royal sophistication"
     }
   ];
 
@@ -58,7 +70,14 @@ const NewArrivals = () => {
         {/* Products Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {products.map((product, index) => (
-            <ProductCard key={index} {...product} />
+            <ProductCard 
+              key={index} 
+              name={product.name}
+              price={product.price}
+              image={product.image}
+              category={product.category}
+              description={product.description}
+            />
           ))}
         </div>
       </div>
