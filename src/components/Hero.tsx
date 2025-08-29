@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import OptimizedImage from '@/components/ui/OptimizedImage';
 import HandDrawnElements from './HandDrawnElements';
+import BotanicalFrame from './BotanicalFrame';
 import { getImage, getFallbackImage } from '@/lib/imageAssets';
 
 const Hero = () => {
@@ -11,16 +12,20 @@ const Hero = () => {
   
   return (
     <section className="min-h-screen bg-background flex items-center relative overflow-hidden">
-      {/* Background Botanical Elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-16 left-8 opacity-5">
-          <HandDrawnElements type="eucalyptus" size={200} opacity={0.3} rotation={-15} />
+      {/* Background Botanical Elements - Enhanced */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {/* Large prominent botanical illustrations */}
+        <div className="absolute top-0 left-0 opacity-30">
+          <HandDrawnElements type="herbarium-branch" size={350} opacity={0.4} rotation={-10} variant="artistic" />
         </div>
-        <div className="absolute bottom-20 right-12 opacity-5">
-          <HandDrawnElements type="olive" size={180} opacity={0.3} rotation={25} />
+        <div className="absolute top-20 right-0 opacity-25">
+          <HandDrawnElements type="eucalyptus" size={400} opacity={0.3} rotation={15} variant="bold" />
         </div>
-        <div className="absolute top-1/2 left-1/4 opacity-3">
-          <HandDrawnElements type="jasmine" size={120} opacity={0.2} rotation={45} />
+        <div className="absolute bottom-0 left-1/3 opacity-20">
+          <HandDrawnElements type="vine-border" size={600} opacity={0.3} />
+        </div>
+        <div className="absolute top-1/3 right-1/4 opacity-15">
+          <HandDrawnElements type="olive" size={200} opacity={0.25} rotation={-25} variant="artistic" />
         </div>
       </div>
 
@@ -57,32 +62,35 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Right Content - Product Hero */}
+        {/* Right Content - Product Hero with Botanical Frame */}
         <div className="order-1 lg:order-2 flex justify-center lg:justify-end relative">
-          <div className="relative">
-            {/* Subtle background botanical element */}
-            <div className="absolute -top-8 -left-8 opacity-5">
-              <HandDrawnElements type="citrus" size={140} opacity={0.3} rotation={-20} />
-            </div>
+          <div className="relative max-w-lg">
+            {/* Botanical frame around product */}
+            <BotanicalFrame variant="ornate" className="bg-background-secondary/20 backdrop-blur-sm">
+              <div className="relative w-80 lg:w-96 transform hover:scale-105 transition-transform duration-700">
+                <OptimizedImage
+                  src={heroProduct?.src || '/src/assets/hero-fragrance.jpg'}
+                  alt={heroProduct?.alt || "Perle de l'Atlas Signature Fragrance"}
+                  aspectRatio="auto"
+                  priority={true}
+                  className="filter drop-shadow-[0_20px_40px_rgba(44,44,44,0.1)] rounded-lg"
+                  fallbackSrc={getFallbackImage('products')}
+                  placeholder="blur"
+                  enableWebP={true}
+                  sizes="(max-width: 768px) 80vw, (max-width: 1024px) 50vw, 400px"
+                />
+              </div>
+            </BotanicalFrame>
             
-            {/* Product Image with luxury shadow */}
-            <div className="relative w-80 lg:w-96">
-              <OptimizedImage
-                src={heroProduct?.src || '/src/assets/hero-fragrance.jpg'}
-                alt={heroProduct?.alt || "Perle de l'Atlas Signature Fragrance"}
-                aspectRatio="auto"
-                priority={true}
-                className="filter drop-shadow-[0_20px_40px_rgba(44,44,44,0.1)]"
-                fallbackSrc={getFallbackImage('products')}
-                placeholder="blur"
-                enableWebP={true}
-                sizes="(max-width: 768px) 80vw, (max-width: 1024px) 50vw, 400px"
-              />
+            {/* Large floating botanical elements */}
+            <div className="absolute -top-16 -left-16 opacity-50">
+              <HandDrawnElements type="rose" size={140} animate variant="artistic" />
             </div>
-            
-            {/* Floating accent element */}
-            <div className="absolute -bottom-4 -right-4 opacity-10">
-              <HandDrawnElements type="lavender" size={80} opacity={0.5} animate={true} />
+            <div className="absolute -bottom-12 -right-12 opacity-60">
+              <HandDrawnElements type="jasmine" size={120} animate rotation={25} variant="bold" />
+            </div>
+            <div className="absolute top-1/4 -left-20 opacity-40">
+              <HandDrawnElements type="lavender" size={160} animate rotation={-30} variant="artistic" />
             </div>
           </div>
         </div>

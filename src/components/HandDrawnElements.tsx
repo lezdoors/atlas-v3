@@ -2,12 +2,13 @@ import React from 'react';
 import { cn } from '@/lib/utils';
 
 interface HandDrawnElementProps {
-  type: 'lavender' | 'eucalyptus' | 'rose' | 'citrus' | 'olive' | 'jasmine';
+  type: 'lavender' | 'eucalyptus' | 'rose' | 'citrus' | 'olive' | 'jasmine' | 'botanical-frame' | 'corner-flourish' | 'vine-border' | 'herbarium-branch';
   size?: number;
   opacity?: number;
   className?: string;
   animate?: boolean;
   rotation?: number;
+  variant?: 'delicate' | 'bold' | 'artistic';
 }
 
 const HandDrawnElements: React.FC<HandDrawnElementProps> = ({
@@ -16,7 +17,8 @@ const HandDrawnElements: React.FC<HandDrawnElementProps> = ({
   opacity = 0.3,
   className,
   animate = false,
-  rotation = 0
+  rotation = 0,
+  variant = 'delicate'
 }) => {
   const baseClasses = cn(
     'transition-all duration-700 ease-out',
@@ -248,6 +250,191 @@ const HandDrawnElements: React.FC<HandDrawnElementProps> = ({
             <ellipse cx="35" cy="75" rx="6" ry="2" fill={strokeColor} opacity="0.3" transform="rotate(-30 35 75)" />
             <ellipse cx="55" cy="58" rx="5" ry="1.8" fill={strokeColor} opacity="0.3" transform="rotate(-40 55 58)" />
             <ellipse cx="75" cy="40" rx="6" ry="2" fill={strokeColor} opacity="0.3" transform="rotate(-50 75 40)" />
+          </svg>
+        );
+
+      case 'botanical-frame':
+        return (
+          <svg
+            viewBox="0 0 300 400"
+            className={baseClasses}
+            style={svgStyle}
+            fill="none"
+          >
+            {/* Frame border */}
+            <rect x="20" y="20" width="260" height="360" stroke={strokeColor} strokeWidth="1.5" fill="none" rx="8" />
+            
+            {/* Corner botanical elements */}
+            <g>
+              {/* Top left corner */}
+              <path d="M20 60 Q30 50 40 60 Q50 70 60 60 Q70 50 80 60" stroke={strokeColor} strokeWidth="1.2" />
+              <path d="M20 80 Q35 75 50 80" stroke={strokeColor} strokeWidth="1" />
+              <circle cx="45" cy="65" r="2" fill={strokeColor} opacity="0.4" />
+              <ellipse cx="35" cy="75" rx="8" ry="3" fill={strokeColor} opacity="0.3" transform="rotate(-20 35 75)" />
+              
+              {/* Top right corner */}
+              <path d="M280 60 Q270 50 260 60 Q250 70 240 60 Q230 50 220 60" stroke={strokeColor} strokeWidth="1.2" />
+              <path d="M280 80 Q265 75 250 80" stroke={strokeColor} strokeWidth="1" />
+              <circle cx="255" cy="65" r="2" fill={strokeColor} opacity="0.4" />
+              <ellipse cx="265" cy="75" rx="8" ry="3" fill={strokeColor} opacity="0.3" transform="rotate(20 265 75)" />
+              
+              {/* Bottom left corner */}
+              <path d="M20 340 Q30 350 40 340 Q50 330 60 340 Q70 350 80 340" stroke={strokeColor} strokeWidth="1.2" />
+              <path d="M20 320 Q35 325 50 320" stroke={strokeColor} strokeWidth="1" />
+              <circle cx="45" cy="335" r="2" fill={strokeColor} opacity="0.4" />
+              <ellipse cx="35" cy="325" rx="8" ry="3" fill={strokeColor} opacity="0.3" transform="rotate(20 35 325)" />
+              
+              {/* Bottom right corner */}
+              <path d="M280 340 Q270 350 260 340 Q250 330 240 340 Q230 350 220 340" stroke={strokeColor} strokeWidth="1.2" />
+              <path d="M280 320 Q265 325 250 320" stroke={strokeColor} strokeWidth="1" />
+              <circle cx="255" cy="335" r="2" fill={strokeColor} opacity="0.4" />
+              <ellipse cx="265" cy="325" rx="8" ry="3" fill={strokeColor} opacity="0.3" transform="rotate(-20 265 325)" />
+            </g>
+            
+            {/* Side botanical elements */}
+            <g>
+              {/* Left side */}
+              <path d="M10 150 Q20 145 30 150 Q20 155 10 150" stroke={strokeColor} strokeWidth="1" fill={strokeColor} fillOpacity="0.2" />
+              <path d="M10 200 Q20 195 30 200 Q20 205 10 200" stroke={strokeColor} strokeWidth="1" fill={strokeColor} fillOpacity="0.2" />
+              <path d="M10 250 Q20 245 30 250 Q20 255 10 250" stroke={strokeColor} strokeWidth="1" fill={strokeColor} fillOpacity="0.2" />
+              
+              {/* Right side */}
+              <path d="M290 150 Q280 145 270 150 Q280 155 290 150" stroke={strokeColor} strokeWidth="1" fill={strokeColor} fillOpacity="0.2" />
+              <path d="M290 200 Q280 195 270 200 Q280 205 290 200" stroke={strokeColor} strokeWidth="1" fill={strokeColor} fillOpacity="0.2" />
+              <path d="M290 250 Q280 245 270 250 Q280 255 290 250" stroke={strokeColor} strokeWidth="1" fill={strokeColor} fillOpacity="0.2" />
+            </g>
+          </svg>
+        );
+
+      case 'corner-flourish':
+        return (
+          <svg
+            viewBox="0 0 80 80"
+            className={baseClasses}
+            style={svgStyle}
+            fill="none"
+          >
+            {/* Main flourish curves */}
+            <path d="M10 70 Q20 60 30 50 Q40 40 50 30 Q60 20 70 10" stroke={strokeColor} strokeWidth="1.5" strokeLinecap="round" />
+            <path d="M10 60 Q25 50 40 40" stroke={strokeColor} strokeWidth="1.2" strokeLinecap="round" />
+            <path d="M20 70 Q35 60 50 50" stroke={strokeColor} strokeWidth="1.2" strokeLinecap="round" />
+            
+            {/* Decorative leaves */}
+            <ellipse cx="25" cy="55" rx="6" ry="2.5" fill={strokeColor} opacity="0.3" transform="rotate(-45 25 55)" />
+            <ellipse cx="40" cy="40" rx="7" ry="3" fill={strokeColor} opacity="0.4" transform="rotate(-45 40 40)" />
+            <ellipse cx="55" cy="25" rx="5" ry="2" fill={strokeColor} opacity="0.3" transform="rotate(-45 55 25)" />
+            
+            {/* Small buds */}
+            <circle cx="30" cy="50" r="1.5" fill={strokeColor} opacity="0.6" />
+            <circle cx="45" cy="35" r="1.5" fill={strokeColor} opacity="0.6" />
+            <circle cx="60" cy="20" r="1.5" fill={strokeColor} opacity="0.6" />
+            
+            {/* Delicate tendrils */}
+            <path d="M35 45 Q40 42 45 45" stroke={strokeColor} strokeWidth="0.8" />
+            <path d="M50 30 Q55 27 60 30" stroke={strokeColor} strokeWidth="0.8" />
+          </svg>
+        );
+
+      case 'vine-border':
+        return (
+          <svg
+            viewBox="0 0 400 60"
+            className={baseClasses}
+            style={svgStyle}
+            fill="none"
+          >
+            {/* Main vine */}
+            <path d="M20 30 Q80 20 140 30 Q200 40 260 30 Q320 20 380 30" stroke={strokeColor} strokeWidth="1.5" strokeLinecap="round" />
+            
+            {/* Leaves along the vine */}
+            <ellipse cx="60" cy="25" rx="8" ry="3" fill={strokeColor} opacity="0.4" transform="rotate(-15 60 25)" />
+            <ellipse cx="120" cy="35" rx="9" ry="3.5" fill={strokeColor} opacity="0.4" transform="rotate(15 120 35)" />
+            <ellipse cx="180" cy="25" rx="7" ry="3" fill={strokeColor} opacity="0.4" transform="rotate(-10 180 25)" />
+            <ellipse cx="240" cy="35" rx="8" ry="3.5" fill={strokeColor} opacity="0.4" transform="rotate(20 240 35)" />
+            <ellipse cx="300" cy="25" rx="7.5" ry="3" fill={strokeColor} opacity="0.4" transform="rotate(-12 300 25)" />
+            <ellipse cx="340" cy="35" rx="6" ry="2.5" fill={strokeColor} opacity="0.4" transform="rotate(18 340 35)" />
+            
+            {/* Small flowers */}
+            <g>
+              <circle cx="90" cy="30" r="2" stroke={strokeColor} strokeWidth="1" fill="none" />
+              <circle cx="90" cy="30" r="1" fill={strokeColor} opacity="0.5" />
+            </g>
+            <g>
+              <circle cx="210" cy="30" r="2" stroke={strokeColor} strokeWidth="1" fill="none" />
+              <circle cx="210" cy="30" r="1" fill={strokeColor} opacity="0.5" />
+            </g>
+            <g>
+              <circle cx="270" cy="30" r="2" stroke={strokeColor} strokeWidth="1" fill="none" />
+              <circle cx="270" cy="30" r="1" fill={strokeColor} opacity="0.5" />
+            </g>
+            
+            {/* Tendrils */}
+            <path d="M100 28 Q105 25 110 28" stroke={strokeColor} strokeWidth="0.8" />
+            <path d="M160 32 Q165 35 170 32" stroke={strokeColor} strokeWidth="0.8" />
+            <path d="M220 28 Q225 25 230 28" stroke={strokeColor} strokeWidth="0.8" />
+          </svg>
+        );
+
+      case 'herbarium-branch':
+        return (
+          <svg
+            viewBox="0 0 200 300"
+            className={baseClasses}
+            style={svgStyle}
+            fill="none"
+          >
+            {/* Main botanical specimen branch */}
+            <path d="M100 280 Q95 250 100 220 Q105 190 100 160 Q95 130 100 100 Q105 70 100 40 Q95 20 100 10" stroke={strokeColor} strokeWidth="2" strokeLinecap="round" />
+            
+            {/* Secondary branches */}
+            <path d="M100 200 Q120 190 140 200" stroke={strokeColor} strokeWidth="1.5" strokeLinecap="round" />
+            <path d="M100 180 Q80 170 60 180" stroke={strokeColor} strokeWidth="1.5" strokeLinecap="round" />
+            <path d="M100 140 Q125 130 150 140" stroke={strokeColor} strokeWidth="1.5" strokeLinecap="round" />
+            <path d="M100 120 Q75 110 50 120" stroke={strokeColor} strokeWidth="1.5" strokeLinecap="round" />
+            <path d="M100 80 Q115 70 130 80" stroke={strokeColor} strokeWidth="1.5" strokeLinecap="round" />
+            <path d="M100 60 Q85 50 70 60" stroke={strokeColor} strokeWidth="1.5" strokeLinecap="round" />
+            
+            {/* Detailed leaves with scientific accuracy */}
+            <g>
+              {/* Right side leaves */}
+              <path d="M140 200 Q150 195 160 200 Q155 210 145 205 Q140 200 140 200" stroke={strokeColor} strokeWidth="1.2" fill={strokeColor} fillOpacity="0.2" />
+              <path d="M145 197 L155 202" stroke={strokeColor} strokeWidth="0.6" />
+              <path d="M145 202 L155 197" stroke={strokeColor} strokeWidth="0.6" />
+              
+              <path d="M150 140 Q165 135 180 140 Q175 155 160 150 Q150 140 150 140" stroke={strokeColor} strokeWidth="1.2" fill={strokeColor} fillOpacity="0.2" />
+              <path d="M155 137 L170 145" stroke={strokeColor} strokeWidth="0.6" />
+              <path d="M155 145 L170 137" stroke={strokeColor} strokeWidth="0.6" />
+              
+              <path d="M130 80 Q140 75 150 80 Q145 90 135 85 Q130 80 130 80" stroke={strokeColor} strokeWidth="1.2" fill={strokeColor} fillOpacity="0.2" />
+              <path d="M135 77 L145 82" stroke={strokeColor} strokeWidth="0.6" />
+              <path d="M135 82 L145 77" stroke={strokeColor} strokeWidth="0.6" />
+            </g>
+            
+            <g>
+              {/* Left side leaves */}
+              <path d="M60 180 Q50 175 40 180 Q45 190 55 185 Q60 180 60 180" stroke={strokeColor} strokeWidth="1.2" fill={strokeColor} fillOpacity="0.2" />
+              <path d="M55 177 L45 182" stroke={strokeColor} strokeWidth="0.6" />
+              <path d="M55 182 L45 177" stroke={strokeColor} strokeWidth="0.6" />
+              
+              <path d="M50 120 Q35 115 20 120 Q25 135 40 130 Q50 120 50 120" stroke={strokeColor} strokeWidth="1.2" fill={strokeColor} fillOpacity="0.2" />
+              <path d="M45 117 L30 125" stroke={strokeColor} strokeWidth="0.6" />
+              <path d="M45 125 L30 117" stroke={strokeColor} strokeWidth="0.6" />
+              
+              <path d="M70 60 Q60 55 50 60 Q55 70 65 65 Q70 60 70 60" stroke={strokeColor} strokeWidth="1.2" fill={strokeColor} fillOpacity="0.2" />
+              <path d="M65 57 L55 62" stroke={strokeColor} strokeWidth="0.6" />
+              <path d="M65 62 L55 57" stroke={strokeColor} strokeWidth="0.6" />
+            </g>
+            
+            {/* Botanical details - seeds/berries */}
+            <circle cx="125" cy="160" r="2.5" fill={strokeColor} opacity="0.6" />
+            <circle cx="135" cy="165" r="2" fill={strokeColor} opacity="0.5" />
+            <circle cx="75" cy="140" r="2.5" fill={strokeColor} opacity="0.6" />
+            <circle cx="65" cy="135" r="2" fill={strokeColor} opacity="0.5" />
+            
+            {/* Root system */}
+            <path d="M100 280 Q90 290 80 300" stroke={strokeColor} strokeWidth="1" strokeLinecap="round" />
+            <path d="M100 280 Q110 290 120 300" stroke={strokeColor} strokeWidth="1" strokeLinecap="round" />
+            <path d="M100 280 Q100 290 100 300" stroke={strokeColor} strokeWidth="1" strokeLinecap="round" />
           </svg>
         );
 

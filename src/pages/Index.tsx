@@ -3,6 +3,7 @@ import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import SignatureScents from '@/components/SignatureScents';
 import Heritage from '@/components/Heritage';
+import HerbariumSection from '@/components/HerbariumSection';
 import Journal from '@/components/Journal';
 import Newsletter from '@/components/Newsletter';
 import Footer from '@/components/Footer';
@@ -47,6 +48,19 @@ const Index = () => {
         <Hero />
         <SignatureScents />
         <Heritage />
+        <HerbariumSection 
+          title="The Language of Botanicals"
+          subtitle="Our Herbarium"
+          description="Each fragrance in our collection begins with a botanical story. From the lavender fields of Provence to the eucalyptus groves of Tasmania, we source the finest natural ingredients to create scents that transport you to their origins."
+          botanicalType="lavender"
+        />
+        <HerbariumSection 
+          title="Artisanal Extraction Methods"
+          subtitle="Traditional Techniques"
+          description="Using time-honored distillation methods passed down through generations, we carefully extract the essence of each botanical. Our process preserves the delicate compounds that give each ingredient its unique olfactory signature."
+          botanicalType="eucalyptus"
+          reverse
+        />
         <Journal />
         <Newsletter />
       </main>
