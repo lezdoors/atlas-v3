@@ -22,9 +22,9 @@ const Hero = () => {
         </h1>
         
         <Button 
-          variant="luxury" 
+          variant="moroccan-primary" 
           size="lg" 
-          className="bg-secondary text-foreground hover:bg-secondary/90 font-playfair font-medium tracking-luxury uppercase text-sm px-8 py-4 animate-slide-up"
+          className="uppercase text-sm px-8 py-4 animate-slide-up"
         >
           DISCOVER THE COLLECTION
         </Button>

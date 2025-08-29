@@ -8,63 +8,74 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Luxury Fragrance Brand Design System */
-    --background: 36 11% 97%; /* Soft cream #f8f6f3 */
-    --foreground: 0 0% 0%; /* Rich black #000000 */
-
-    --card: 36 11% 97%; /* Soft cream */
-    --card-foreground: 0 0% 0%; /* Rich black */
-
-    --popover: 36 11% 97%;
-    --popover-foreground: 0 0% 0%;
-
-    /* Deep charcoal primary */
-    --primary: 0 0% 10%; /* Deep charcoal #1a1a1a */
-    --primary-foreground: 36 11% 97%; /* Soft cream */
-
-    /* Warm gold secondary */
-    --secondary: 43 65% 52%; /* Warm gold #d4af37 */
-    --secondary-foreground: 0 0% 10%; /* Deep charcoal */
-
-    --muted: 24 11% 95%; /* Soft beige #f1ede8 */
-    --muted-foreground: 0 0% 42%; /* Warm gray #6b6b6b */
-
-    /* Forest green accent */
-    --accent: 154 24% 24%; /* Forest green #2d4a3e */
-    --accent-foreground: 36 11% 97%; /* Soft cream */
-
-    /* Muted rose for special elements */
-    --rose: 14 18% 87%; /* Muted rose #e8d5d0 */
-    --rose-foreground: 0 0% 10%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 36 11% 97%;
-
-    --border: 24 11% 91%;
-    --input: 24 11% 91%;
-    --ring: 43 65% 52%; /* Gold ring */
-
-    --radius: 0.5rem;
-
-    /* Custom luxury variables */
-    --luxury-gold: 43 65% 52%; /* #d4af37 */
-    --luxury-charcoal: 0 0% 10%; /* #1a1a1a */
-    --luxury-cream: 36 11% 97%; /* #f8f6f3 */
-    --luxury-beige: 24 11% 95%; /* #f1ede8 */
-    --luxury-rose: 14 18% 87%; /* #e8d5d0 */
-    --luxury-forest: 154 24% 24%; /* #2d4a3e */
+    /* PERLE DE L'ATLAS - ULTRA-LUXURY DESIGN SYSTEM */
     
-    /* Gradients */
-    --gradient-gold: linear-gradient(135deg, hsl(43, 65%, 52%), hsl(43, 65%, 45%));
-    --gradient-charcoal: linear-gradient(135deg, hsl(0, 0%, 10%), hsl(0, 0%, 15%));
-    --gradient-elegant: linear-gradient(135deg, hsl(var(--luxury-cream)), hsl(var(--luxury-beige)));
+    /* PRIMARY PALETTE - EXACT SPECIFICATIONS */
+    --background: 40 22% 99%; /* Cream White #FEFCF7 */
+    --foreground: 0 0% 10%; /* Rich Black #1A1A1A */
     
-    /* Shadows */
-    --shadow-luxury: 0 10px 30px -10px hsl(var(--luxury-charcoal) / 0.1);
-    --shadow-gold: 0 4px 20px hsl(var(--luxury-gold) / 0.2);
+    --card: 36 17% 97%; /* Soft Ivory #F9F6F0 */
+    --card-foreground: 0 0% 10%;
     
-    /* Transitions */
-    --transition-luxury: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --popover: 40 22% 99%;
+    --popover-foreground: 0 0% 10%;
+    
+    /* BRAND COLORS */
+    --primary: 0 0% 10%; /* Rich Black #1A1A1A */
+    --primary-foreground: 40 22% 99%; /* Cream White */
+    
+    --secondary: 28 47% 66%; /* Amber Gold #D4A574 */
+    --secondary-foreground: 0 0% 10%;
+    
+    --muted: 36 17% 97%; /* Soft Ivory #F9F6F0 */
+    --muted-foreground: 0 0% 18%; /* Charcoal #2D2D2D */
+    
+    /* MOROCCAN ACCENT PALETTE */
+    --atlas-emerald: 154 49% 35%; /* Atlas Emerald #2E8B57 */
+    --royal-indigo: 276 100% 25%; /* Royal Indigo #4B0082 */
+    --terracotta: 13 76% 65%; /* Terracotta #E07A5F */
+    --burnished-gold: 43 45% 60%; /* Burnished Gold #C9A961 */
+    
+    --accent: 154 49% 35%; /* Atlas Emerald */
+    --accent-foreground: 40 22% 99%;
+    
+    --destructive: 0 73% 41%;
+    --destructive-foreground: 40 22% 99%;
+    
+    --border: 36 20% 92%; /* Subtle border */
+    --input: 36 20% 92%;
+    --ring: 28 47% 66%; /* Amber Gold ring */
+    
+    --radius: 8px;
+    
+    /* LUXURY VARIABLES */
+    --amber-gold: 28 47% 66%; /* #D4A574 */
+    --atlas-emerald-var: 154 49% 35%; /* #2E8B57 */
+    --royal-indigo-var: 276 100% 25%; /* #4B0082 */
+    --terracotta-var: 13 76% 65%; /* #E07A5F */
+    --burnished-gold-var: 43 45% 60%; /* #C9A961 */
+    --cream-white: 40 22% 99%; /* #FEFCF7 */
+    --soft-ivory: 36 17% 97%; /* #F9F6F0 */
+    --rich-black: 0 0% 10%; /* #1A1A1A */
+    --charcoal: 0 0% 18%; /* #2D2D2D */
+    
+    /* PREMIUM GRADIENTS */
+    --gradient-amber: linear-gradient(135deg, hsl(28, 47%, 66%), hsl(43, 45%, 60%));
+    --gradient-moroccan: linear-gradient(135deg, hsl(28, 47%, 66%), hsl(154, 49%, 35%));
+    --gradient-luxury: linear-gradient(135deg, hsl(40, 22%, 99%), hsl(36, 17%, 97%));
+    --gradient-charcoal: linear-gradient(135deg, hsl(0, 0%, 10%), hsl(0, 0%, 18%));
+    
+    /* LUXURY SHADOWS */
+    --shadow-subtle: 0 2px 8px hsl(0, 0%, 10% / 0.04);
+    --shadow-medium: 0 8px 24px hsl(0, 0%, 10% / 0.08);
+    --shadow-elevated: 0 16px 48px hsl(0, 0%, 10% / 0.12);
+    --shadow-amber: 0 8px 32px hsl(28, 47%, 66% / 0.15);
+    --shadow-emerald: 0 8px 32px hsl(154, 49%, 35% / 0.15);
+    
+    /* PREMIUM TRANSITIONS */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-elegant: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
   }
 
   .dark {

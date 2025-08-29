@@ -5,29 +5,35 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-luxury text-sm font-medium ring-offset-background transition-luxury focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-moroccan font-medium ring-offset-background transition-smooth focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 relative overflow-hidden group",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-subtle hover:shadow-medium",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
+        outline: "border-2 border-border bg-background hover:border-secondary hover:text-secondary transition-elegant",
+        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-subtle",
+        ghost: "hover:bg-muted hover:text-foreground transition-smooth",
         link: "text-primary underline-offset-4 hover:underline",
         
-        // Luxury variants
-        luxury: "bg-gradient-gold text-primary font-playfair font-medium tracking-luxury shadow-gold hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300",
-        "luxury-outline": "border-2 border-secondary bg-transparent text-secondary font-playfair font-medium tracking-luxury hover:bg-secondary hover:text-secondary-foreground transition-luxury",
-        "luxury-ghost": "text-secondary font-playfair font-medium tracking-luxury hover:bg-secondary/10 hover:text-secondary transition-luxury",
-        elegant: "bg-accent text-accent-foreground font-playfair font-medium tracking-luxury hover:bg-accent/90 transition-luxury",
-        minimal: "bg-transparent text-foreground border border-border hover:border-secondary hover:text-secondary transition-luxury"
+        // MOROCCAN LUXURY VARIANTS
+        "moroccan-primary": "bg-gradient-amber text-moroccan-black font-playfair font-medium tracking-luxury shadow-amber hover:shadow-elevated transform hover:-translate-y-1 transition-elegant before:absolute before:inset-0 before:bg-moroccan-amber before:opacity-0 hover:before:opacity-10 before:transition-opacity",
+        
+        "moroccan-outline": "border-2 border-secondary bg-transparent text-secondary font-playfair font-medium tracking-luxury hover:bg-secondary hover:text-secondary-foreground transition-elegant shadow-subtle hover:shadow-amber",
+        
+        "moroccan-ghost": "text-secondary font-playfair font-medium tracking-luxury hover:bg-secondary/10 hover:text-secondary transition-smooth relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-secondary after:transition-all hover:after:w-full",
+        
+        "emerald": "bg-moroccan-emerald text-moroccan-cream font-playfair font-medium tracking-luxury hover:bg-moroccan-emerald/90 shadow-emerald hover:shadow-elevated transform hover:-translate-y-1 transition-elegant",
+        
+        "minimal": "bg-transparent text-foreground border border-border hover:border-secondary hover:text-secondary transition-smooth font-inter font-medium tracking-wide",
+        
+        "luxury-minimal": "bg-moroccan-cream text-moroccan-charcoal border border-moroccan-charcoal/20 hover:border-secondary hover:bg-moroccan-ivory transition-elegant font-inter"
       },
       size: {
-        default: "h-12 px-6 py-3",
+        default: "h-12 px-6 py-3 text-base",
         sm: "h-10 px-4 py-2 text-sm",
-        lg: "h-14 px-8 py-4 text-base",
-        xl: "h-16 px-10 py-5 text-lg",
+        lg: "h-14 px-8 py-4 text-lg",
+        xl: "h-16 px-10 py-5 text-xl",
         icon: "h-12 w-12",
       },
     },

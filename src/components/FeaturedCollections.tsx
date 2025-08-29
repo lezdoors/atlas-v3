@@ -72,7 +72,7 @@ const FeaturedCollections = () => {
                       {collection.description}
                     </p>
                     <Button 
-                      variant="luxury-outline" 
+                      variant="moroccan-outline" 
                       size="lg"
                       className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
                     >

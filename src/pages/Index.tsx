@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
-import NewArrivals from '@/components/NewArrivals';
+import SignatureScents from '@/components/SignatureScents';
 import Heritage from '@/components/Heritage';
 import Journal from '@/components/Journal';
 import Newsletter from '@/components/Newsletter';
@@ -13,7 +13,7 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
-        <NewArrivals />
+        <SignatureScents />
         <Heritage />
         <Journal />
         <Newsletter />
