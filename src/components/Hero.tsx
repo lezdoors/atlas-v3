@@ -3,15 +3,20 @@ import { Button } from '@/components/ui/button';
 import OptimizedImage from '@/components/ui/OptimizedImage';
 import HandDrawnElements from './HandDrawnElements';
 import BotanicalFrame from './BotanicalFrame';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { getImage, getFallbackImage } from '@/lib/imageAssets';
 
 const Hero = () => {
+  const heroRef = useScrollAnimation();
   // Get hero background image from assets
   const heroBackground = getImage('backgrounds', 'heroFragrance');
   const heroProduct = getImage('products', 'atlasRose');
   
   return (
-    <section className="min-h-screen bg-background flex items-center relative overflow-hidden pt-20 lg:pt-24">
+    <section 
+      ref={heroRef}
+      className="min-h-screen bg-background flex items-center relative overflow-hidden pt-20 lg:pt-24 fade-in-up"
+    >
       {/* Background Botanical Elements - Enhanced */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Large prominent botanical illustrations */}
@@ -50,7 +55,7 @@ const Hero = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-foreground text-foreground hover:bg-foreground hover:text-background transition-all duration-300 font-inter font-medium tracking-wide px-8 py-4 rounded-none"
+              className="luxury-button border-foreground text-foreground hover:bg-foreground hover:text-background transition-all duration-300 font-inter font-medium tracking-wide px-8 py-4 rounded-none"
             >
               Discover Collection
             </Button>
@@ -64,10 +69,10 @@ const Hero = () => {
 
         {/* Right Content - Product Hero with Botanical Frame */}
         <div className="order-1 lg:order-2 flex justify-center lg:justify-end relative">
-          <div className="relative max-w-lg">
+          <div className="relative max-w-lg image-hover-effect">
             {/* Botanical frame around product */}
             <BotanicalFrame variant="ornate" className="bg-background-secondary/20 backdrop-blur-sm">
-              <div className="relative w-80 lg:w-96 transform hover:scale-105 transition-transform duration-700">
+              <div className="relative w-80 lg:w-96">
                 <OptimizedImage
                   src={heroProduct?.src || '/src/assets/hero-fragrance.jpg'}
                   alt={heroProduct?.alt || "Perle de l'Atlas Signature Fragrance"}

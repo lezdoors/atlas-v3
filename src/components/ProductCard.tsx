@@ -23,7 +23,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   const fallbackImage = getFallbackImage('products');
 
   return (
-    <div className="group relative bg-card overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:-translate-y-1">
+    <div className="group relative bg-card overflow-hidden scale-on-hover image-hover-effect luxury-card">
       {/* Product Image */}
       <div className="relative overflow-hidden">
         <OptimizedImage
@@ -75,9 +75,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
             {price}
           </span>
           
-          <button className="font-inter text-sm text-gold-muted hover:text-accent transition-colors duration-300 relative group/link tracking-wide">
+          <button className="luxury-link font-inter text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 tracking-wide">
             View Details
-            <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-gold-muted transition-all duration-300 group-hover/link:w-full"></span>
           </button>
         </div>
       </div>

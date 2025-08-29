@@ -93,9 +93,48 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground font-inter;
     line-height: 1.6;
+  }
+
+  /* LUXURY SCROLL ANIMATIONS */
+  @media (prefers-reduced-motion: no-preference) {
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    
+    .fade-in-up.animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .scale-on-hover {
+      transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    
+    .scale-on-hover:hover {
+      transform: scale(1.03);
+    }
+    
+    .image-hover-effect {
+      transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+      overflow: hidden;
+    }
+    
+    .image-hover-effect:hover img {
+      transform: scale(1.05);
+    }
+    
+    .image-hover-effect img {
+      transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
   }
 }
 
@@ -155,6 +194,97 @@ All colors MUST be HSL.
 
   .botanical-divider {
     @apply flex justify-center items-center my-16 md:my-24;
+  }
+
+  /* LUXURY MICRO-INTERACTIONS */
+  .luxury-input {
+    @apply transition-all duration-500 ease-out;
+  }
+  
+  .luxury-input:focus {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .luxury-button {
+    @apply transition-all duration-500 ease-out;
+  }
+  
+  .luxury-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+  }
+
+  .luxury-link {
+    @apply relative;
+  }
+  
+  .luxury-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: currentColor;
+    transition: width 0.3s ease-out;
+  }
+  
+  .luxury-link:hover::after {
+    width: 100%;
+  }
+
+  .luxury-social {
+    @apply relative;
+  }
+  
+  .luxury-social::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease-out;
+    z-index: -1;
+  }
+  
+  .luxury-social:hover::before {
+    width: 40px;
+    height: 40px;
+  }
+
+  .luxury-legal {
+    @apply relative;
+  }
+  
+  .luxury-legal::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -1px;
+    left: 50%;
+    background-color: currentColor;
+    transition: all 0.3s ease-out;
+    transform: translateX(-50%);
+  }
+  
+  .luxury-legal:hover::after {
+    width: 100%;
+  }
+
+  .luxury-card {
+    @apply transition-all duration-500 ease-out;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+  
+  .luxury-card:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
   }
 }
 
