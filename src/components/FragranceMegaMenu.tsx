@@ -1,5 +1,6 @@
 import React from 'react';
 import OptimizedImage from './ui/OptimizedImage';
+import atlasRoseImg from '@/assets/atlas-rose-product.jpg';
 
 interface FragranceMegaMenuProps {
   isOpen: boolean;
@@ -11,33 +12,33 @@ export const FragranceMegaMenu: React.FC<FragranceMegaMenuProps> = ({ isOpen, on
 
   const menuCategories = {
     'Signature Scents': [
-      'Atlas Rose',
-      'Neroli Sublime',
-      'Argan Mystique',
-      'Cedar Dreams',
-      'Jasmine Royale',
-      'Oud Eternal'
+      { name: 'Atlas Rose', href: '/fragrances/signature-scents' },
+      { name: 'Neroli Sublime', href: '/fragrances/signature-scents' },
+      { name: 'Argan Mystique', href: '/fragrances/signature-scents' },
+      { name: 'Cedar Dreams', href: '/fragrances/signature-scents' },
+      { name: 'Jasmine Royale', href: '/fragrances/signature-scents' },
+      { name: 'View All', href: '/fragrances/signature-scents' }
     ],
     'Limited Editions': [
-      'Midnight Garden',
-      'Desert Mirage',
-      'Ocean Breeze',
-      'Golden Hour',
-      'Winter Solstice'
+      { name: 'Midnight Garden', href: '/fragrances/limited-editions' },
+      { name: 'Desert Mirage', href: '/fragrances/limited-editions' },
+      { name: 'Ocean Breeze', href: '/fragrances/limited-editions' },
+      { name: 'Golden Hour', href: '/fragrances/limited-editions' },
+      { name: 'View All', href: '/fragrances/limited-editions' }
     ],
     'Discovery Sets': [
-      'The Essential Collection',
-      'Floral Journey',
-      'Woody Exploration',
-      'Citrus Escape',
-      'Oriental Treasures'
+      { name: 'The Essential Collection', href: '/fragrances/discovery-sets' },
+      { name: 'Floral Journey', href: '/fragrances/discovery-sets' },
+      { name: 'Woody Exploration', href: '/fragrances/discovery-sets' },
+      { name: 'Citrus Escape', href: '/fragrances/discovery-sets' },
+      { name: 'View All', href: '/fragrances/discovery-sets' }
     ],
     'Collections': [
-      'Heritage Line',
-      'Modern Classics',
-      'Artisan Series',
-      'Botanical Garden',
-      'Rare Essences'
+      { name: 'Heritage Line', href: '/collections/heritage' },
+      { name: 'Modern Classics', href: '/collections/modern' },
+      { name: 'Artisan Series', href: '/collections/artisan' },
+      { name: 'Botanical Garden', href: '/collections/botanical' },
+      { name: 'View All Collections', href: '/collections' }
     ]
   };
 
@@ -62,13 +63,13 @@ export const FragranceMegaMenu: React.FC<FragranceMegaMenuProps> = ({ isOpen, on
                     {category}
                   </h3>
                   <ul className="space-y-3">
-                    {items.map((item) => (
-                      <li key={item}>
+                    {items.map((item, index) => (
+                      <li key={index}>
                         <a 
-                          href="#" 
+                          href={item.href} 
                           className="block text-sm text-foreground hover:text-primary transition-colors duration-200 relative group"
                         >
-                          {item}
+                          {item.name}
                           <span className="absolute bottom-0 left-0 w-0 h-px bg-primary transition-all duration-300 group-hover:w-full" />
                         </a>
                       </li>
@@ -87,7 +88,7 @@ export const FragranceMegaMenu: React.FC<FragranceMegaMenuProps> = ({ isOpen, on
                   <div className="relative overflow-hidden rounded-lg bg-muted/20 p-6 mb-4">
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5" />
                     <OptimizedImage
-                      src="/src/assets/fragrance-bottle-1.jpg"
+                      src={atlasRoseImg}
                       alt="Atlas Rose - Signature Fragrance"
                       className="w-full h-48 object-cover rounded-md transition-transform duration-500 group-hover:scale-105"
                     />

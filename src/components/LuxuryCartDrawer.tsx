@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { X, Plus, Minus, Trash2, Gift, Truck, Shield } from 'lucide-react';
 import OptimizedImage from './ui/OptimizedImage';
+import atlasRoseImg from '@/assets/atlas-rose-product.jpg';
+import neroliSublimeImg from '@/assets/neroli-sublime-product.jpg';
 
 interface CartItem {
   id: string;
@@ -24,7 +26,7 @@ export const LuxuryCartDrawer: React.FC<LuxuryCartDrawerProps> = ({ isOpen, onCl
       size: '50ml',
       price: 165,
       quantity: 1,
-      image: '/src/assets/fragrance-bottle-1.jpg'
+      image: atlasRoseImg
     },
     {
       id: '2',
@@ -32,7 +34,7 @@ export const LuxuryCartDrawer: React.FC<LuxuryCartDrawerProps> = ({ isOpen, onCl
       size: '30ml',
       price: 125,
       quantity: 2,
-      image: '/src/assets/fragrance-bottle-2.jpg'
+      image: neroliSublimeImg
     }
   ]);
 
