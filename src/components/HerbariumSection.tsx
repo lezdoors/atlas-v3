@@ -22,7 +22,7 @@ const HerbariumSection: React.FC<HerbariumSectionProps> = ({
 }) => {
   return (
     <section className={cn(
-      "py-24 relative overflow-hidden",
+      "section-padding relative overflow-hidden",
       reverse ? "bg-background-secondary" : "bg-background",
       className
     )}>
@@ -36,7 +36,7 @@ const HerbariumSection: React.FC<HerbariumSectionProps> = ({
         </div>
       </div>
 
-      <div className="container mx-auto px-4">
+      <div className="container-luxury">
         <div className={cn(
           "grid grid-cols-1 lg:grid-cols-2 gap-16 items-center",
           reverse && "lg:grid-flow-col-dense"
@@ -83,8 +83,8 @@ const HerbariumSection: React.FC<HerbariumSectionProps> = ({
               {title}
             </h2>
             
-            <div className="space-y-4">
-              <p className="body-large text-text-secondary leading-relaxed">
+            <div className="space-y-6">
+              <p className="body-large text-text-secondary leading-[1.8]">
                 {description}
               </p>
             </div>

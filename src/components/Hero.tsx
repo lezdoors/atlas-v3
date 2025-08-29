@@ -11,7 +11,7 @@ const Hero = () => {
   const heroProduct = getImage('products', 'atlasRose');
   
   return (
-    <section className="min-h-screen bg-background flex items-center relative overflow-hidden">
+    <section className="min-h-screen bg-background flex items-center relative overflow-hidden pt-20 lg:pt-24">
       {/* Background Botanical Elements - Enhanced */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Large prominent botanical illustrations */}
@@ -29,7 +29,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-8 lg:px-16 grid lg:grid-cols-2 gap-16 lg:gap-24 items-center py-20 relative z-10">
+      <div className="container-luxury grid lg:grid-cols-2 gap-16 lg:gap-24 items-center section-padding relative z-10">
         {/* Left Content - Typography focused */}
         <div className="order-2 lg:order-1 space-y-8">
           {/* Subtle botanical decoration */}
@@ -41,7 +41,7 @@ const Hero = () => {
               <span className="block italic">l'Atlas</span>
             </h1>
             
-            <p className="body-large max-w-md">
+            <p className="body-large max-w-lg leading-[1.8]">
               Handcrafted fragrances born from the ancient wisdom of Moroccan artisans
             </p>
           </div>

@@ -54,42 +54,34 @@ const SignatureScents = () => {
   ];
 
   return (
-    <section className="py-24 bg-background relative overflow-hidden">
-      {/* Background Botanical Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 -left-10 opacity-5">
-          <HandDrawnElements type="eucalyptus" size={180} opacity={0.3} rotation={-15} />
+    <section className="section-padding bg-background relative overflow-hidden">
+      {/* Background botanical elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-10 left-10 opacity-20">
+          <HandDrawnElements type="eucalyptus" size={200} animate />
         </div>
-        <div className="absolute bottom-32 -right-16 opacity-5">
-          <HandDrawnElements type="citrus" size={160} opacity={0.3} rotation={45} />
+        <div className="absolute bottom-10 right-10 opacity-20">
+          <HandDrawnElements type="olive" size={180} animate rotation={25} />
         </div>
-        <div className="absolute top-1/2 left-1/4 opacity-4">
-          <HandDrawnElements type="olive" size={140} opacity={0.25} rotation={-30} />
-        </div>
-        <div className="absolute bottom-20 left-1/3 opacity-4">
-          <HandDrawnElements type="jasmine" size={100} opacity={0.3} rotation={60} />
+        <div className="absolute top-1/2 left-1/4 opacity-15">
+          <HandDrawnElements type="jasmine" size={120} animate rotation={45} />
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-8 lg:px-16 relative">
+      <div className="container-luxury relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="flex justify-center mb-6">
-            <BotanicalDivider className="text-muted-foreground" width={160} />
-          </div>
-          
+        <div className="text-center mb-20 lg:mb-24">
           <h2 className="heading-section mb-6">
             Signature Scents
           </h2>
-          
-          <p className="body-large max-w-2xl mx-auto">
-            Each fragrance tells a story of Moroccan heritage, crafted with rare botanicals 
-            and traditional artisan techniques passed down through generations.
+          <p className="body-large max-w-2xl mx-auto leading-[1.8]">
+            Each fragrance tells a story of Morocco's rich botanical heritage, 
+            carefully crafted to transport you to the souks of Marrakech and the gardens of the Atlas Mountains.
           </p>
         </div>
 
-        {/* Product Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16">
+        {/* Products Grid - 8 Column System */}
+        <div className="grid-luxury-8 mb-16 lg:mb-20">
           {products.map((product, index) => (
             <div key={index} className="flex justify-center">
               <ProductCard
@@ -104,11 +96,11 @@ const SignatureScents = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="text-center mt-16">
+        <div className="text-center">
           <Button 
             variant="outline" 
             size="lg"
-            className="border-foreground text-foreground hover:bg-foreground hover:text-primary-foreground transition-all duration-300 font-inter font-medium tracking-wide px-10 py-4 rounded-none"
+            className="border-text-primary text-text-primary hover:bg-text-primary hover:text-background transition-all duration-300 nav-link px-12 py-4 rounded-none"
           >
             Explore Full Collection
           </Button>
