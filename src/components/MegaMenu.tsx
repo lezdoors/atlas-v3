@@ -1,7 +1,8 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import OptimizedImage from '@/components/ui/OptimizedImage';
 import { HandDrawnOliveBranch } from './HandDrawnIcons';
-import productSample from '@/assets/product-sample.jpg';
+import { getFallbackImage } from '@/lib/imageAssets';
 
 interface MegaMenuProps {
   isOpen: boolean;
@@ -43,9 +44,9 @@ const MegaMenu: React.FC<MegaMenuProps> = ({ isOpen, onClose }) => {
   };
 
   const featuredProducts = [
-    { name: 'Rose Damascus', price: 89, image: productSample },
-    { name: 'Oud Royal', price: 156, image: productSample },
-    { name: 'Atlas Bloom', price: 112, image: productSample }
+    { name: 'Rose Damascus', price: 89, image: '/src/assets/product-sample.jpg' },
+    { name: 'Oud Royal', price: 156, image: '/src/assets/product-sample.jpg' },
+    { name: 'Atlas Bloom', price: 112, image: '/src/assets/product-sample.jpg' }
   ];
 
   return (
@@ -150,10 +151,14 @@ const MegaMenu: React.FC<MegaMenuProps> = ({ isOpen, onClose }) => {
               <div className="space-y-4">
                 {featuredProducts.map((product, index) => (
                   <div key={index} className="flex items-center gap-3 group cursor-pointer">
-                    <img 
+                    <OptimizedImage 
                       src={product.image}
                       alt={product.name}
+                      aspectRatio="square"
                       className="w-12 h-12 object-cover rounded-lg group-hover:scale-105 transition-transform"
+                      fallbackSrc={getFallbackImage('products')}
+                      placeholder="skeleton"
+                      sizes="48px"
                     />
                     <div>
                       <p className="font-playfair font-medium text-foreground group-hover:text-secondary transition-colors">

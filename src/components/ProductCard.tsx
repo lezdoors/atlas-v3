@@ -33,6 +33,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
           fallbackSrc={fallbackImage}
           className="transition-transform duration-700 group-hover:scale-105"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          placeholder="skeleton"
+          preloadOnHover={true}
+          enableWebP={true}
         />
         
         {/* Botanical Overlay - appears on hover */}

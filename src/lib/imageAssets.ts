@@ -21,61 +21,61 @@ const imageAssets: ImageCollection = {
   // Product Images - Fragrance bottles and product shots
   products: {
     atlasRose: {
-      src: '/images/products/atlas-rose-perfume.jpg',
+      src: '/src/assets/product-sample.jpg',
       alt: 'Atlas Rose - Luxury Moroccan Perfume Bottle',
       width: 800,
       height: 1000
     },
     amberOud: {
-      src: '/images/products/amber-oud-perfume.jpg',
+      src: '/src/assets/product-sample.jpg',
       alt: 'Amber Oud - Premium Oriental Fragrance',
       width: 800,
       height: 1000
     },
     figCassis: {
-      src: '/images/products/fig-cassis-perfume.jpg',
+      src: '/src/assets/product-sample.jpg',
       alt: 'Fig & Cassis - Mediterranean Eau de Toilette',
       width: 800,
       height: 1000
     },
     neroliGarden: {
-      src: '/images/products/neroli-garden-perfume.jpg',
+      src: '/src/assets/product-sample.jpg',
       alt: 'Neroli Garden - Orange Blossom Eau de Parfum',
       width: 800,
       height: 1000
     },
     santalMystique: {
-      src: '/images/products/santal-mystique-perfume.jpg',
+      src: '/src/assets/product-sample.jpg',
       alt: 'Santal Mystique - Creamy Sandalwood Parfum',
       width: 800,
       height: 1000
     },
     cedratLumiere: {
-      src: '/images/products/cedrat-lumiere-perfume.jpg',
+      src: '/src/assets/product-sample.jpg',
       alt: 'Cedrat Lumière - Luminous Citrus Eau Fraîche',
       width: 800,
       height: 1000
     },
     atlasOil: {
-      src: '/images/products/atlas-argan-oil.jpg',
+      src: '/src/assets/product-sample.jpg',
       alt: 'Pure Atlas Argan Oil - Luxury Skincare',
       width: 600,
       height: 750
     },
     roseDamascusSerum: {
-      src: '/images/products/rose-damascus-serum.jpg',
+      src: '/src/assets/product-sample.jpg',
       alt: 'Rose Damascus Serum - Anti-Aging Facial Treatment',
       width: 600,
       height: 750
     },
     atlasClayMask: {
-      src: '/images/products/atlas-clay-mask.jpg',
+      src: '/src/assets/product-sample.jpg',
       alt: 'Atlas Clay Mask - Purifying Face Treatment',
       width: 600,
       height: 750
     },
     giftCollection: {
-      src: '/images/products/luxury-gift-set.jpg',
+      src: '/src/assets/product-sample.jpg',
       alt: 'Perle de l\'Atlas Luxury Gift Collection',
       width: 1000,
       height: 800
@@ -85,31 +85,31 @@ const imageAssets: ImageCollection = {
   // Background Images - Hero sections and textures
   backgrounds: {
     heroFragrance: {
-      src: '/images/backgrounds/moroccan-artisan-hero.jpg',
+      src: '/src/assets/hero-fragrance.jpg',
       alt: 'Moroccan Artisan Crafting Luxury Perfumes',
       width: 1920,
       height: 1080
     },
     atlasHeritage: {
-      src: '/images/backgrounds/atlas-mountains-landscape.jpg',
+      src: '/src/assets/collection-hero.jpg',
       alt: 'Atlas Mountains Landscape at Golden Hour',
       width: 1920,
       height: 1080
     },
     marrakechSouk: {
-      src: '/images/backgrounds/marrakech-souk-texture.jpg',
+      src: '/src/assets/collection-hero.jpg',
       alt: 'Traditional Marrakech Souk Atmosphere',
       width: 1600,
       height: 900
     },
     arganGrove: {
-      src: '/images/backgrounds/argan-tree-grove.jpg',
+      src: '/src/assets/collection-hero.jpg',
       alt: 'Ancient Argan Grove in Morocco',
       width: 1920,
       height: 1080
     },
     craftworkshop: {
-      src: '/images/backgrounds/perfume-workshop-marrakech.jpg',
+      src: '/src/assets/collection-hero.jpg',
       alt: 'Traditional Perfume Workshop in Marrakech',
       width: 1600,
       height: 900
@@ -205,10 +205,10 @@ const imageAssets: ImageCollection = {
 
 // Fallback images for error states
 export const fallbackImages = {
-  product: '/images/fallbacks/product-placeholder.jpg',
-  background: '/images/fallbacks/background-placeholder.jpg',
-  botanical: '/images/fallbacks/botanical-placeholder.svg',
-  lifestyle: '/images/fallbacks/lifestyle-placeholder.jpg'
+  product: '/src/assets/product-sample.jpg',
+  background: '/src/assets/hero-fragrance.jpg',
+  botanical: '/src/assets/argan-branch-minimal.png',
+  lifestyle: '/src/assets/collection-hero.jpg'
 };
 
 // Helper function to get image by category and key

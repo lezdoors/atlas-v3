@@ -1,8 +1,9 @@
 import React from 'react';
 import { X, Plus, Minus, Trash2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import OptimizedImage from '@/components/ui/OptimizedImage';
 import { HandDrawnGift, HandDrawnTruck, HandDrawnBottle } from './HandDrawnIcons';
-import productSample from '@/assets/product-sample.jpg';
+import { getFallbackImage } from '@/lib/imageAssets';
 
 interface CartItem {
   id: string;
@@ -27,7 +28,7 @@ const CartDrawer: React.FC<CartDrawerProps> = ({ isOpen, onClose }) => {
       size: '50ml',
       price: 89,
       quantity: 1,
-      image: productSample
+      image: '/src/assets/product-sample.jpg'
     },
     {
       id: '2',
@@ -35,7 +36,7 @@ const CartDrawer: React.FC<CartDrawerProps> = ({ isOpen, onClose }) => {
       size: '30ml',
       price: 156,
       quantity: 1,
-      image: productSample
+      image: '/src/assets/product-sample.jpg'
     }
   ];
 
@@ -92,10 +93,14 @@ const CartDrawer: React.FC<CartDrawerProps> = ({ isOpen, onClose }) => {
                 <div key={item.id} className="flex gap-4 group">
                   {/* Product Image */}
                   <div className="w-20 h-20 rounded-moroccan overflow-hidden flex-shrink-0">
-                    <img
+                    <OptimizedImage
                       src={item.image}
                       alt={item.name}
+                      aspectRatio="square"
                       className="w-full h-full object-cover"
+                      fallbackSrc={getFallbackImage('products')}
+                      placeholder="skeleton"
+                      sizes="80px"
                     />
                   </div>
 

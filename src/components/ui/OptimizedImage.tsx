@@ -7,10 +7,12 @@ export interface OptimizedImageProps extends React.ImgHTMLAttributes<HTMLImageEl
   aspectRatio?: 'square' | '4/3' | '3/4' | '16/9' | 'auto';
   priority?: boolean;
   fallbackSrc?: string;
-  placeholder?: 'blur' | 'shimmer' | 'none';
+  placeholder?: 'blur' | 'shimmer' | 'skeleton' | 'none';
   sizes?: string;
   quality?: number;
   className?: string;
+  preloadOnHover?: boolean;
+  enableWebP?: boolean;
 }
 
 const OptimizedImage = forwardRef<HTMLImageElement, OptimizedImageProps>(
@@ -19,18 +21,22 @@ const OptimizedImage = forwardRef<HTMLImageElement, OptimizedImageProps>(
     alt,
     aspectRatio = 'auto',
     priority = false,
-    fallbackSrc = '/images/fallbacks/product-placeholder.jpg',
-    placeholder = 'shimmer',
+    fallbackSrc = '/src/assets/product-sample.jpg',
+    placeholder = 'skeleton',
     sizes = '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw',
     quality = 85,
     className,
+    preloadOnHover = false,
+    enableWebP = true,
     ...props
   }, ref) => {
     const [isLoading, setIsLoading] = useState(!priority);
     const [hasError, setHasError] = useState(false);
     const [isInView, setIsInView] = useState(priority);
+    const [isHovered, setIsHovered] = useState(false);
     const imgRef = useRef<HTMLImageElement>(null);
     const observerRef = useRef<IntersectionObserver | null>(null);
+    const preloadLinkRef = useRef<HTMLLinkElement | null>(null);
 
     // Intersection Observer for lazy loading
     useEffect(() => {
@@ -44,7 +50,7 @@ const OptimizedImage = forwardRef<HTMLImageElement, OptimizedImageProps>(
           },
           {
             threshold: 0.1,
-            rootMargin: '50px',
+            rootMargin: '100px', // Increased for better UX
           }
         );
 
@@ -54,18 +60,47 @@ const OptimizedImage = forwardRef<HTMLImageElement, OptimizedImageProps>(
       return () => observerRef.current?.disconnect();
     }, [priority]);
 
-    // Generate responsive srcSet for different screen densities
+    // Preload on hover functionality
+    useEffect(() => {
+      if (preloadOnHover && isHovered && !isInView) {
+        if (!preloadLinkRef.current) {
+          preloadLinkRef.current = document.createElement('link');
+          preloadLinkRef.current.rel = 'preload';
+          preloadLinkRef.current.as = 'image';
+          preloadLinkRef.current.href = imageSrc;
+          document.head.appendChild(preloadLinkRef.current);
+        }
+      }
+
+      return () => {
+        if (preloadLinkRef.current) {
+          document.head.removeChild(preloadLinkRef.current);
+          preloadLinkRef.current = null;
+        }
+      };
+    }, [isHovered, isInView, preloadOnHover]);
+
+    // Generate responsive srcSet for different screen densities and formats
     const generateSrcSet = (baseSrc: string): string => {
       if (baseSrc.endsWith('.svg')) return '';
       
-      const formats = ['webp', 'jpg'];
       const densities = [1, 2];
+      const baseUrl = baseSrc.replace(/\.[^.]+$/, '');
+      const extension = baseSrc.split('.').pop() || 'jpg';
       
-      return formats
-        .flatMap(format =>
-          densities.map(density => `${baseSrc.replace(/\.[^.]+$/, '')}_${density}x.${format} ${density}x`)
-        )
-        .join(', ');
+      const srcSetEntries = densities.map(density => 
+        `${baseUrl}${density > 1 ? `_${density}x` : ''}.${extension} ${density}x`
+      );
+
+      // Add WebP support if enabled
+      if (enableWebP && extension !== 'svg') {
+        const webpEntries = densities.map(density => 
+          `${baseUrl}${density > 1 ? `_${density}x` : ''}.webp ${density}x`
+        );
+        return [...webpEntries, ...srcSetEntries].join(', ');
+      }
+      
+      return srcSetEntries.join(', ');
     };
 
     // Aspect ratio classes
@@ -77,22 +112,41 @@ const OptimizedImage = forwardRef<HTMLImageElement, OptimizedImageProps>(
       auto: ''
     };
 
-    // Placeholder component
+    // Skeleton placeholder component
+    const SkeletonPlaceholder = () => (
+      <div className="absolute inset-0 bg-gradient-to-r from-muted/20 via-muted/40 to-muted/20 animate-pulse">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-background/10 to-transparent animate-[shimmer_2s_infinite] transform -skew-x-12" />
+        {/* Product bottle silhouette for product images */}
+        {src.includes('product') && (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-16 h-24 bg-muted/30 rounded-t-full animate-pulse" />
+          </div>
+        )}
+      </div>
+    );
+
+    // Blur placeholder component
+    const BlurPlaceholder = () => (
+      <div className="absolute inset-0 bg-gradient-to-br from-muted/30 via-muted/20 to-muted/30 backdrop-blur-sm" />
+    );
+
+    // Shimmer placeholder component
+    const ShimmerPlaceholder = () => (
+      <div className="absolute inset-0 bg-gradient-to-r from-muted/30 via-muted/50 to-muted/30">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-background/20 to-transparent animate-[shimmer_2s_infinite] transform -skew-x-12" />
+      </div>
+    );
+
+    // Placeholder content based on type
     const PlaceholderContent = () => {
       if (placeholder === 'none') return null;
 
-      if (placeholder === 'blur') {
-        return (
-          <div className="absolute inset-0 bg-gradient-to-br from-muted/30 via-muted/20 to-muted/30 backdrop-blur-sm" />
-        );
+      switch (placeholder) {
+        case 'blur': return <BlurPlaceholder />;
+        case 'shimmer': return <ShimmerPlaceholder />;
+        case 'skeleton': return <SkeletonPlaceholder />;
+        default: return <SkeletonPlaceholder />;
       }
-
-      // Shimmer effect
-      return (
-        <div className="absolute inset-0 bg-gradient-to-r from-muted/30 via-muted/50 to-muted/30 animate-pulse">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-background/20 to-transparent animate-[shimmer_2s_infinite] transform -skew-x-12" />
-        </div>
-      );
     };
 
     const handleLoad = () => {
@@ -105,6 +159,14 @@ const OptimizedImage = forwardRef<HTMLImageElement, OptimizedImageProps>(
       setHasError(true);
     };
 
+    const handleMouseEnter = () => {
+      setIsHovered(true);
+    };
+
+    const handleMouseLeave = () => {
+      setIsHovered(false);
+    };
+
     const imageSrc = hasError ? fallbackSrc : src;
     const showImage = isInView || priority;
 
@@ -112,35 +174,50 @@ const OptimizedImage = forwardRef<HTMLImageElement, OptimizedImageProps>(
       <div
         ref={imgRef}
         className={cn(
-          'relative overflow-hidden bg-muted/20 transition-all duration-500',
+          'relative overflow-hidden bg-muted/10 transition-all duration-500',
           aspectRatioClasses[aspectRatio],
           'rounded-none shadow-[0_2px_12px_rgba(44,44,44,0.06)]',
           'hover:shadow-[0_6px_30px_rgba(44,44,44,0.12)]',
           className
         )}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
         {/* Loading placeholder */}
         {(isLoading || !showImage) && <PlaceholderContent />}
 
         {/* Main image */}
         {showImage && (
-          <img
-            ref={ref}
-            src={imageSrc}
-            alt={alt}
-            srcSet={generateSrcSet(imageSrc)}
-            sizes={sizes}
-            loading={priority ? 'eager' : 'lazy'}
-            decoding="async"
-            onLoad={handleLoad}
-            onError={handleError}
-            className={cn(
-              'w-full h-full object-cover transition-all duration-700',
-              isLoading ? 'opacity-0 scale-105' : 'opacity-100 scale-100',
-              hasError && 'grayscale'
+          <picture>
+            {/* WebP source for modern browsers */}
+            {enableWebP && !src.endsWith('.svg') && (
+              <source
+                srcSet={generateSrcSet(src.replace(/\.[^.]+$/, '.webp'))}
+                type="image/webp"
+                sizes={sizes}
+              />
             )}
-            {...props}
-          />
+            
+            {/* Fallback JPEG/PNG source */}
+            <img
+              ref={ref}
+              src={imageSrc}
+              alt={alt}
+              srcSet={generateSrcSet(imageSrc)}
+              sizes={sizes}
+              loading={priority ? 'eager' : 'lazy'}
+              decoding="async"
+              fetchPriority={priority ? 'high' : 'auto'}
+              onLoad={handleLoad}
+              onError={handleError}
+              className={cn(
+                'w-full h-full object-cover transition-all duration-700',
+                isLoading ? 'opacity-0 scale-105' : 'opacity-100 scale-100',
+                hasError && 'grayscale filter contrast-75'
+              )}
+              {...props}
+            />
+          </picture>
         )}
 
         {/* Error state overlay */}
@@ -169,6 +246,17 @@ const OptimizedImage = forwardRef<HTMLImageElement, OptimizedImageProps>(
         {priority && isLoading && (
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="w-8 h-8 border-2 border-muted-foreground/20 border-t-accent rounded-full animate-spin" />
+          </div>
+        )}
+
+        {/* Performance indicator for dev mode */}
+        {process.env.NODE_ENV === 'development' && (
+          <div className="absolute top-1 right-1 opacity-50">
+            <div className={cn(
+              "w-2 h-2 rounded-full",
+              priority ? "bg-green-400" : "bg-blue-400",
+              hasError && "bg-red-400"
+            )} title={priority ? "Priority" : hasError ? "Error" : "Lazy"} />
           </div>
         )}
       </div>

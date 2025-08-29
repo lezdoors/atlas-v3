@@ -90,6 +90,9 @@ const FeaturedCollections = () => {
                     className="transition-transform duration-700 hover:scale-105"
                     fallbackSrc={getFallbackImage('backgrounds')}
                     sizes="(max-width: 1024px) 100vw, 50vw"
+                    placeholder="skeleton"
+                    preloadOnHover={true}
+                    enableWebP={true}
                   />
                 </div>
                 

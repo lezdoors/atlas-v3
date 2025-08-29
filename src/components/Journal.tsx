@@ -1,9 +1,12 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
-import journalImage1 from '@/assets/hero-fragrance.jpg';
-import journalImage2 from '@/assets/product-sample.jpg';
+import OptimizedImage from '@/components/ui/OptimizedImage';
+import { getImage } from '@/lib/imageAssets';
 
 const Journal = () => {
+  const heroImage = getImage('backgrounds', 'heroFragrance');
+  const collectionImage = getImage('backgrounds', 'atlasHeritage');
+
   const articles = [
     {
       id: 1,
@@ -11,7 +14,8 @@ const Journal = () => {
       title: "The Ancient Art of Moroccan Perfumery",
       description: "Discover the centuries-old techniques that define our craft",
       readTime: "5 min read",
-      image: journalImage1
+      image: heroImage?.src || '/src/assets/hero-fragrance.jpg',
+      alt: "Moroccan Perfumery Workshop"
     },
     {
       id: 2,
@@ -19,7 +23,8 @@ const Journal = () => {
       title: "Journey Through the Atlas Mountains",
       description: "Exploring the source of our finest ingredients",
       readTime: "7 min read",
-      image: journalImage2
+      image: collectionImage?.src || '/src/assets/collection-hero.jpg',
+      alt: "Atlas Mountains Landscape"
     }
   ];
 
@@ -39,10 +44,14 @@ const Journal = () => {
           {articles.map((article) => (
             <article key={article.id} className="group cursor-pointer">
               <div className="relative overflow-hidden rounded-luxury mb-6">
-                <img 
+                <OptimizedImage
                   src={article.image}
-                  alt={article.title}
-                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                  alt={article.alt}
+                  aspectRatio="16/9"
+                  className="transition-transform duration-500 group-hover:scale-105"
+                  placeholder="skeleton"
+                  preloadOnHover={true}
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
               

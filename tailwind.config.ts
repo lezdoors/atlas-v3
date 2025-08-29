@@ -155,7 +155,7 @@ export default {
 				'luxury-float': 'luxury-float 4s ease-in-out infinite',
 				'draw-line': 'draw-line 1.5s ease-out',
 				'scale-in': 'scale-in 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)',
-				'shimmer': 'shimmer 2s infinite',
+				'shimmer': 'shimmer 2s infinite linear',
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out'
 			},

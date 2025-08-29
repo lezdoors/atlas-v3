@@ -74,6 +74,9 @@ const Hero = () => {
                 priority={true}
                 className="filter drop-shadow-[0_20px_40px_rgba(44,44,44,0.1)]"
                 fallbackSrc={getFallbackImage('products')}
+                placeholder="blur"
+                enableWebP={true}
+                sizes="(max-width: 768px) 80vw, (max-width: 1024px) 50vw, 400px"
               />
             </div>
             
