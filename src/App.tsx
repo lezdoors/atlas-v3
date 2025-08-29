@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import SignatureScents from "./pages/SignatureScents";
 import LimitedEditions from "./pages/LimitedEditions";
 import DiscoverySets from "./pages/DiscoverySets";
+import ProductDetail from "./pages/ProductDetail";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/fragrances/signature-scents" element={<SignatureScents />} />
           <Route path="/fragrances/limited-editions" element={<LimitedEditions />} />
           <Route path="/fragrances/discovery-sets" element={<DiscoverySets />} />
+          <Route path="/product/:productId" element={<ProductDetail />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -67,8 +67,14 @@ export const LuxuryCartDrawer: React.FC<LuxuryCartDrawerProps> = ({ isOpen, onCl
         onClick={onClose}
       />
       
-      {/* Cart Drawer */}
-      <div className="fixed right-0 top-0 h-full w-full max-w-md bg-background shadow-2xl z-50 animate-slide-in-right">
+      {/* Cart Drawer - Mobile optimized */}
+      <div className={`fixed right-0 top-0 h-full w-full transition-transform duration-500 ${
+        window.innerWidth < 768 
+          ? 'bottom-0 top-auto h-[85vh] rounded-t-2xl' 
+          : 'max-w-md'
+        } bg-background shadow-2xl z-50 ${
+        window.innerWidth < 768 ? 'animate-slide-up' : 'animate-slide-in-right'
+      }`}>
         <div className="flex flex-col h-full">
           
           {/* Header */}

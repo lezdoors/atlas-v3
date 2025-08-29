@@ -4,10 +4,10 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import OptimizedImage from '@/components/ui/OptimizedImage';
 import BotanicalFrame from '@/components/BotanicalFrame';
-import signatureScentsBg from '@/assets/signature-scents-hero.jpg';
-import atlasRoseImg from '@/assets/atlas-rose-product.jpg';
-import neroliSublimeImg from '@/assets/neroli-sublime-product.jpg';
-import arganMystiqueImg from '@/assets/argan-mystique-product.jpg';
+import signatureScentsBg from '@/assets/lavender-hero.jpg';
+import atlasRoseImg from '@/assets/atlas-rose-hero.jpg';
+import neroliSublimeImg from '@/assets/neroli-sublime-hero.jpg';
+import arganMystiqueImg from '@/assets/argan-mystique-hero.jpg';
 
 const SignatureScents = () => {
   const [viewType, setViewType] = useState<'grid' | 'list'>('grid');

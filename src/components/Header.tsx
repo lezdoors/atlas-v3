@@ -121,28 +121,62 @@ const Header = () => {
 
           {/* Mobile Navigation */}
           {isMobileMenuOpen && (
-            <div className="lg:hidden border-t border-border/30 py-6">
-              <div className="flex flex-col space-y-4">
-                <a href="#" className="font-inter text-sm text-foreground tracking-wide uppercase">
-                  Fragrances
-                </a>
-                <a href="#" className="font-inter text-sm text-foreground tracking-wide uppercase">
-                  Skincare
-                </a>
-                <a href="#" className="font-inter text-sm text-foreground tracking-wide uppercase">
-                  Collections
-                </a>
-                <a href="#" className="font-inter text-sm text-foreground tracking-wide uppercase">
-                  Heritage
-                </a>
-                <a href="#" className="font-inter text-sm text-foreground tracking-wide uppercase">
-                  Journal
-                </a>
-                <div className="pt-4 border-t border-border/30">
-                  <button className="w-full flex items-center justify-center space-x-2 p-2">
-                    <Search className="w-4 h-4 text-foreground" />
-                    <span className="font-inter text-sm text-foreground">Search</span>
+            <div className="fixed inset-0 z-50 bg-background lg:hidden">
+              <div className="flex flex-col h-full">
+                {/* Mobile Header */}
+                <div className="flex items-center justify-between p-6 border-b border-border">
+                  <h2 className="font-playfair text-xl">Menu</h2>
+                  <button
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="p-2"
+                  >
+                    <X className="w-6 h-6" />
                   </button>
+                </div>
+
+                {/* Mobile Menu Content */}
+                <div className="flex-1 p-6 space-y-8">
+                  {/* Search */}
+                  <div className="relative">
+                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                    <input
+                      type="text"
+                      placeholder="Search fragrances..."
+                      className="w-full pl-10 pr-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20"
+                    />
+                  </div>
+
+                  {/* Navigation Links */}
+                  <nav className="space-y-6">
+                    <a href="/fragrances/signature-scents" className="block text-lg font-medium text-foreground hover:text-primary transition-colors">
+                      Signature Scents
+                    </a>
+                    <a href="/fragrances/limited-editions" className="block text-lg font-medium text-foreground hover:text-primary transition-colors">
+                      Limited Editions
+                    </a>
+                    <a href="/fragrances/discovery-sets" className="block text-lg font-medium text-foreground hover:text-primary transition-colors">
+                      Discovery Sets
+                    </a>
+                    <a href="#" className="block text-lg font-medium text-foreground hover:text-primary transition-colors">
+                      Skincare
+                    </a>
+                    <a href="#" className="block text-lg font-medium text-foreground hover:text-primary transition-colors">
+                      Collections
+                    </a>
+                    <a href="#" className="block text-lg font-medium text-foreground hover:text-primary transition-colors">
+                      Heritage
+                    </a>
+                    <a href="#" className="block text-lg font-medium text-foreground hover:text-primary transition-colors">
+                      Journal
+                    </a>
+                  </nav>
+
+                  {/* Botanical Decoration */}
+                  <div className="absolute bottom-6 right-6 opacity-20">
+                    <svg viewBox="0 0 100 100" className="w-16 h-16 text-primary">
+                      <path d="M20 50 Q30 30, 50 50 Q70 30, 80 50 Q70 70, 50 50 Q30 70, 20 50" stroke="currentColor" strokeWidth="2" fill="none"/>
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
