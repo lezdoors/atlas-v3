@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import OptimizedImage from '@/components/ui/OptimizedImage';
 import BotanicalFrame from '@/components/BotanicalFrame';
+import TestimonialsSection from '@/components/TestimonialsSection';
 import { useParams } from 'react-router-dom';
 import atlasRoseHero from '@/assets/atlas-rose-hero.jpg';
 import neroliSublimeHero from '@/assets/neroli-sublime-hero.jpg';
@@ -303,6 +304,9 @@ const ProductDetail = () => {
           </div>
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      <TestimonialsSection variant="product" />
 
       {/* Related Products */}
       <section className="section-padding">

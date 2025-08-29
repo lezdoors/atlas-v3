@@ -3,6 +3,7 @@ import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import SignatureScents from '@/components/SignatureScents';
 import Heritage from '@/components/Heritage';
+import TestimonialsSection from '@/components/TestimonialsSection';
 import HerbariumSection from '@/components/HerbariumSection';
 import SectionDivider from '@/components/SectionDivider';
 import Journal from '@/components/Journal';
@@ -48,6 +49,8 @@ const Index = () => {
         <SignatureScents />
         <SectionDivider />
         <Heritage />
+        <SectionDivider />
+        <TestimonialsSection variant="homepage" />
         <SectionDivider />
         <HerbariumSection 
           title="The Herbarium"
