@@ -4,9 +4,6 @@ import OptimizedImage from '@/components/ui/OptimizedImage';
 import { getImage } from '@/lib/imageAssets';
 
 const Journal = () => {
-  const heroImage = getImage('backgrounds', 'heroFragrance');
-  const collectionImage = getImage('backgrounds', 'atlasHeritage');
-
   const articles = [
     {
       id: 1,
@@ -14,7 +11,7 @@ const Journal = () => {
       title: "The Ancient Art of Moroccan Perfumery",
       description: "Discover the centuries-old techniques that define our craft",
       readTime: "5 min read",
-      image: heroImage?.src || '/src/assets/hero-fragrance.jpg',
+      image: getImage('backgrounds', 'heroFragrance')?.src || '/src/assets/hero-fragrance.jpg',
       alt: "Moroccan Perfumery Workshop"
     },
     {
@@ -23,7 +20,7 @@ const Journal = () => {
       title: "Journey Through the Atlas Mountains",
       description: "Exploring the source of our finest ingredients",
       readTime: "7 min read",
-      image: collectionImage?.src || '/src/assets/collection-hero.jpg',
+      image: getImage('backgrounds', 'atlasHeritage')?.src || '/src/assets/collection-hero.jpg',
       alt: "Atlas Mountains Landscape"
     }
   ];
