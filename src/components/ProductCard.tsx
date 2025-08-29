@@ -1,7 +1,7 @@
 import React from 'react';
 import OptimizedImage from '@/components/ui/OptimizedImage';
 import HandDrawnElements from './HandDrawnElements';
-import { getImage, getFallbackImage } from '@/lib/imageAssets';
+
 
 interface ProductCardProps {
   name: string;
@@ -18,9 +18,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   category = "Eau de Parfum",
   description = "Handcrafted with Moroccan botanicals"
 }) => {
-  // Use provided image or try to get from assets, fallback to placeholder
   const productImage = image || '/src/assets/product-sample.jpg';
-  const fallbackImage = getFallbackImage('products');
 
   return (
     <div className="group relative bg-card overflow-hidden scale-on-hover image-hover-effect luxury-card">
@@ -30,7 +28,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
           src={productImage}
           alt={`${name} - ${category}`}
           aspectRatio="3/4"
-          fallbackSrc={fallbackImage}
+          fallbackSrc="/src/assets/product-sample.jpg"
           className="transition-transform duration-700 group-hover:scale-105"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           placeholder="skeleton"

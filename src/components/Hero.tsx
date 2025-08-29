@@ -4,13 +4,13 @@ import OptimizedImage from '@/components/ui/OptimizedImage';
 import HandDrawnElements from './HandDrawnElements';
 import BotanicalFrame from './BotanicalFrame';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { getImage, getFallbackImage } from '@/lib/imageAssets';
+
 
 const Hero = () => {
   const heroRef = useScrollAnimation();
-  // Get hero background image from assets
-  const heroBackground = getImage('backgrounds', 'heroFragrance');
-  const heroProduct = getImage('products', 'atlasRose');
+  // Use direct image imports for better migration compatibility
+  const heroBackground = '/src/assets/hero-fragrance.jpg';
+  const heroProduct = '/src/assets/product-sample.jpg';
   
   return (
     <section 
@@ -74,12 +74,11 @@ const Hero = () => {
             <BotanicalFrame variant="ornate" className="bg-background-secondary/20 backdrop-blur-sm">
               <div className="relative w-80 lg:w-96">
                 <OptimizedImage
-                  src={heroProduct?.src || '/src/assets/hero-fragrance.jpg'}
-                  alt={heroProduct?.alt || "Perle de l'Atlas Signature Fragrance"}
+                  src={heroProduct}
+                  alt="Perle de l'Atlas Signature Fragrance"
                   aspectRatio="auto"
                   priority={true}
                   className="filter drop-shadow-[0_20px_40px_rgba(44,44,44,0.1)] rounded-lg"
-                  fallbackSrc={getFallbackImage('products')}
                   placeholder="blur"
                   enableWebP={true}
                   sizes="(max-width: 768px) 80vw, (max-width: 1024px) 50vw, 400px"

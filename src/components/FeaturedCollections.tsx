@@ -2,21 +2,16 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import OptimizedImage from '@/components/ui/OptimizedImage';
 import HandDrawnElements, { BotanicalDivider } from './HandDrawnElements';
-import { getImage, getImagesByCategory, getFallbackImage } from '@/lib/imageAssets';
 
 const FeaturedCollections = () => {
-  // Get images from assets
-  const backgroundImages = getImagesByCategory('backgrounds');
-  const productImages = getImagesByCategory('products');
-  
   const collections = [
     {
       id: 1,
       title: "Atlas Heritage",
       subtitle: "Traditional Fragrances",
       description: "Discover scents inspired by ancient Moroccan traditions, crafted with rare ingredients from the Atlas Mountains.",
-      image: backgroundImages.atlasHeritage?.src || '/src/assets/collection-hero.jpg',
-      alt: backgroundImages.atlasHeritage?.alt || "Atlas Heritage Collection",
+      image: '/src/assets/collection-hero.jpg',
+      alt: "Atlas Heritage Collection",
       cta: "Explore Heritage"
     },
     {
@@ -24,8 +19,8 @@ const FeaturedCollections = () => {
       title: "Royal Oud Collection",
       subtitle: "Luxury Oriental Scents",
       description: "Experience the depth and richness of precious oud wood, blended with exotic spices and rare florals.",
-      image: productImages.amberOud?.src || '/src/assets/collection-hero.jpg',
-      alt: productImages.amberOud?.alt || "Royal Oud Collection",
+      image: '/src/assets/product-sample.jpg',
+      alt: "Royal Oud Collection",
       cta: "Discover Oud"
     },
     {
@@ -33,8 +28,8 @@ const FeaturedCollections = () => {
       title: "Garden of Roses",
       subtitle: "Floral Elegance",
       description: "Delicate rose compositions celebrating the beauty of Moroccan gardens and the art of floral perfumery.",
-      image: productImages.atlasRose?.src || '/src/assets/collection-hero.jpg',
-      alt: productImages.atlasRose?.alt || "Garden of Roses Collection",
+      image: '/src/assets/product-sample.jpg',
+      alt: "Garden of Roses Collection",
       cta: "Smell the Roses"
     }
   ];
@@ -88,7 +83,7 @@ const FeaturedCollections = () => {
                     alt={collection.alt}
                     aspectRatio="4/3"
                     className="transition-transform duration-700 hover:scale-105"
-                    fallbackSrc={getFallbackImage('backgrounds')}
+                    fallbackSrc="/src/assets/product-sample.jpg"
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     placeholder="skeleton"
                     preloadOnHover={true}

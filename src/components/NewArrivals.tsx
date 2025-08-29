@@ -1,38 +1,34 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import ProductCard from './ProductCard';
-import { getImagesByCategory } from '@/lib/imageAssets';
 
 const NewArrivals = () => {
-  // Get product images from assets
-  const productImages = getImagesByCategory('products');
-
   const products = [
     {
       name: "Golden Argan Oil",
       price: "From $48",
-      image: productImages.atlasOil?.src,
+      image: '/src/assets/product-sample.jpg',
       category: "Body Oil",
       description: "Pure Moroccan argan oil for radiant skin"
     },
     {
       name: "Rose Damascus Serum",
       price: "From $62",
-      image: productImages.roseDamascusSerum?.src,
+      image: '/src/assets/product-sample.jpg',
       category: "Face Serum",
       description: "Luxurious rose serum for luminous complexion"
     },
     {
       name: "Atlas Clay Mask",
       price: "From $38",
-      image: productImages.atlasClayMask?.src,
+      image: '/src/assets/product-sample.jpg',
       category: "Face Mask",
       description: "Purifying clay from the Atlas Mountains"
     },
     {
       name: "Oud Royal Perfume",
       price: "From $125",
-      image: productImages.amberOud?.src,
+      image: '/src/assets/product-sample.jpg',
       category: "Parfum",
       description: "Precious oud with royal sophistication"
     }

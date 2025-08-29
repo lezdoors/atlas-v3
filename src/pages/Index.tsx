@@ -9,33 +9,30 @@ import Journal from '@/components/Journal';
 import Newsletter from '@/components/Newsletter';
 import Footer from '@/components/Footer';
 import { ImagePreloader } from '@/lib/imagePreloader';
-import { getImagesByCategory } from '@/lib/imageAssets';
 
 const Index = () => {
   // Preload critical images on component mount
   useEffect(() => {
     const preloadCriticalImages = async () => {
-      const productImages = getImagesByCategory('products');
-      const backgroundImages = getImagesByCategory('backgrounds');
-      
-      // Critical images for above-the-fold content
+      // Preload hero and above-fold images
       const criticalImages = [
-        productImages.atlasRose?.src,
-        backgroundImages.heroFragrance?.src,
-        '/src/assets/hero-fragrance.jpg', // Fallback
-        '/src/assets/product-sample.jpg'  // Fallback
-      ].filter(Boolean) as string[];
+        '/src/assets/hero-fragrance.jpg',
+        '/src/assets/product-sample.jpg',
+        '/src/assets/collection-hero.jpg'
+      ];
 
       // Preload hero images with high priority
       ImagePreloader.preloadCritical(criticalImages);
 
-      // Preload product images for immediate section with lower priority
-      const productImageUrls = Object.values(productImages)
-        .map(img => img.src)
-        .slice(0, 6); // First 6 products only
+      // Preload additional product images with lower priority
+      const additionalImages = [
+        '/src/assets/atlas-rose-hero.jpg',
+        '/src/assets/neroli-sublime-hero.jpg',
+        '/src/assets/argan-mystique-hero.jpg'
+      ];
 
       setTimeout(() => {
-        ImagePreloader.preloadBatch(productImageUrls, 'low');
+        ImagePreloader.preloadBatch(additionalImages, 'low');
       }, 2000); // Delay to not interfere with critical loading
     };
 
@@ -45,42 +42,21 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main>
+      <main className="overflow-hidden">
         <Hero />
-        
-        <SectionDivider variant="botanical" />
-        
+        <SectionDivider />
         <SignatureScents />
-        
-        <SectionDivider variant="ornate" />
-        
+        <SectionDivider />
         <Heritage />
-        
-        <SectionDivider variant="botanical" />
-        
+        <SectionDivider />
         <HerbariumSection 
-          title="The Language of Botanicals"
-          subtitle="Our Herbarium"
-          description="Each fragrance in our collection begins with a botanical story. From the lavender fields of Provence to the eucalyptus groves of Tasmania, we source the finest natural ingredients to create scents that transport you to their origins."
-          botanicalType="lavender"
+          title="The Herbarium"
+          description="A botanical journey through Morocco's sacred gardens"
+          botanicalType="rose"
         />
-        
-        <SectionDivider variant="line" />
-        
-        <HerbariumSection 
-          title="Artisanal Extraction Methods"
-          subtitle="Traditional Techniques"
-          description="Using time-honored distillation methods passed down through generations, we carefully extract the essence of each botanical. Our process preserves the delicate compounds that give each ingredient its unique olfactory signature."
-          botanicalType="eucalyptus"
-          reverse
-        />
-        
-        <SectionDivider variant="ornate" />
-        
+        <SectionDivider />
         <Journal />
-        
-        <SectionDivider variant="botanical" />
-        
+        <SectionDivider />
         <Newsletter />
       </main>
       <Footer />

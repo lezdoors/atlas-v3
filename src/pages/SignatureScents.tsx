@@ -52,7 +52,7 @@ const SignatureScents = () => {
       category: 'EAU DE PARFUM',
       description: 'Night-blooming jasmine with white tea',
       price: 175,
-      image: atlasRoseImg,
+      image: neroliSublimeImg,
       scent: 'floral',
       isNew: true
     },
@@ -72,7 +72,7 @@ const SignatureScents = () => {
       category: 'PARFUM',
       description: 'Rare agarwood with rose and saffron',
       price: 285,
-      image: arganMystiqueImg,
+      image: neroliSublimeImg,
       scent: 'oriental',
       isNew: false
     }

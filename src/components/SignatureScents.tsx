@@ -2,52 +2,48 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import HandDrawnElements, { BotanicalDivider } from './HandDrawnElements';
 import ProductCard from './ProductCard';
-import { getImagesByCategory } from '@/lib/imageAssets';
 
 const SignatureScents = () => {
-  // Get product images from assets
-  const productImages = getImagesByCategory('products');
-
   const products = [
     {
       name: "Atlas Rose",
       price: "From $185",
-      image: productImages.atlasRose?.src,
+      image: '/src/assets/product-sample.jpg',
       category: "Eau de Parfum",
       description: "Damask rose petals kissed by mountain air"
     },
     {
       name: "Amber Oud",
       price: "From $220",
-      image: productImages.amberOud?.src,
+      image: '/src/assets/product-sample.jpg',
       category: "Parfum",
       description: "Rich amber with precious oud wood"
     },
     {
       name: "Fig & Cassis",
       price: "From $165",
-      image: productImages.figCassis?.src,
+      image: '/src/assets/product-sample.jpg',
       category: "Eau de Toilette",
       description: "Mediterranean fig with blackcurrant notes"
     },
     {
       name: "Neroli Garden",
       price: "From $195",
-      image: productImages.neroliGarden?.src,
+      image: '/src/assets/product-sample.jpg',
       category: "Eau de Parfum",
       description: "Orange blossom in full bloom"
     },
     {
       name: "Santal Mystique",
       price: "From $240",
-      image: productImages.santalMystique?.src,
+      image: '/src/assets/product-sample.jpg',
       category: "Parfum",
       description: "Creamy sandalwood with spiced incense"
     },
     {
       name: "Cedrat Lumière",
       price: "From $155",
-      image: productImages.cedratLumiere?.src,
+      image: '/src/assets/product-sample.jpg',
       category: "Eau Fraîche",
       description: "Luminous citron with fresh herbs"
     }
