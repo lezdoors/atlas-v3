@@ -8,27 +8,27 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* PERLE DE L'ATLAS - ULTRA-LUXURY DESIGN SYSTEM */
+    /* LUXURY MINIMALIST DESIGN SYSTEM */
     
-    /* PRIMARY PALETTE - EXACT SPECIFICATIONS */
-    --background: 40 22% 99%; /* Cream White #FEFCF7 */
-    --foreground: 0 0% 10%; /* Rich Black #1A1A1A */
+    /* PRIMARY PALETTE - MAISON LOUIS MARIE INSPIRED */
+    --background: 48 9% 98%; /* #FAF9F6 - Cream white */
+    --foreground: 0 0% 17%; /* #2C2C2C - Charcoal */
     
-    --card: 36 17% 97%; /* Soft Ivory #F9F6F0 */
-    --card-foreground: 0 0% 10%;
+    --card: 48 9% 98%; /* #FAF9F6 */
+    --card-foreground: 0 0% 17%;
     
-    --popover: 40 22% 99%;
-    --popover-foreground: 0 0% 10%;
+    --popover: 48 9% 98%;
+    --popover-foreground: 0 0% 17%;
     
     /* BRAND COLORS */
-    --primary: 0 0% 10%; /* Rich Black #1A1A1A */
-    --primary-foreground: 40 22% 99%; /* Cream White */
+    --primary: 0 0% 17%; /* #2C2C2C - Charcoal */
+    --primary-foreground: 48 9% 98%; /* #FAF9F6 - Cream white */
     
-    --secondary: 28 47% 66%; /* Amber Gold #D4A574 */
-    --secondary-foreground: 0 0% 10%;
+    --secondary: 45 8% 96%; /* #F5F2EE - Soft beige */
+    --secondary-foreground: 0 0% 17%;
     
-    --muted: 36 17% 97%; /* Soft Ivory #F9F6F0 */
-    --muted-foreground: 0 0% 18%; /* Charcoal #2D2D2D */
+    --muted: 45 8% 96%; /* #F5F2EE - Soft beige */
+    --muted-foreground: 0 0% 45%; /* Warm gray */
     
     /* MOROCCAN ACCENT PALETTE */
     --atlas-emerald: 154 49% 35%; /* Atlas Emerald #2E8B57 */
