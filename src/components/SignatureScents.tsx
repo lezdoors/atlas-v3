@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { HandDrawnDivider, HandDrawnOliveBranch } from './HandDrawnIcons';
 import ProductCard from './ProductCard';
+import arganBranch from '@/assets/argan-branch-minimal.png';
 
 const SignatureScents = () => {
   const products = [
@@ -14,9 +15,17 @@ const SignatureScents = () => {
   return (
     <section className="py-30 bg-background relative overflow-hidden">
       {/* Background Decoration */}
-      <div className="absolute inset-0 opacity-5">
-        <HandDrawnOliveBranch className="absolute top-20 left-10 text-secondary" size={200} />
-        <HandDrawnOliveBranch className="absolute bottom-20 right-10 text-secondary rotate-180" size={200} />
+      <div className="absolute inset-0 opacity-10">
+        <img 
+          src={arganBranch} 
+          alt=""
+          className="absolute top-20 left-10 w-48 h-36 object-contain"
+        />
+        <img 
+          src={arganBranch} 
+          alt=""
+          className="absolute bottom-20 right-10 w-48 h-36 object-contain rotate-180"
+        />
       </div>
 
       <div className="max-w-7xl mx-auto px-8 relative">
