@@ -2,99 +2,89 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Perle de l'Atlas - Luxury Moroccan Perfume Design System */
 
 @layer base {
   :root {
-    /* Luxury Fragrance Brand Design System */
-    --background: 36 11% 97%; /* Soft cream #f8f6f3 */
-    --foreground: 0 0% 0%; /* Rich black #000000 */
+    /* Ultra-minimalist luxury with Moroccan sophistication */
+    --background: 48 17% 99%; /* Creamy off-white #FEFCF7 */
+    --foreground: 0 0% 10%; /* Rich black #1A1A1A */
 
-    --card: 36 11% 97%; /* Soft cream */
-    --card-foreground: 0 0% 0%; /* Rich black */
+    --card: 48 17% 99%;
+    --card-foreground: 0 0% 10%;
 
-    --popover: 36 11% 97%;
-    --popover-foreground: 0 0% 0%;
+    --popover: 48 17% 99%;
+    --popover-foreground: 0 0% 10%;
 
-    /* Deep charcoal primary */
-    --primary: 0 0% 10%; /* Deep charcoal #1a1a1a */
-    --primary-foreground: 36 11% 97%; /* Soft cream */
+    /* Moroccan Accent Palette */
+    --primary: 0 0% 10%; /* Rich black #1A1A1A */
+    --primary-foreground: 48 17% 99%;
 
-    /* Warm gold secondary */
-    --secondary: 43 65% 52%; /* Warm gold #d4af37 */
-    --secondary-foreground: 0 0% 10%; /* Deep charcoal */
+    --secondary: 35 48% 64%; /* Amber Gold #D4A574 */
+    --secondary-foreground: 0 0% 10%;
 
-    --muted: 24 11% 95%; /* Soft beige #f1ede8 */
-    --muted-foreground: 0 0% 42%; /* Warm gray #6b6b6b */
+    --muted: 48 17% 96%; /* Ultra-light cream */
+    --muted-foreground: 0 0% 45%;
 
-    /* Forest green accent */
-    --accent: 154 24% 24%; /* Forest green #2d4a3e */
-    --accent-foreground: 36 11% 97%; /* Soft cream */
+    --accent: 154 56% 38%; /* Deep Emerald #2E8B57 */
+    --accent-foreground: 48 17% 99%;
 
-    /* Muted rose for special elements */
-    --rose: 14 18% 87%; /* Muted rose #e8d5d0 */
-    --rose-foreground: 0 0% 10%;
+    /* Additional Moroccan Colors */
+    --moroccan-indigo: 260 100% 26%; /* Royal Indigo #4B0082 */
+    --moroccan-terracotta: 13 70% 65%; /* Warm Terracotta #E07A5F */
+    --moroccan-amber: 35 48% 64%; /* Amber Gold #D4A574 */
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 36 11% 97%;
+    --destructive-foreground: 48 17% 99%;
 
-    --border: 24 11% 91%;
-    --input: 24 11% 91%;
-    --ring: 43 65% 52%; /* Gold ring */
+    --border: 48 17% 92%;
+    --input: 48 17% 92%;
+    --ring: 35 48% 64%;
 
     --radius: 0.5rem;
 
-    /* Custom luxury variables */
-    --luxury-gold: 43 65% 52%; /* #d4af37 */
-    --luxury-charcoal: 0 0% 10%; /* #1a1a1a */
-    --luxury-cream: 36 11% 97%; /* #f8f6f3 */
-    --luxury-beige: 24 11% 95%; /* #f1ede8 */
-    --luxury-rose: 14 18% 87%; /* #e8d5d0 */
-    --luxury-forest: 154 24% 24%; /* #2d4a3e */
+    /* Luxury Brand Variables */
+    --luxury-spacing: 2rem;
+    --luxury-border-radius: 0.5rem;
     
-    /* Gradients */
-    --gradient-gold: linear-gradient(135deg, hsl(43, 65%, 52%), hsl(43, 65%, 45%));
-    --gradient-charcoal: linear-gradient(135deg, hsl(0, 0%, 10%), hsl(0, 0%, 15%));
-    --gradient-elegant: linear-gradient(135deg, hsl(var(--luxury-cream)), hsl(var(--luxury-beige)));
+    /* Premium Shadows */
+    --shadow-elegant: 0 4px 6px -1px hsl(0 0% 0% / 0.03), 0 2px 4px -1px hsl(0 0% 0% / 0.03);
+    --shadow-luxury: 0 10px 25px -3px hsl(0 0% 0% / 0.05), 0 4px 6px -2px hsl(0 0% 0% / 0.03);
+    --shadow-premium: 0 20px 25px -5px hsl(0 0% 0% / 0.08), 0 10px 10px -5px hsl(0 0% 0% / 0.02);
     
-    /* Shadows */
-    --shadow-luxury: 0 10px 30px -10px hsl(var(--luxury-charcoal) / 0.1);
-    --shadow-gold: 0 4px 20px hsl(var(--luxury-gold) / 0.2);
-    
-    /* Transitions */
+    /* Smooth Transitions */
     --transition-luxury: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.35ms cubic-bezier(0.23, 1, 0.32, 1);
   }
 
   .dark {
-    --background: 0 0% 10%; /* Deep charcoal background */
-    --foreground: 36 11% 97%; /* Soft cream text */
+    --background: 0 0% 8%;
+    --foreground: 48 17% 99%;
 
-    --card: 0 0% 12%;
-    --card-foreground: 36 11% 97%;
+    --card: 0 0% 10%;
+    --card-foreground: 48 17% 99%;
 
-    --popover: 0 0% 12%;
-    --popover-foreground: 36 11% 97%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 48 17% 99%;
 
-    --primary: 43 65% 52%; /* Gold primary in dark */
-    --primary-foreground: 0 0% 10%;
+    --primary: 35 48% 64%; /* Amber Gold in dark */
+    --primary-foreground: 0 0% 8%;
 
     --secondary: 0 0% 15%;
-    --secondary-foreground: 36 11% 97%;
+    --secondary-foreground: 48 17% 99%;
 
     --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 70%;
+    --muted-foreground: 0 0% 65%;
 
-    --accent: 154 24% 30%; /* Lighter forest green */
-    --accent-foreground: 36 11% 97%;
+    --accent: 154 56% 45%;
+    --accent-foreground: 48 17% 99%;
 
     --destructive: 0 62% 50%;
-    --destructive-foreground: 36 11% 97%;
+    --destructive-foreground: 48 17% 99%;
 
     --border: 0 0% 20%;
     --input: 0 0% 20%;
-    --ring: 43 65% 52%;
+    --ring: 35 48% 64%;
   }
 }
 
@@ -108,6 +98,53 @@ All colors MUST be HSL.
   }
 }
 
+@layer components {
+  /* Hand-drawn illustration effects */
+  .hand-drawn-underline {
+    position: relative;
+  }
+  
+  .hand-drawn-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 4"><path d="M0,2 Q25,0 50,2 T100,2" stroke="%23D4A574" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>') repeat-x;
+    background-size: 20px 4px;
+    opacity: 0;
+    transform: scaleX(0);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: left;
+  }
+  
+  .hand-drawn-underline:hover::after {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+  
+  /* Moroccan patterns */
+  .moroccan-pattern {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><defs><pattern id="p" width="60" height="60" patternUnits="userSpaceOnUse"><circle cx="30" cy="30" r="1.5" fill="%23D4A574" opacity="0.1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23p)"/></svg>');
+  }
+  
+  /* Luxury hover effects */
+  .luxury-hover {
+    transition: var(--transition-luxury);
+  }
+  
+  .luxury-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-premium);
+  }
+  
+  /* Smooth scrolling */
+  .smooth-scroll {
+    scroll-behavior: smooth;
+  }
+}
+
 @layer utilities {
   .scrollbar-hide {
     -ms-overflow-style: none;
@@ -116,5 +153,24 @@ All colors MUST be HSL.
   
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
+  }
+  
+  /* Custom letter spacing for luxury typography */
+  .tracking-luxury {
+    letter-spacing: 0.05em;
+  }
+  
+  .tracking-wide-luxury {
+    letter-spacing: 0.1em;
+  }
+  
+  /* Breathing room utilities */
+  .breathing-room {
+    padding: var(--luxury-spacing);
+  }
+  
+  /* Elegant borders */
+  .border-elegant {
+    border: 1px solid hsl(var(--border));
   }
 }
