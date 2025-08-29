@@ -4,36 +4,38 @@ import heroImage from '@/assets/hero-fragrance.jpg';
 
 const Hero = () => {
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative h-screen flex items-center justify-center overflow-hidden bg-moroccan-cream">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
-          alt="The Soul of Morocco - Hands with Atlas mountain sand"
+          alt="In the shade of Atlas Mountains"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-foreground/40" />
       </div>
 
+      {/* Content Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/20 to-primary/60 z-10" />
+
       {/* Content */}
-      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-playfair font-bold text-background mb-8 tracking-luxury animate-fade-in">
-          The Soul of Morocco
+      <div className="relative z-20 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+        <h1 className="text-6xl md:text-8xl font-playfair font-normal text-background mb-8 tracking-luxury animate-fade-in">
+          In the shade of Atlas Mountains
         </h1>
         
-        <Button 
-          variant="moroccan-primary" 
-          size="lg" 
-          className="uppercase text-sm px-8 py-4 animate-slide-up"
-        >
-          DISCOVER THE COLLECTION
-        </Button>
+        <p className="text-lg md:text-xl text-background/90 font-inter mb-12 max-w-2xl mx-auto leading-relaxed animate-slide-up">
+          High up in the scorching heat of a Moroccan landscape, 
+          a fig tree fills the twinkling air, growing wild under the ancient sky
+        </p>
         
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-luxury-float">
-          <div className="w-6 h-10 border-2 border-background/50 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-background/70 rounded-full mt-2 animate-pulse" />
-          </div>
+        <div className="animate-slide-up" style={{ animationDelay: '0.3s' }}>
+          <Button 
+            variant="moroccan-outline" 
+            size="lg" 
+            className="border-2 border-background text-background hover:bg-background hover:text-primary font-poppins font-medium tracking-wide uppercase px-8"
+          >
+            Discover the Scent
+          </Button>
         </div>
       </div>
     </section>
