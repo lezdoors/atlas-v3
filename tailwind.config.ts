@@ -133,6 +133,10 @@ export default {
 					'0%': { opacity: '0', transform: 'scale(0.95)' },
 					'100%': { opacity: '1', transform: 'scale(1)' }
 				},
+				'shimmer': {
+					'0%': { transform: 'translateX(-100%)' },
+					'100%': { transform: 'translateX(100%)' }
+				},
 				'accordion-down': {
 					from: { height: '0' },
 					to: { height: 'var(--radix-accordion-content-height)' }
@@ -151,6 +155,7 @@ export default {
 				'luxury-float': 'luxury-float 4s ease-in-out infinite',
 				'draw-line': 'draw-line 1.5s ease-out',
 				'scale-in': 'scale-in 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)',
+				'shimmer': 'shimmer 2s infinite',
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out'
 			},
