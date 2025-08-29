@@ -31,12 +31,12 @@ const Hero = () => {
           <div className="w-16 h-px bg-muted-foreground/20 mb-8"></div>
           
           <div className="space-y-6">
-            <h1 className="font-playfair text-5xl lg:text-6xl xl:text-7xl leading-[0.9] text-foreground font-light tracking-tight">
+            <h1 className="heading-hero">
               Perle de 
               <span className="block italic">l'Atlas</span>
             </h1>
             
-            <p className="font-inter text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-md">
+            <p className="body-large max-w-md">
               Handcrafted fragrances born from the ancient wisdom of Moroccan artisans
             </p>
           </div>

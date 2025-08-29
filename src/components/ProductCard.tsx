@@ -55,12 +55,12 @@ const ProductCard: React.FC<ProductCardProps> = ({
       {/* Product Information */}
       <div className="pt-6 pb-4 px-1">
         {/* Category */}
-        <p className="font-inter text-xs text-muted-foreground uppercase tracking-wider mb-2">
+        <p className="body-small mb-2">
           {category}
         </p>
         
         {/* Product Name */}
-        <h3 className="font-playfair text-xl text-foreground mb-2 leading-tight">
+        <h3 className="heading-product mb-2 leading-tight">
           {name}
         </h3>
         

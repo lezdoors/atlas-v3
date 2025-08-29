@@ -61,11 +61,11 @@ const FeaturedCollections = () => {
             <BotanicalDivider className="text-muted-foreground opacity-60" width={200} />
           </div>
           
-          <h2 className="font-playfair text-4xl lg:text-5xl text-foreground mb-6 font-light tracking-tight">
+          <h2 className="heading-section mb-6">
             Signature Collections
           </h2>
           
-          <p className="font-inter text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p className="body-large max-w-2xl mx-auto">
             Three distinct olfactory journeys, each telling the story of Morocco's 
             rich heritage through the art of fine fragrance.
           </p>
@@ -110,7 +110,7 @@ const FeaturedCollections = () => {
               {/* Content */}
               <div className={`space-y-6 ${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
                 <div className="space-y-3">
-                  <p className="font-inter text-sm text-muted-foreground uppercase tracking-wider">
+                  <p className="body-small">
                     {collection.subtitle}
                   </p>
                   <h3 className="font-playfair text-3xl lg:text-4xl text-foreground font-light tracking-tight">
@@ -118,7 +118,7 @@ const FeaturedCollections = () => {
                   </h3>
                 </div>
                 
-                <p className="font-inter text-muted-foreground leading-relaxed text-lg">
+                <p className="body-large">
                   {collection.description}
                 </p>
                 

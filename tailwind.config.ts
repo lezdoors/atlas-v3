@@ -63,11 +63,13 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				// Luxury brand colors
-				gold: {
-					muted: "#D4B996",
-					DEFAULT: "#D4B996",
-				},
+				// Maison Louis Marie luxury colors
+				'warm-white': '#FAF9F6',
+				'soft-beige': '#F5F2EE',
+				'charcoal': '#2C2C2C',
+				'medium-gray': '#6B6B6B',
+				'muted-gold': '#D4B996',
+				'subtle-beige': '#E8E6E3',
 			},
 			backgroundImage: {
 				'gradient-amber': 'var(--gradient-amber)',

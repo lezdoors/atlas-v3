@@ -78,11 +78,11 @@ const SignatureScents = () => {
             <BotanicalDivider className="text-muted-foreground" width={160} />
           </div>
           
-          <h2 className="font-playfair text-4xl lg:text-5xl text-foreground mb-6 font-light tracking-tight">
+          <h2 className="heading-section mb-6">
             Signature Scents
           </h2>
           
-          <p className="font-inter text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p className="body-large max-w-2xl mx-auto">
             Each fragrance tells a story of Moroccan heritage, crafted with rare botanicals 
             and traditional artisan techniques passed down through generations.
           </p>
