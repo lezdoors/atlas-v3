@@ -22,6 +22,9 @@ All colors MUST be HSL.
     /* ACCENT & BORDERS */
     --luxury-accent: 39 25% 77%; /* #D4B996 - Muted gold */
     --accent: 39 25% 77%; /* #D4B996 - Muted gold */
+    --accent-green: 186 80% 12%; /* #0F3B2E - Deep green */
+    --accent-gold: 40 55% 47%; /* #B28A3A - Subtle gold */
+    --paper-white: 43 29% 98%; /* #FAFAF7 - Paper white */
     --border-subtle: 36 8% 90%; /* #E8E6E3 - Subtle beige */
     
     /* TAILWIND MAPPINGS */

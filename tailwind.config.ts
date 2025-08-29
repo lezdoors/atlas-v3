@@ -70,6 +70,9 @@ export default {
 				'medium-gray': '#6B6B6B',
 				'muted-gold': '#D4B996',
 				'subtle-beige': '#E8E6E3',
+				'paper-white': 'hsl(var(--paper-white))',
+				'accent-green': 'hsl(var(--accent-green))',
+				'accent-gold': 'hsl(var(--accent-gold))',
 			},
 			backgroundImage: {
 				'gradient-amber': 'var(--gradient-amber)',

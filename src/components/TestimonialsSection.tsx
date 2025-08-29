@@ -2,10 +2,10 @@ import React, { useEffect, useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import testimonialCustomer1 from '@/assets/testimonial-customer-1.jpg';
-import testimonialCustomer2 from '@/assets/testimonial-customer-2.jpg';
-import testimonialArtisan1 from '@/assets/testimonial-artisan-1.jpg';
-import testimonialPress1 from '@/assets/testimonial-press-1.jpg';
+import testimonialCustomer1 from '@/assets/testimonial-customer-refined-1.jpg';
+import testimonialCustomer2 from '@/assets/testimonial-customer-refined-2.jpg';
+import testimonialArtisan1 from '@/assets/testimonial-artisan-refined.jpg';
+import testimonialPress1 from '@/assets/testimonial-press-refined.jpg';
 
 type TestimonialType = 'customer' | 'press' | 'artisan';
 
@@ -64,6 +64,20 @@ const testimonials: Testimonial[] = [
     designation: "Press",
     type: 'press',
     src: testimonialPress1
+  },
+  {
+    quote: "Petrichor and jasmine—it's poetry distilled into fragrance.",
+    name: "M. Alaoui",
+    designation: "Customer • Casablanca",
+    type: 'customer',
+    src: testimonialCustomer1
+  },
+  {
+    quote: "Three decades of craft—each drop tells our story.",
+    name: "A. Benjelloun",
+    designation: "Master Perfumer • Fès",
+    type: 'artisan',
+    src: testimonialArtisan1
   }
 ];
 
@@ -106,7 +120,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
   // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.target === document.body || event.target instanceof HTMLElement && event.target.closest('[data-testimonials-section]')) {
+      if (event.target === document.body || (event.target instanceof HTMLElement && event.target.closest('[data-testimonials-section]'))) {
         switch (event.key) {
           case 'ArrowLeft':
             event.preventDefault();
@@ -160,11 +174,9 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
   const sectionTitle = variant === 'homepage' ? 'Press & Praise' : 'What People Say';
   const sectionPadding = variant === 'homepage' ? 'py-16 md:py-24' : 'py-12';
 
-  const currentTestimonial = testimonials[active];
-
   return (
     <section 
-      className={cn('bg-background', sectionPadding, className)}
+      className={cn('bg-[hsl(var(--paper-white))]', sectionPadding, className)}
       data-testimonials-section
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
@@ -174,170 +186,204 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
       role="region"
       aria-label="Customer testimonials"
     >
-      <div className="container-luxury">
+      <div className="max-w-6xl mx-auto px-4 md:px-8 lg:px-12">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="heading-section mb-4">
+          <h2 className="font-playfair text-3xl md:text-4xl font-bold text-foreground mb-4 tracking-luxury">
             {sectionTitle}
           </h2>
-          <p className="text-text-secondary body-small">
+          <p className="text-muted-foreground text-sm tracking-wide">
             Verified reviews & editorial mentions
           </p>
         </div>
 
         {/* Testimonials Content */}
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            {/* Image Gallery */}
-            <div className="relative">
-              <div className="relative h-80 w-full max-w-md mx-auto">
-                <AnimatePresence mode="wait">
-                  {testimonials.map((testimonial, index) => (
-                    <motion.div
-                      key={`${testimonial.src}-${index}`}
-                      initial={prefersReducedMotion ? {} : {
-                        opacity: 0,
-                        y: 4,
-                      }}
-                      animate={{
-                        opacity: index === active ? 1 : 0,
-                        y: index === active ? 0 : 4,
-                        zIndex: index === active ? 10 : 1,
-                      }}
-                      exit={prefersReducedMotion ? {} : {
-                        opacity: 0,
-                        y: -4,
-                      }}
-                      transition={{
-                        duration: prefersReducedMotion ? 0 : 0.3,
-                        ease: 'easeInOut',
-                      }}
-                      className="absolute inset-0"
-                    >
-                      <div className="relative h-full w-full">
-                        <img
-                          src={testimonial.src}
-                          alt={`${testimonial.name} testimonial`}
-                          className="h-full w-full rounded-3xl object-cover object-center"
-                          loading={index === 0 ? 'eager' : 'lazy'}
-                        />
-                        {/* Botanical overlay */}
-                        <div className="absolute bottom-4 right-4 opacity-10">
-                          <svg width="32" height="32" viewBox="0 0 32 32" className="text-foreground">
-                            <path
-                              d="M16 2C16 2 8 8 8 16C8 24 16 30 16 30C16 30 24 24 24 16C24 8 16 2 16 2Z"
-                              fill="currentColor"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                    </motion.div>
-                  ))}
-                </AnimatePresence>
-              </div>
-            </div>
-
-            {/* Content */}
-            <div className="flex flex-col justify-between h-full">
-              <div 
-                className="flex-1"
-                aria-live="polite"
-                aria-atomic="true"
-              >
-                <AnimatePresence mode="wait">
+        <div className="relative grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
+          {/* Image Gallery */}
+          <div className="relative order-2 md:order-1">
+            <div className="relative h-80 w-full max-w-sm mx-auto">
+              <AnimatePresence mode="wait">
+                {testimonials.map((testimonial, index) => (
                   <motion.div
-                    key={active}
+                    key={`${testimonial.src}-${index}`}
                     initial={prefersReducedMotion ? {} : {
                       opacity: 0,
                       y: 4,
                     }}
                     animate={{
-                      opacity: 1,
-                      y: 0,
+                      opacity: index === active ? 1 : 0,
+                      y: index === active ? 0 : 4,
+                      zIndex: index === active ? 10 : 1,
                     }}
                     exit={prefersReducedMotion ? {} : {
                       opacity: 0,
                       y: -4,
                     }}
                     transition={{
-                      duration: prefersReducedMotion ? 0 : 0.25,
+                      duration: prefersReducedMotion ? 0 : 0.3,
                       ease: 'easeInOut',
                     }}
+                    className="absolute inset-0"
                   >
-                    {/* Quote */}
-                    <blockquote className="font-playfair text-lg md:text-xl text-foreground leading-relaxed mb-8">
-                      "{currentTestimonial.quote}"
-                    </blockquote>
-
-                    {/* Attribution */}
-                    <div className="space-y-2">
-                      <div className="font-playfair text-sm font-medium text-foreground uppercase tracking-wide">
-                        {currentTestimonial.name}
-                      </div>
-                      <div className="text-sm text-text-secondary">
-                        {currentTestimonial.designation}
+                    <div className="relative h-full w-full">
+                      <img
+                        src={testimonial.src}
+                        alt={`${testimonial.name} testimonial`}
+                        className="h-full w-full rounded-3xl object-cover object-center"
+                        loading={index === 0 ? 'eager' : 'lazy'}
+                        style={{ maxWidth: '700px' }}
+                      />
+                      {/* Botanical overlay */}
+                      <div className="absolute bottom-4 right-4 opacity-12">
+                        <svg 
+                          width="24" 
+                          height="24" 
+                          viewBox="0 0 24 24" 
+                          fill="none" 
+                          className="text-[hsl(var(--accent-green))]"
+                        >
+                          <path
+                            d="M12 2L8 6v6c0 2.2 1.8 4 4 4s4-1.8 4-4V6l-4-4z"
+                            stroke="currentColor"
+                            strokeWidth="1"
+                            fill="currentColor"
+                            opacity="0.3"
+                          />
+                          <path
+                            d="M12 8v8m-3-5l6 0"
+                            stroke="currentColor"
+                            strokeWidth="1"
+                            opacity="0.5"
+                          />
+                        </svg>
                       </div>
                     </div>
                   </motion.div>
-                </AnimatePresence>
+                ))}
+              </AnimatePresence>
+            </div>
+          </div>
+
+          {/* Content */}
+          <div className="flex flex-col justify-between py-4 order-1 md:order-2">
+            <div 
+              className="flex-1"
+              aria-live="polite"
+              aria-atomic="true"
+            >
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={active}
+                  initial={prefersReducedMotion ? {} : {
+                    opacity: 0,
+                    y: 4,
+                  }}
+                  animate={{
+                    opacity: 1,
+                    y: 0,
+                  }}
+                  exit={prefersReducedMotion ? {} : {
+                    opacity: 0,
+                    y: -4,
+                  }}
+                  transition={{
+                    duration: prefersReducedMotion ? 0 : 0.25,
+                    ease: 'easeInOut',
+                  }}
+                >
+                  {/* Quote */}
+                  <blockquote className="font-playfair text-lg md:text-xl text-[hsl(0_0%_7%)] leading-relaxed mb-8">
+                    "{testimonials[active].quote}"
+                  </blockquote>
+
+                  {/* Attribution */}
+                  <div className="space-y-1">
+                    <div className="font-playfair text-sm font-medium text-foreground uppercase tracking-wider">
+                      {testimonials[active].name}
+                    </div>
+                    <div className="text-sm text-muted-foreground">
+                      {testimonials[active].designation}
+                    </div>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            {/* Navigation Controls */}
+            <div className="flex items-center justify-between pt-12 md:pt-8">
+              {/* Navigation Buttons */}
+              <div className="flex gap-3">
+                <button
+                  onClick={handlePrev}
+                  className="h-8 w-8 rounded-full bg-secondary flex items-center justify-center group hover:bg-muted transition-colors duration-200"
+                  aria-label="Previous testimonial"
+                >
+                  <ChevronLeft className="h-4 w-4 text-foreground group-hover:-translate-x-0.5 transition-transform duration-200" />
+                </button>
+                <button
+                  onClick={handleNext}
+                  className="h-8 w-8 rounded-full bg-secondary flex items-center justify-center group hover:bg-muted transition-colors duration-200"
+                  aria-label="Next testimonial"
+                >
+                  <ChevronRight className="h-4 w-4 text-foreground group-hover:translate-x-0.5 transition-transform duration-200" />
+                </button>
               </div>
 
-              {/* Navigation Controls */}
-              <div className="flex items-center justify-between mt-12">
-                {/* Navigation Buttons */}
-                <div className="flex gap-3">
+              {/* Dots Navigation */}
+              <div className="flex gap-2" role="tablist" aria-label="Testimonial navigation">
+                {testimonials.map((_, index) => (
                   <button
-                    onClick={handlePrev}
-                    className="h-10 w-10 rounded-full border border-border-subtle hover:bg-secondary transition-colors duration-200 flex items-center justify-center group"
-                    aria-label="Previous testimonial"
-                  >
-                    <ChevronLeft className="h-5 w-5 text-foreground transition-transform duration-200 group-hover:-translate-x-0.5" />
-                  </button>
-                  <button
-                    onClick={handleNext}
-                    className="h-10 w-10 rounded-full border border-border-subtle hover:bg-secondary transition-colors duration-200 flex items-center justify-center group"
-                    aria-label="Next testimonial"
-                  >
-                    <ChevronRight className="h-5 w-5 text-foreground transition-transform duration-200 group-hover:translate-x-0.5" />
-                  </button>
-                </div>
-
-                {/* Dots Navigation */}
-                <div className="flex gap-2" role="tablist" aria-label="Testimonial navigation">
-                  {testimonials.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => goToSlide(index)}
-                      className={cn(
-                        'h-2 w-2 rounded-full transition-all duration-200',
-                        index === active 
-                          ? 'bg-accent-gold w-6' 
-                          : 'bg-border-subtle hover:bg-accent-green'
-                      )}
-                      role="tab"
-                      aria-selected={index === active}
-                      aria-label={`Go to testimonial ${index + 1}`}
-                    />
-                  ))}
-                </div>
-
-                {/* Autoplay Toggle */}
-                {!prefersReducedMotion && (
-                  <button
-                    onClick={toggleAutoplay}
-                    className="text-xs text-text-secondary hover:text-foreground transition-colors duration-200 uppercase tracking-wide"
-                    aria-label={autoplay ? 'Pause autoplay' : 'Start autoplay'}
-                  >
-                    {autoplay ? 'Pause' : 'Auto'}
-                  </button>
-                )}
+                    key={index}
+                    onClick={() => goToSlide(index)}
+                    className={cn(
+                      'h-2 rounded-full transition-all duration-200',
+                      index === active 
+                        ? 'bg-[hsl(var(--accent-gold))] w-6' 
+                        : 'bg-border w-2 hover:bg-[hsl(var(--accent-green))]'
+                    )}
+                    role="tab"
+                    aria-selected={index === active}
+                    aria-label={`Go to testimonial ${index + 1}`}
+                  />
+                ))}
               </div>
+
+              {/* Autoplay Toggle */}
+              {!prefersReducedMotion && (
+                <button
+                  onClick={toggleAutoplay}
+                  className="text-xs text-muted-foreground hover:text-foreground transition-colors duration-200 uppercase tracking-wide font-medium"
+                  aria-label={autoplay ? 'Pause autoplay' : 'Start autoplay'}
+                >
+                  {autoplay ? 'Pause' : 'Auto'}
+                </button>
+              )}
             </div>
           </div>
         </div>
       </div>
 
       {/* Structured Data for SEO */}
+      {variant === 'product' && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "AggregateRating",
+              "itemReviewed": {
+                "@type": "Product",
+                "name": "Atlas Perle Fragrance Collection"
+              },
+              "ratingValue": "4.9",
+              "reviewCount": testimonials.length,
+              "bestRating": "5",
+              "worstRating": "1"
+            })
+          }}
+        />
+      )}
+      
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -349,7 +395,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
               "position": index + 1,
               "reviewBody": testimonial.quote,
               "author": {
-                "@type": "Person",
+                "@type": testimonial.type === 'press' ? 'Organization' : 'Person',
                 "name": testimonial.name
               },
               "reviewRating": {
