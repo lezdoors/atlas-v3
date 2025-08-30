@@ -18,7 +18,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
   category = "Eau de Parfum",
   description = "Handcrafted with Moroccan botanicals"
 }) => {
-  const productImage = image || '/src/assets/product-sample.jpg';
+  // Fallback to available product images
+  const productImage = image || '/src/assets/atlas-rose-product.jpg';
 
   return (
     <div className="group relative bg-card overflow-hidden scale-on-hover image-hover-effect luxury-card">
@@ -26,11 +27,11 @@ const ProductCard: React.FC<ProductCardProps> = ({
       <div className="relative overflow-hidden">
         <OptimizedImage
           src={productImage}
-          alt={`${name} - ${category}`}
+          alt={`${name} - ${category} bottle`}
           aspectRatio="3/4"
-          fallbackSrc="/src/assets/product-sample.jpg"
-          className="transition-transform duration-700 group-hover:scale-105"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          fallbackSrc="/src/assets/atlas-rose-product.jpg"
+          className="transition-transform duration-700 group-hover:scale-105 object-cover"
+          sizes="(max-width: 768px) 80vw, (max-width: 1200px) 40vw, 25vw"
           placeholder="skeleton"
           preloadOnHover={true}
           enableWebP={true}
@@ -51,7 +52,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
       </div>
       
       {/* Product Information */}
-      <div className="pt-6 pb-4 px-1">
+      <div className="pt-4 pb-3 px-1">
         {/* Category */}
         <p className="body-small mb-2">
           {category}

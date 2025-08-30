@@ -179,11 +179,11 @@ All colors MUST be HSL.
 
   /* Luxury Spacing System */
   .section-padding {
-    @apply py-16 md:py-24 lg:py-32;
+    @apply py-8 md:py-16 lg:py-20;
   }
 
   .container-luxury {
-    @apply max-w-[1400px] mx-auto px-4 md:px-10 lg:px-16;
+    @apply max-w-[1400px] mx-auto px-4 md:px-8 lg:px-12;
   }
 
   .grid-luxury-8 {
@@ -228,11 +228,11 @@ All colors MUST be HSL.
   /* Mobile Optimizations */
   @media (max-width: 768px) {
     .luxury-card {
-      @apply p-4;
+      @apply p-3;
     }
     
     .section-padding {
-      @apply py-8;
+      @apply py-6;
     }
     
     .container-luxury {

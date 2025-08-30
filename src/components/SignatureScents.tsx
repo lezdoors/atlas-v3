@@ -8,49 +8,49 @@ const SignatureScents = () => {
     {
       name: "Atlas Rose",
       price: "From $185",
-      image: '/src/assets/product-sample.jpg',
+      image: '/src/assets/atlas-rose-product.jpg',
       category: "Eau de Parfum",
       description: "Damask rose petals kissed by mountain air"
     },
     {
-      name: "Amber Oud",
+      name: "Argan Mystique",
       price: "From $220",
-      image: '/src/assets/product-sample.jpg',
+      image: '/src/assets/argan-mystique-product.jpg',
       category: "Parfum",
-      description: "Rich amber with precious oud wood"
+      description: "Rich argan with precious amber"
     },
     {
-      name: "Fig & Cassis",
-      price: "From $165",
-      image: '/src/assets/product-sample.jpg',
-      category: "Eau de Toilette",
-      description: "Mediterranean fig with blackcurrant notes"
-    },
-    {
-      name: "Neroli Garden",
+      name: "Neroli Sublime",
       price: "From $195",
-      image: '/src/assets/product-sample.jpg',
+      image: '/src/assets/neroli-sublime-product.jpg',
       category: "Eau de Parfum",
       description: "Orange blossom in full bloom"
     },
     {
-      name: "Santal Mystique",
-      price: "From $240",
-      image: '/src/assets/product-sample.jpg',
-      category: "Parfum",
-      description: "Creamy sandalwood with spiced incense"
+      name: "Atlas Rose",
+      price: "From $185",
+      image: '/src/assets/atlas-rose-product.jpg',
+      category: "Eau de Parfum",
+      description: "Damask rose petals kissed by mountain air"
     },
     {
-      name: "Cedrat Lumière",
-      price: "From $155",
-      image: '/src/assets/product-sample.jpg',
+      name: "Argan Mystique",
+      price: "From $240",
+      image: '/src/assets/argan-mystique-product.jpg',
+      category: "Parfum",
+      description: "Creamy argan with spiced incense"
+    },
+    {
+      name: "Neroli Sublime",
+      price: "From $195",
+      image: '/src/assets/neroli-sublime-product.jpg',
       category: "Eau Fraîche",
       description: "Luminous citron with fresh herbs"
     }
   ];
 
   return (
-    <section className="py-8 md:py-16 lg:py-24 bg-background relative overflow-hidden">
+    <section className="py-8 md:py-16 lg:py-20 bg-background relative overflow-hidden">
       {/* Background botanical elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-10 left-10 opacity-20">
@@ -66,8 +66,8 @@ const SignatureScents = () => {
 
       <div className="container-luxury relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-12 lg:mb-16">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-playfair mb-4 lg:mb-6 text-foreground leading-tight">
+        <div className="text-center mb-8 lg:mb-12">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-playfair mb-3 lg:mb-4 text-foreground leading-tight">
             Signature Scents
           </h2>
           <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
@@ -77,13 +77,19 @@ const SignatureScents = () => {
         </div>
 
         {/* Products Grid - Mobile: Horizontal Scroll, Desktop: Grid */}
-        <div className="mb-12 lg:mb-16">
+        <div className="mb-8 lg:mb-12">
           {/* Mobile Horizontal Scroll */}
-          <div className="lg:hidden">
+          <div className="lg:hidden relative">
+            {/* Gradient fades */}
+            <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none"></div>
+            
+            {/* Swipe indicator */}
+            <div className="text-xs text-muted-foreground mb-3 text-center">← Swipe to explore →</div>
+            
             <div className="flex overflow-x-auto gap-4 pb-4 snap-x snap-mandatory scrollbar-hide px-4 -mx-4">
-              <div className="text-xs text-muted-foreground mb-2 px-4 whitespace-nowrap">← Swipe →</div>
               {products.map((product, index) => (
-                <div key={index} className="flex-none w-72 snap-start">
+                <div key={index} className="flex-none w-64 snap-start">
                   <ProductCard
                     name={product.name}
                     price={product.price}
@@ -97,17 +103,16 @@ const SignatureScents = () => {
           </div>
           
           {/* Desktop Grid */}
-          <div className="hidden lg:grid grid-cols-3 xl:grid-cols-4 gap-8">
+          <div className="hidden lg:grid grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
             {products.map((product, index) => (
-              <div key={index} className="flex justify-center">
-                <ProductCard
-                  name={product.name}
-                  price={product.price}
-                  image={product.image}
-                  category={product.category}
-                  description={product.description}
-                />
-              </div>
+              <ProductCard
+                key={index}
+                name={product.name}
+                price={product.price}
+                image={product.image}
+                category={product.category}
+                description={product.description}
+              />
             ))}
           </div>
         </div>

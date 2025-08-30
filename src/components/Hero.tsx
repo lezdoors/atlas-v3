@@ -8,14 +8,13 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const Hero = () => {
   const heroRef = useScrollAnimation();
-  // Use direct image imports for better migration compatibility
-  const heroBackground = '/src/assets/hero-fragrance.jpg';
-  const heroProduct = '/src/assets/product-sample.jpg';
+  // Use valid image paths - these are available in assets
+  const heroProduct = '/src/assets/atlas-rose-product.jpg';
   
   return (
     <section 
       ref={heroRef}
-      className="h-[65vh] lg:h-[80vh] bg-background flex items-center relative overflow-hidden pt-16 lg:pt-20 fade-in-up"
+      className="h-[70vh] lg:h-[80vh] bg-background flex items-center relative overflow-hidden pt-8 lg:pt-12 fade-in-up"
     >
       {/* Background Botanical Elements - Enhanced */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -34,7 +33,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="container-luxury grid lg:grid-cols-2 gap-12 lg:gap-24 items-center py-8 lg:py-16 relative z-10">
+      <div className="container-luxury grid lg:grid-cols-2 gap-8 lg:gap-16 items-center py-4 lg:py-8 relative z-10">
         {/* Left Content - Typography focused */}
         <div className="order-2 lg:order-1 space-y-6 lg:space-y-8">
           {/* Subtle botanical decoration */}
@@ -55,7 +54,8 @@ const Hero = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="luxury-button border-foreground text-foreground hover:bg-foreground hover:text-background transition-all duration-300 font-inter font-medium tracking-wide px-8 py-4 rounded-none"
+              className="luxury-button border-foreground text-foreground hover:bg-foreground hover:text-background transition-all duration-300 font-inter font-medium tracking-wide px-8 py-4 rounded-none min-h-[48px]"
+              onClick={() => window.location.href = '/shop'}
             >
               Discover the Collection
             </Button>
