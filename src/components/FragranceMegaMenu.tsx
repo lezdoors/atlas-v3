@@ -88,7 +88,7 @@ export const FragranceMegaMenu: React.FC<FragranceMegaMenuProps> = ({ isOpen, on
                   <div className="relative overflow-hidden rounded-lg bg-muted/20 p-6 mb-4">
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5" />
                     <OptimizedImage
-                      src={atlasRoseImg}
+                      src="/lovable-uploads/4dc12531-fd9f-4f1d-8fa3-b98940991529.png"
                       alt="Atlas Rose - Signature Fragrance"
                       className="w-full h-48 object-cover rounded-md transition-transform duration-500 group-hover:scale-105"
                     />

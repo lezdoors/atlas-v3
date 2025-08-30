@@ -28,7 +28,7 @@ const testimonials: Testimonial[] = [
     name: "Nina N.",
     designation: "Customer • New York",
     type: 'customer',
-    src: testimonialCustomer1
+    src: "/lovable-uploads/d72ea138-9b0d-49c1-81b7-c5b06670eb33.png"
   },
   {
     quote: "Small-batch Moroccan perfumery meets modern restraint.",
@@ -56,7 +56,7 @@ const testimonials: Testimonial[] = [
     name: "C. Benali",
     designation: "Customer • Paris",
     type: 'customer',
-    src: testimonialCustomer2
+    src: "/lovable-uploads/a4899d22-a4d2-49d4-9ee4-b84038194ad7.png"
   },
   {
     quote: "Each bottle captures the essence of Morocco's ancient craftsmanship.",

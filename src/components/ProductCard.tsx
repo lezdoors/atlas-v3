@@ -18,18 +18,30 @@ const ProductCard: React.FC<ProductCardProps> = ({
   category = "Eau de Parfum",
   description = "Handcrafted with Moroccan botanicals"
 }) => {
-  // Fallback to available product images
-  const productImage = image || '/src/assets/atlas-rose-product.jpg';
+  // Map product images to the new HD images
+  const getProductImage = () => {
+    if (image) return image;
+    
+    const imageMap: { [key: string]: string } = {
+      'Atlas Rose': '/lovable-uploads/4dc12531-fd9f-4f1d-8fa3-b98940991529.png',
+      'Neroli Sublime': '/lovable-uploads/89035e52-743d-4dc4-9906-c9971cc9f755.png',
+      'Argan Mystique': '/lovable-uploads/6555d9b8-8e4f-4254-bd4a-6f377627125f.png',
+      'Cedar Dreams': '/lovable-uploads/822029b6-119e-40b4-920c-7a398e0fa004.png',
+      'Jasmine Royale': '/lovable-uploads/df92ee8c-5046-4a4a-9abe-a822b285b977.png',
+      'Rose Damascena': '/lovable-uploads/554790ac-4ecb-477a-a077-e2d542af256e.png',
+    };
+    return imageMap[name] || '/lovable-uploads/4dc12531-fd9f-4f1d-8fa3-b98940991529.png';
+  };
 
   return (
     <div className="group relative bg-card overflow-hidden scale-on-hover image-hover-effect luxury-card">
       {/* Product Image */}
       <div className="relative overflow-hidden">
         <OptimizedImage
-          src={productImage}
+          src={getProductImage()}
           alt={`${name} - ${category} bottle`}
           aspectRatio="3/4"
-          fallbackSrc="/src/assets/atlas-rose-product.jpg"
+          fallbackSrc="/lovable-uploads/4dc12531-fd9f-4f1d-8fa3-b98940991529.png"
           className="transition-transform duration-700 group-hover:scale-105 object-cover"
           sizes="(max-width: 768px) 80vw, (max-width: 1200px) 40vw, 25vw"
           placeholder="skeleton"
