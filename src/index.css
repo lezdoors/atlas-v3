@@ -8,54 +8,66 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* MAISON LOUIS MARIE LUXURY PALETTE */
+    /* PERLE DE L'ATLAS MOROCCAN LUXURY PALETTE */
     
-    /* PRIMARY BACKGROUNDS */
-    --background: 48 9% 98%; /* #FAF9F6 - Warm white */
-    --background: 48 9% 98%; /* #FAF9F6 - Warm white */
-    --background-secondary: 33 9% 96%; /* #F5F2EE - Soft beige */
+    /* PRIMARY BACKGROUNDS - Warm, sophisticated base */
+    --background: 45 15% 97%; /* #F8F6F3 - Warm alabaster */
+    --background-secondary: 35 20% 92%; /* #EFE8E0 - Moroccan sand */
+    --background-tertiary: 25 35% 85%; /* #E0CDB8 - Desert stone */
     
-    /* TEXT COLORS */
-    --text-primary: 0 0% 17%; /* #2C2C2C - Charcoal */
-    --text-secondary: 0 0% 42%; /* #6B6B6B - Medium gray */
+    /* TEXT COLORS - Deep, sophisticated */
+    --text-primary: 15 15% 15%; /* #262219 - Dark umber */
+    --text-secondary: 25 12% 35%; /* #5A5145 - Warm charcoal */
+    --text-accent: 35 45% 25%; /* #3B2F1E - Rich brown */
     
-    /* ACCENT & BORDERS */
-    --luxury-accent: 39 25% 77%; /* #D4B996 - Muted gold */
-    --accent: 39 25% 77%; /* #D4B996 - Muted gold */
-    --accent-green: 186 80% 12%; /* #0F3B2E - Deep green */
-    --accent-gold: 40 55% 47%; /* #B28A3A - Subtle gold */
-    --paper-white: 43 29% 98%; /* #FAFAF7 - Paper white */
-    --border-subtle: 36 8% 90%; /* #E8E6E3 - Subtle beige */
+    /* MOROCCAN LUXURY ACCENTS */
+    --moroccan-gold: 42 65% 55%; /* #C6A052 - Atlas gold */
+    --moroccan-terracotta: 15 55% 45%; /* #A6623A - Terracotta */
+    --moroccan-sage: 120 25% 35%; /* #46664A - Desert sage */
+    --moroccan-amber: 35 75% 35%; /* #996633 - Amber spice */
+    --luxury-copper: 25 85% 25%; /* #7A3F1A - Copper patina */
     
-    /* TAILWIND MAPPINGS */
-    --foreground: 0 0% 17%; /* Text primary */
-    --card: 48 9% 98%;
-    --card-foreground: 0 0% 17%;
-    --popover: 48 9% 98%;
-    --popover-foreground: 0 0% 17%;
-    --primary: 0 0% 17%;
-    --primary-foreground: 48 9% 98%;
-    --secondary: 33 9% 96%;
-    --secondary-foreground: 0 0% 17%;
-    --muted: 33 9% 96%;
-    --muted-foreground: 0 0% 42%;
-    --accent: 39 25% 77%;
-    --accent-foreground: 0 0% 17%;
+    /* REFINED NEUTRALS */
+    --accent: 42 65% 55%; /* Moroccan gold */
+    --accent-green: 120 25% 35%; /* Desert sage */
+    --accent-gold: 42 65% 55%; /* Atlas gold */
+    --paper-white: 50 25% 98%; /* #FDFCF9 - Handmade paper */
+    --border-subtle: 35 15% 88%; /* #E6DDD5 - Soft taupe */
+    
+    /* TAILWIND MAPPINGS - Moroccan Theme */
+    --foreground: 15 15% 15%; /* Dark umber */
+    --card: 45 15% 97%;
+    --card-foreground: 15 15% 15%;
+    --popover: 45 15% 97%;
+    --popover-foreground: 15 15% 15%;
+    --primary: 42 65% 55%; /* Moroccan gold */
+    --primary-foreground: 45 15% 97%;
+    --secondary: 35 20% 92%;
+    --secondary-foreground: 15 15% 15%;
+    --muted: 35 20% 92%;
+    --muted-foreground: 25 12% 35%;
+    --accent: 42 65% 55%;
+    --accent-foreground: 15 15% 15%;
     --destructive: 0 73% 41%;
-    --destructive-foreground: 48 9% 98%;
-    --border: 36 8% 90%;
-    --input: 36 8% 90%;
-    --ring: 39 25% 77%;
-    --radius: 8px;
+    --destructive-foreground: 45 15% 97%;
+    --border: 35 15% 88%;
+    --input: 35 15% 88%;
+    --ring: 42 65% 55%;
+    --radius: 12px;
     
-    /* LUXURY GRADIENTS */
-    --gradient-luxury: linear-gradient(135deg, hsl(48, 9%, 98%), hsl(33, 9%, 96%));
-    --gradient-accent: linear-gradient(135deg, hsl(39, 25%, 77%), hsl(39, 25%, 82%));
+    /* MOROCCAN LUXURY GRADIENTS */
+    --gradient-luxury: linear-gradient(135deg, hsl(45, 15%, 97%), hsl(35, 20%, 92%));
+    --gradient-moroccan: linear-gradient(135deg, hsl(42, 65%, 55%), hsl(35, 75%, 35%));
+    --gradient-desert: linear-gradient(180deg, hsl(35, 20%, 92%), hsl(25, 35%, 85%));
+    --gradient-amber: radial-gradient(circle at 30% 70%, hsl(35, 75%, 35%), hsl(42, 65%, 55%));
+    --gradient-sage: linear-gradient(135deg, hsl(120, 25%, 35%), hsl(120, 15%, 45%));
     
-    /* LUXURY SHADOWS */
-    --shadow-subtle: 0 2px 8px hsl(0, 0%, 0% / 0.04);
-    --shadow-medium: 0 8px 24px hsl(0, 0%, 0% / 0.08);
-    --shadow-elevated: 0 16px 48px hsl(0, 0%, 0% / 0.12);
+    /* MOROCCAN LUXURY SHADOWS */
+    --shadow-subtle: 0 2px 8px hsl(15, 15%, 15% / 0.06);
+    --shadow-medium: 0 8px 24px hsl(15, 15%, 15% / 0.12);
+    --shadow-elevated: 0 20px 48px hsl(15, 15%, 15% / 0.18);
+    --shadow-moroccan: 0 12px 32px hsl(42, 65%, 55% / 0.15);
+    --shadow-warm: 0 6px 20px hsl(35, 75%, 35% / 0.10);
     
     /* TRANSITIONS */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
