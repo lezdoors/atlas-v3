@@ -15,7 +15,7 @@ const Hero = () => {
   return (
     <section 
       ref={heroRef}
-      className="min-h-screen bg-background flex items-center relative overflow-hidden pt-20 lg:pt-24 fade-in-up"
+      className="h-[65vh] lg:h-[80vh] bg-background flex items-center relative overflow-hidden pt-16 lg:pt-20 fade-in-up"
     >
       {/* Background Botanical Elements - Enhanced */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -34,30 +34,30 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="container-luxury grid lg:grid-cols-2 gap-16 lg:gap-24 items-center section-padding relative z-10">
+      <div className="container-luxury grid lg:grid-cols-2 gap-12 lg:gap-24 items-center py-8 lg:py-16 relative z-10">
         {/* Left Content - Typography focused */}
-        <div className="order-2 lg:order-1 space-y-8">
+        <div className="order-2 lg:order-1 space-y-6 lg:space-y-8">
           {/* Subtle botanical decoration */}
           <div className="w-16 h-px bg-muted-foreground/20 mb-8"></div>
           
           <div className="space-y-6">
-            <h1 className="heading-hero">
-              Perle de 
-              <span className="block italic">l'Atlas</span>
+            <h1 className="heading-hero text-center lg:text-left">
+              The Soul of 
+              <span className="block italic">Morocco</span>
             </h1>
             
-            <p className="body-large max-w-lg leading-[1.8]">
-              Handcrafted fragrances born from the ancient wisdom of Moroccan artisans
+            <p className="body-large max-w-lg mx-auto lg:mx-0 text-center lg:text-left leading-[1.65]">
+              Small-batch perfumes crafted with ancestral methods and modern refinement.
             </p>
           </div>
           
-          <div className="pt-4">
+          <div className="pt-6 text-center lg:text-left">
             <Button 
               variant="outline" 
               size="lg"
               className="luxury-button border-foreground text-foreground hover:bg-foreground hover:text-background transition-all duration-300 font-inter font-medium tracking-wide px-8 py-4 rounded-none"
             >
-              Discover Collection
+              Discover the Collection
             </Button>
           </div>
 

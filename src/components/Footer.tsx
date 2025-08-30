@@ -23,16 +23,16 @@ const Footer = () => {
             </p>
             
             {/* Premium Newsletter Form */}
-            <div className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
+            <div className="flex flex-col gap-3 max-w-lg mx-auto">
               <input
                 type="email"
                 placeholder="Enter your email address"
-                className="luxury-input flex-1 h-14 px-6 bg-white/5 border border-white/20 text-white placeholder-white/50 font-inter text-sm rounded-none focus:outline-none focus:border-white/40 focus:bg-white/10 transition-all duration-500 backdrop-blur-sm"
+                className="luxury-input w-full h-12 md:h-14 px-4 md:px-6 bg-white/5 border border-white/20 text-white placeholder-white/50 font-inter text-sm rounded-none focus:outline-none focus:border-white/40 focus:bg-white/10 transition-all duration-500 backdrop-blur-sm"
               />
               <Button
                 variant="outline"
                 size="lg"
-                className="h-14 px-8 border-white/20 text-white hover:bg-white hover:text-[#2C2C2C] transition-all duration-500 font-inter text-sm tracking-wider uppercase rounded-none luxury-button"
+                className="w-full h-12 md:h-14 px-6 md:px-8 border-white/20 text-white hover:bg-white hover:text-[#2C2C2C] transition-all duration-500 font-inter text-sm tracking-wider uppercase rounded-none luxury-button"
               >
                 Subscribe
               </Button>

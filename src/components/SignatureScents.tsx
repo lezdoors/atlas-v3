@@ -50,7 +50,7 @@ const SignatureScents = () => {
   ];
 
   return (
-    <section className="section-padding bg-background relative overflow-hidden">
+    <section className="py-8 md:py-16 lg:py-24 bg-background relative overflow-hidden">
       {/* Background botanical elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-10 left-10 opacity-20">
@@ -66,29 +66,50 @@ const SignatureScents = () => {
 
       <div className="container-luxury relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-20 lg:mb-24">
-          <h2 className="heading-section mb-6">
+        <div className="text-center mb-12 lg:mb-16">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-playfair mb-4 lg:mb-6 text-foreground leading-tight">
             Signature Scents
           </h2>
-          <p className="body-large max-w-2xl mx-auto leading-[1.8]">
+          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Each fragrance tells a story of Morocco's rich botanical heritage, 
             carefully crafted to transport you to the souks of Marrakech and the gardens of the Atlas Mountains.
           </p>
         </div>
 
-        {/* Products Grid - 8 Column System */}
-        <div className="grid-luxury-8 mb-16 lg:mb-20">
-          {products.map((product, index) => (
-            <div key={index} className="flex justify-center">
-              <ProductCard
-                name={product.name}
-                price={product.price}
-                image={product.image}
-                category={product.category}
-                description={product.description}
-              />
+        {/* Products Grid - Mobile: Horizontal Scroll, Desktop: Grid */}
+        <div className="mb-12 lg:mb-16">
+          {/* Mobile Horizontal Scroll */}
+          <div className="lg:hidden">
+            <div className="flex overflow-x-auto gap-4 pb-4 snap-x snap-mandatory scrollbar-hide px-4 -mx-4">
+              <div className="text-xs text-muted-foreground mb-2 px-4 whitespace-nowrap">← Swipe →</div>
+              {products.map((product, index) => (
+                <div key={index} className="flex-none w-72 snap-start">
+                  <ProductCard
+                    name={product.name}
+                    price={product.price}
+                    image={product.image}
+                    category={product.category}
+                    description={product.description}
+                  />
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+          
+          {/* Desktop Grid */}
+          <div className="hidden lg:grid grid-cols-3 xl:grid-cols-4 gap-8">
+            {products.map((product, index) => (
+              <div key={index} className="flex justify-center">
+                <ProductCard
+                  name={product.name}
+                  price={product.price}
+                  image={product.image}
+                  category={product.category}
+                  description={product.description}
+                />
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Call to Action */}

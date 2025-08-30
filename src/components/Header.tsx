@@ -12,9 +12,9 @@ const Header = () => {
   return (
     <>
       {/* Promotional Banner */}
-      <div className="bg-primary text-primary-foreground py-2 text-center">
-        <p className="font-inter text-sm tracking-wide">
-          Complimentary samples with every order • Free shipping on orders over $150
+      <div className="bg-primary text-primary-foreground py-2.5 text-center">
+        <p className="font-inter text-xs md:text-sm tracking-wide px-4">
+          Complimentary samples with every order • Free shipping over $150
         </p>
       </div>
 
