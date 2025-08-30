@@ -21,7 +21,7 @@ const OptimizedImage = forwardRef<HTMLImageElement, OptimizedImageProps>(
     alt,
     aspectRatio = 'auto',
     priority = false,
-    fallbackSrc = '/src/assets/product-sample.jpg',
+    fallbackSrc = '/src/assets/atlas-rose-product.jpg',
     placeholder = 'skeleton',
     sizes = '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw',
     quality = 85,
@@ -237,7 +237,12 @@ const OptimizedImage = forwardRef<HTMLImageElement, OptimizedImageProps>(
                   d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
                 />
               </svg>
-              <p className="text-xs text-muted-foreground font-inter">Image unavailable</p>
+              <div className="w-full h-full bg-gradient-to-br from-primary/5 to-secondary/5 flex items-center justify-center">
+                <svg viewBox="0 0 100 100" className="w-16 h-16 text-primary/30">
+                  <path d="M20 50 Q30 30, 50 50 Q70 30, 80 50 Q70 70, 50 50 Q30 70, 20 50" stroke="currentColor" strokeWidth="2" fill="none"/>
+                  <circle cx="50" cy="50" r="3" fill="currentColor"/>
+                </svg>
+              </div>
             </div>
           </div>
         )}

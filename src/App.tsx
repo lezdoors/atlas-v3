@@ -7,6 +7,9 @@ import Index from "./pages/Index";
 import SignatureScents from "./pages/SignatureScents";
 import LimitedEditions from "./pages/LimitedEditions";
 import DiscoverySets from "./pages/DiscoverySets";
+import Collections from "./pages/Collections";
+import Heritage from "./pages/Heritage";
+import Journal from "./pages/Journal";
 import ProductDetail from "./pages/ProductDetail";
 import NotFound from "./pages/NotFound";
 
@@ -23,6 +26,9 @@ const App = () => (
           <Route path="/fragrances/signature-scents" element={<SignatureScents />} />
           <Route path="/fragrances/limited-editions" element={<LimitedEditions />} />
           <Route path="/fragrances/discovery-sets" element={<DiscoverySets />} />
+          <Route path="/collections" element={<Collections />} />
+          <Route path="/heritage" element={<Heritage />} />
+          <Route path="/journal" element={<Journal />} />
           <Route path="/product/:productId" element={<ProductDetail />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
