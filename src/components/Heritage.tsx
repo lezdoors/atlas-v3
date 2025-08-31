@@ -10,7 +10,7 @@ const Heritage = () => {
           {/* Image */}
           <div className="relative">
             <img 
-              src="/lovable-uploads/d72ea138-9b0d-49c1-81b7-c5b06670eb33.png"
+              src={heritageImage}
               alt="Atlas Perle Heritage - Traditional Moroccan craftsmanship"
               className="w-full h-[600px] object-cover rounded-luxury"
             />

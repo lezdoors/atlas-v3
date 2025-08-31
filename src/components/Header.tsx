@@ -96,21 +96,21 @@ const Header = () => {
                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-accent transition-all duration-300 group-hover:w-full"></span>
               </a>
               <a
-                href="/collections"
+                href="#"
                 className="font-inter text-sm text-foreground hover:text-accent transition-colors duration-300 tracking-wide uppercase relative group"
               >
                 Collections
                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-accent transition-all duration-300 group-hover:w-full"></span>
               </a>
               <a
-                href="/heritage"
+                href="#"
                 className="font-inter text-sm text-foreground hover:text-accent transition-colors duration-300 tracking-wide uppercase relative group"
               >
                 Heritage
                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-accent transition-all duration-300 group-hover:w-full"></span>
               </a>
               <a
-                href="/journal"
+                href="#"
                 className="font-inter text-sm text-foreground hover:text-accent transition-colors duration-300 tracking-wide uppercase relative group"
               >
                 Journal
@@ -160,13 +160,13 @@ const Header = () => {
                     <a href="#" className="block text-lg font-medium text-foreground hover:text-primary transition-colors">
                       Skincare
                     </a>
-                    <a href="/collections" className="block text-lg font-medium text-foreground hover:text-primary transition-colors">
+                    <a href="#" className="block text-lg font-medium text-foreground hover:text-primary transition-colors">
                       Collections
                     </a>
-                    <a href="/heritage" className="block text-lg font-medium text-foreground hover:text-primary transition-colors">
+                    <a href="#" className="block text-lg font-medium text-foreground hover:text-primary transition-colors">
                       Heritage
                     </a>
-                    <a href="/journal" className="block text-lg font-medium text-foreground hover:text-primary transition-colors">
+                    <a href="#" className="block text-lg font-medium text-foreground hover:text-primary transition-colors">
                       Journal
                     </a>
                   </nav>

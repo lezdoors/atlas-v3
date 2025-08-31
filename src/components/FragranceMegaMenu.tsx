@@ -52,14 +52,14 @@ export const FragranceMegaMenu: React.FC<FragranceMegaMenuProps> = ({ isOpen, on
       
       {/* Mega Menu */}
       <div className="absolute top-full left-0 right-0 z-50 animate-slide-down">
-        <div className="bg-background/98 backdrop-blur-md border-b shadow-elegant">
+        <div className="bg-background/95 backdrop-blur-md border-b shadow-lg">
           <div className="max-w-7xl mx-auto px-8 py-12">
-            <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-8 lg:gap-12">
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
               
               {/* Categories Columns */}
               {Object.entries(menuCategories).map(([category, items]) => (
-                <div key={category} className="space-y-4 min-w-0">
-                  <h3 className="text-xs font-medium tracking-widest uppercase text-muted-foreground whitespace-nowrap">
+                <div key={category} className="space-y-4">
+                  <h3 className="text-xs font-medium tracking-widest uppercase text-muted-foreground">
                     {category}
                   </h3>
                   <ul className="space-y-3">
@@ -67,7 +67,7 @@ export const FragranceMegaMenu: React.FC<FragranceMegaMenuProps> = ({ isOpen, on
                       <li key={index}>
                         <a 
                           href={item.href} 
-                          className="block text-sm text-foreground hover:text-primary transition-colors duration-200 relative group whitespace-nowrap"
+                          className="block text-sm text-foreground hover:text-primary transition-colors duration-200 relative group"
                         >
                           {item.name}
                           <span className="absolute bottom-0 left-0 w-0 h-px bg-primary transition-all duration-300 group-hover:w-full" />
@@ -79,7 +79,7 @@ export const FragranceMegaMenu: React.FC<FragranceMegaMenuProps> = ({ isOpen, on
               ))}
 
               {/* Featured Product Column */}
-              <div className="space-y-4 md:col-span-2 lg:col-span-1 md:pl-8 md:border-l border-border">
+              <div className="space-y-4 md:pl-8 md:border-l border-border">
                 <h3 className="text-xs font-medium tracking-widest uppercase text-muted-foreground">
                   Featured Product
                 </h3>
@@ -88,7 +88,7 @@ export const FragranceMegaMenu: React.FC<FragranceMegaMenuProps> = ({ isOpen, on
                   <div className="relative overflow-hidden rounded-lg bg-muted/20 p-6 mb-4">
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5" />
                     <OptimizedImage
-                      src="/lovable-uploads/4dc12531-fd9f-4f1d-8fa3-b98940991529.png"
+                      src={atlasRoseImg}
                       alt="Atlas Rose - Signature Fragrance"
                       className="w-full h-48 object-cover rounded-md transition-transform duration-500 group-hover:scale-105"
                     />

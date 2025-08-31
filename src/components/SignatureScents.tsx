@@ -8,98 +8,72 @@ const SignatureScents = () => {
     {
       name: "Atlas Rose",
       price: "From $185",
-      image: '/lovable-uploads/4dc12531-fd9f-4f1d-8fa3-b98940991529.png',
+      image: '/src/assets/atlas-rose-product.jpg',
       category: "Eau de Parfum",
       description: "Damask rose petals kissed by mountain air"
     },
     {
       name: "Argan Mystique",
       price: "From $220",
-      image: '/lovable-uploads/6555d9b8-8e4f-4254-bd4a-6f377627125f.png',
+      image: '/src/assets/argan-mystique-product.jpg',
       category: "Parfum",
       description: "Rich argan with precious amber"
     },
     {
       name: "Neroli Sublime",
       price: "From $195",
-      image: '/lovable-uploads/89035e52-743d-4dc4-9906-c9971cc9f755.png',
+      image: '/src/assets/neroli-sublime-product.jpg',
       category: "Eau de Parfum",
       description: "Orange blossom in full bloom"
     },
     {
-      name: "Cedar Dreams",
-      price: "From $210",
-      image: '/lovable-uploads/822029b6-119e-40b4-920c-7a398e0fa004.png',
+      name: "Atlas Rose",
+      price: "From $185",
+      image: '/src/assets/atlas-rose-product.jpg',
       category: "Eau de Parfum",
-      description: "Moroccan cedar with amber warmth"
+      description: "Damask rose petals kissed by mountain air"
     },
     {
-      name: "Jasmine Royale",
+      name: "Argan Mystique",
       price: "From $240",
-      image: '/lovable-uploads/df92ee8c-5046-4a4a-9abe-a822b285b977.png',
+      image: '/src/assets/argan-mystique-product.jpg',
       category: "Parfum",
-      description: "Royal jasmine with precious spices"
+      description: "Creamy argan with spiced incense"
     },
     {
-      name: "Rose Damascena",
+      name: "Neroli Sublime",
       price: "From $195",
-      image: '/lovable-uploads/554790ac-4ecb-477a-a077-e2d542af256e.png',
+      image: '/src/assets/neroli-sublime-product.jpg',
       category: "Eau Fraîche",
-      description: "Pure damascene rose essence"
+      description: "Luminous citron with fresh herbs"
     }
   ];
 
   return (
-    <section className="py-12 md:py-20 lg:py-24 relative overflow-hidden"
-             style={{ background: 'var(--gradient-desert)' }}>
-      {/* Moroccan Geometric Pattern Background */}
+    <section className="py-8 md:py-16 lg:py-20 bg-background relative overflow-hidden">
+      {/* Background botanical elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 opacity-[0.02]" 
-             style={{
-               backgroundImage: `linear-gradient(30deg, transparent 40%, hsl(var(--moroccan-gold)) 40%, hsl(var(--moroccan-gold)) 42%, transparent 42%),
-                                linear-gradient(-30deg, transparent 40%, hsl(var(--moroccan-amber)) 40%, hsl(var(--moroccan-amber)) 42%, transparent 42%)`,
-               backgroundSize: '120px 120px'
-             }}>
+        <div className="absolute top-10 left-10 opacity-20">
+          <HandDrawnElements type="eucalyptus" size={200} animate />
         </div>
-        
-        {/* Enhanced botanical elements */}
-        <div className="absolute top-16 left-8 opacity-[0.08]">
-          <HandDrawnElements type="eucalyptus" size={250} animate rotation={-15} variant="artistic" />
+        <div className="absolute bottom-10 right-10 opacity-20">
+          <HandDrawnElements type="olive" size={180} animate rotation={25} />
         </div>
-        <div className="absolute bottom-16 right-8 opacity-[0.06]">
-          <HandDrawnElements type="olive" size={220} animate rotation={35} variant="bold" />
-        </div>
-        <div className="absolute top-1/2 left-1/3 opacity-[0.04]">
-          <HandDrawnElements type="jasmine" size={180} animate rotation={-25} variant="artistic" />
+        <div className="absolute top-1/2 left-1/4 opacity-15">
+          <HandDrawnElements type="jasmine" size={120} animate rotation={45} />
         </div>
       </div>
 
       <div className="container-luxury relative z-10">
-        {/* Moroccan Section Header */}
-        <div className="text-center mb-16 lg:mb-20">
-          {/* Moroccan ornamental header */}
-          <div className="flex items-center justify-center space-x-6 mb-8">
-            <div className="w-16 h-px bg-gradient-to-r from-transparent via-moroccan-gold to-moroccan-amber"></div>
-            <div className="flex space-x-2">
-              <div className="w-2 h-2 rounded-full bg-moroccan-gold"></div>
-              <div className="w-1 h-1 rounded-full bg-moroccan-amber mt-0.5"></div>
-              <div className="w-2 h-2 rounded-full bg-moroccan-gold"></div>
-            </div>
-            <div className="w-16 h-px bg-gradient-to-l from-transparent via-moroccan-gold to-moroccan-amber"></div>
-          </div>
-          
-          <h2 className="font-playfair text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light tracking-[-0.01em] mb-8"
-              style={{ color: 'hsl(var(--text-primary))' }}>
-            <span style={{ color: 'hsl(var(--moroccan-gold))' }}>Signature</span> Scents
+        {/* Section Header */}
+        <div className="text-center mb-8 lg:mb-12">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-playfair mb-3 lg:mb-4 text-foreground leading-tight">
+            Signature Scents
           </h2>
-          
-          <div className="max-w-3xl mx-auto">
-            <p className="font-inter text-lg md:text-xl leading-[1.7]" 
-               style={{ color: 'hsl(var(--text-secondary))' }}>
-              Each fragrance tells a story of Morocco's rich botanical heritage, 
-              carefully crafted to transport you to the souks of Marrakech and the gardens of the Atlas Mountains.
-            </p>
-          </div>
+          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Each fragrance tells a story of Morocco's rich botanical heritage, 
+            carefully crafted to transport you to the souks of Marrakech and the gardens of the Atlas Mountains.
+          </p>
         </div>
 
         {/* Products Grid - Mobile: Horizontal Scroll, Desktop: Grid */}
@@ -128,49 +102,29 @@ const SignatureScents = () => {
             </div>
           </div>
           
-          {/* Desktop Grid - Moroccan Luxury Layout */}
-          <div className="hidden lg:grid grid-cols-3 xl:grid-cols-4 gap-8 lg:gap-10">
+          {/* Desktop Grid */}
+          <div className="hidden lg:grid grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
             {products.map((product, index) => (
-              <div key={index} 
-                   className="group transform transition-all duration-700 hover:scale-[1.02] hover:-translate-y-2 animate-fade-in"
-                   style={{ 
-                     animationDelay: `${index * 150}ms`,
-                     filter: 'drop-shadow(0 8px 32px rgba(0,0,0,0.08))'
-                   }}>
-                <ProductCard
-                  name={product.name}
-                  price={product.price}
-                  image={product.image}
-                  category={product.category}
-                  description={product.description}
-                />
-              </div>
+              <ProductCard
+                key={index}
+                name={product.name}
+                price={product.price}
+                image={product.image}
+                category={product.category}
+                description={product.description}
+              />
             ))}
           </div>
         </div>
 
-        {/* Moroccan Call to Action */}
-        <div className="text-center mt-20 lg:mt-24">
-          {/* Decorative flourish */}
-          <div className="flex items-center justify-center space-x-4 mb-8">
-            <div className="w-8 h-px bg-gradient-to-r from-transparent to-moroccan-gold"></div>
-            <div className="w-3 h-3 rotate-45 border border-moroccan-gold"></div>
-            <div className="w-8 h-px bg-gradient-to-l from-transparent to-moroccan-gold"></div>
-          </div>
-          
+        {/* Call to Action */}
+        <div className="text-center">
           <Button 
             variant="outline" 
             size="lg"
-            className="luxury-button border-2 font-inter font-medium tracking-[0.05em] uppercase text-sm px-12 py-5 rounded-none min-h-[56px] relative overflow-hidden group"
-            style={{ 
-              borderColor: 'hsl(var(--moroccan-gold))', 
-              color: 'hsl(var(--moroccan-gold))',
-              background: 'transparent'
-            }}
+            className="border-foreground text-foreground hover:bg-foreground hover:text-background transition-all duration-300 nav-link px-12 py-4 rounded-none"
           >
-            <span className="relative z-10">Explore Full Collection</span>
-            <div className="absolute inset-0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center"
-                 style={{ background: 'hsl(var(--moroccan-gold))' }}></div>
+            Explore Full Collection
           </Button>
         </div>
       </div>

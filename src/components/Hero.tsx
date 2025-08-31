@@ -14,129 +14,87 @@ const Hero = () => {
   return (
     <section 
       ref={heroRef}
-      className="min-h-[70vh] lg:min-h-[80vh] relative overflow-hidden fade-in-up"
-      style={{
-        background: 'var(--gradient-luxury)',
-        backgroundAttachment: 'fixed'
-      }}
+      className="h-[70vh] lg:h-[80vh] bg-background flex items-center relative overflow-hidden pt-8 lg:pt-12 fade-in-up"
     >
-      {/* Moroccan Luxury Background Pattern */}
-      <div className="absolute inset-0 pointer-events-none">
-        {/* Subtle geometric pattern overlay */}
-        <div className="absolute inset-0 opacity-[0.03]" 
-             style={{
-               backgroundImage: `radial-gradient(circle at 25% 25%, hsl(var(--moroccan-gold)) 2px, transparent 2px),
-                                radial-gradient(circle at 75% 75%, hsl(var(--moroccan-amber)) 1px, transparent 1px)`,
-               backgroundSize: '60px 60px, 40px 40px'
-             }}>
+      {/* Background Botanical Elements - Enhanced */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {/* Large prominent botanical illustrations */}
+        <div className="absolute top-0 left-0 opacity-30">
+          <HandDrawnElements type="herbarium-branch" size={350} opacity={0.4} rotation={-10} variant="artistic" />
         </div>
-        
-        {/* Enhanced botanical elements with Moroccan positioning */}
-        <div className="absolute top-0 left-0 opacity-[0.08]">
-          <HandDrawnElements type="herbarium-branch" size={400} opacity={0.6} rotation={-15} variant="artistic" />
+        <div className="absolute top-20 right-0 opacity-25">
+          <HandDrawnElements type="eucalyptus" size={400} opacity={0.3} rotation={15} variant="bold" />
         </div>
-        <div className="absolute top-1/4 right-0 opacity-[0.06]">
-          <HandDrawnElements type="eucalyptus" size={450} opacity={0.5} rotation={25} variant="bold" />
+        <div className="absolute bottom-0 left-1/3 opacity-20">
+          <HandDrawnElements type="vine-border" size={600} opacity={0.3} />
         </div>
-        <div className="absolute bottom-0 left-1/4 opacity-[0.05]">
-          <HandDrawnElements type="vine-border" size={700} opacity={0.4} rotation={5} />
-        </div>
-        <div className="absolute top-1/2 right-1/3 opacity-[0.04]">
-          <HandDrawnElements type="olive" size={300} opacity={0.3} rotation={-35} variant="artistic" />
+        <div className="absolute top-1/3 right-1/4 opacity-15">
+          <HandDrawnElements type="olive" size={200} opacity={0.25} rotation={-25} variant="artistic" />
         </div>
       </div>
 
-      <div className="container-luxury grid lg:grid-cols-2 gap-12 lg:gap-20 items-center py-12 lg:py-16 relative z-10">
-        {/* Left Content - Moroccan Luxury Typography */}
-        <div className="order-2 lg:order-1 space-y-8 lg:space-y-12">
-          {/* Moroccan decorative line */}
-          <div className="flex items-center justify-center lg:justify-start space-x-4 mb-8">
-            <div className="w-8 h-px bg-gradient-to-r from-transparent via-moroccan-gold to-transparent"></div>
-            <div className="w-2 h-2 rounded-full bg-moroccan-gold opacity-60"></div>
-            <div className="w-12 h-px bg-gradient-to-r from-moroccan-gold to-transparent"></div>
-          </div>
+      <div className="container-luxury grid lg:grid-cols-2 gap-8 lg:gap-16 items-center py-4 lg:py-8 relative z-10">
+        {/* Left Content - Typography focused */}
+        <div className="order-2 lg:order-1 space-y-6 lg:space-y-8">
+          {/* Subtle botanical decoration */}
+          <div className="w-16 h-px bg-muted-foreground/20 mb-8"></div>
           
-          <div className="space-y-8">
-            <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light leading-[0.95] tracking-[-0.02em] text-center lg:text-left"
-                style={{ color: 'hsl(var(--text-primary))' }}>
+          <div className="space-y-6">
+            <h1 className="heading-hero text-center lg:text-left">
               The Soul of 
-              <span className="block italic font-normal" style={{ color: 'hsl(var(--moroccan-gold))' }}>Morocco</span>
+              <span className="block italic">Morocco</span>
             </h1>
             
-            <div className="max-w-lg mx-auto lg:mx-0">
-              <p className="font-inter text-lg md:text-xl leading-[1.7] text-center lg:text-left" 
-                 style={{ color: 'hsl(var(--text-secondary))' }}>
-                Small-batch perfumes crafted with ancestral methods and modern refinement.
-              </p>
-            </div>
+            <p className="body-large max-w-lg mx-auto lg:mx-0 text-center lg:text-left leading-[1.65]">
+              Small-batch perfumes crafted with ancestral methods and modern refinement.
+            </p>
           </div>
           
           <div className="pt-6 text-center lg:text-left">
             <Button 
               variant="outline" 
               size="lg"
-              className="luxury-button border-2 font-inter font-medium tracking-[0.05em] uppercase text-sm px-10 py-4 rounded-none min-h-[52px] relative overflow-hidden group"
-              style={{ 
-                borderColor: 'hsl(var(--moroccan-gold))', 
-                color: 'hsl(var(--moroccan-gold))',
-                background: 'transparent'
-              }}
+              className="luxury-button border-foreground text-foreground hover:bg-foreground hover:text-background transition-all duration-300 font-inter font-medium tracking-wide px-8 py-4 rounded-none min-h-[48px]"
               onClick={() => window.location.href = '/shop'}
             >
-              <span className="relative z-10">Discover the Collection</span>
-              <div className="absolute inset-0 bg-moroccan-gold transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"
-                   style={{ background: 'hsl(var(--moroccan-gold))' }}></div>
+              Discover the Collection
             </Button>
           </div>
 
-          {/* Moroccan corner flourish */}
-          <div className="absolute -left-6 top-1/2 -translate-y-1/2 opacity-20 hidden lg:block">
-            <HandDrawnElements type="rose" size={80} opacity={0.6} animate={true} variant="artistic" />
+          {/* Decorative botanical element */}
+          <div className="absolute -left-4 top-1/2 -translate-y-1/2 opacity-10">
+            <HandDrawnElements type="rose" size={100} opacity={0.4} animate={true} />
           </div>
         </div>
 
-        {/* Right Content - Luxury Product Showcase */}
+        {/* Right Content - Product Hero with Botanical Frame */}
         <div className="order-1 lg:order-2 flex justify-center lg:justify-end relative">
-          <div className="relative group">
-            {/* Luxury backdrop with Moroccan shadow */}
-            <div className="absolute inset-0 rounded-2xl transform rotate-3 scale-95 opacity-20"
-                 style={{ 
-                   background: 'var(--gradient-moroccan)',
-                   filter: 'blur(20px)'
-                 }}></div>
-            
-            {/* Enhanced botanical frame */}
-            <BotanicalFrame variant="ornate" className="relative z-10">
-              <div className="relative w-72 lg:w-80 xl:w-96 p-8">
+          <div className="relative max-w-lg image-hover-effect">
+            {/* Botanical frame around product */}
+            <BotanicalFrame variant="ornate" className="bg-background-secondary/20 backdrop-blur-sm">
+              <div className="relative w-80 lg:w-96">
                 <OptimizedImage
-                  src="/lovable-uploads/4dc12531-fd9f-4f1d-8fa3-b98940991529.png"
+                  src={heroProduct}
                   alt="Perle de l'Atlas Signature Fragrance"
                   aspectRatio="auto"
                   priority={true}
-                  className="w-full h-auto transform transition-transform duration-700 group-hover:scale-105"
-                  style={{ 
-                    filter: 'drop-shadow(0 25px 50px rgba(0,0,0,0.15))',
-                    borderRadius: '12px'
-                  }}
+                  className="filter drop-shadow-[0_20px_40px_rgba(44,44,44,0.1)] rounded-lg"
                   placeholder="blur"
                   enableWebP={true}
                   sizes="(max-width: 768px) 80vw, (max-width: 1024px) 50vw, 400px"
                 />
-                
-                {/* Luxury reflection effect */}
-                <div className="absolute inset-0 rounded-xl bg-gradient-to-t from-transparent via-transparent to-white/10 pointer-events-none"></div>
               </div>
             </BotanicalFrame>
             
-            {/* Floating Moroccan elements */}
-            <div className="absolute -top-12 -left-12 opacity-30 animate-pulse">
-              <HandDrawnElements type="rose" size={100} animate variant="artistic" rotation={-15} />
+            {/* Large floating botanical elements */}
+            <div className="absolute -top-16 -left-16 opacity-50">
+              <HandDrawnElements type="rose" size={140} animate variant="artistic" />
             </div>
-            <div className="absolute -bottom-8 -right-8 opacity-40">
-              <HandDrawnElements type="jasmine" size={90} animate rotation={35} variant="bold" />
+            <div className="absolute -bottom-12 -right-12 opacity-60">
+              <HandDrawnElements type="jasmine" size={120} animate rotation={25} variant="bold" />
             </div>
-            <div className="absolute top-1/3 -left-16 opacity-25 hidden xl:block">
-              <HandDrawnElements type="lavender" size={120} animate rotation={-45} variant="artistic" />
+            <div className="absolute top-1/4 -left-20 opacity-40">
+              <HandDrawnElements type="lavender" size={160} animate rotation={-30} variant="artistic" />
             </div>
           </div>
         </div>
