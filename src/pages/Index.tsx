@@ -17,9 +17,9 @@ const Index = () => {
     const preloadCriticalImages = async () => {
       // Preload hero and above-fold images
       const criticalImages = [
-        '/src/assets/hero-fragrance.jpg',
-        '/src/assets/product-sample.jpg',
-        '/src/assets/collection-hero.jpg'
+        '/images/hero-fragrance.jpg',
+        '/images/product-sample.jpg',
+        '/images/collection-hero.jpg'
       ];
 
       // Preload hero images with high priority
@@ -27,9 +27,9 @@ const Index = () => {
 
       // Preload additional product images with lower priority
       const additionalImages = [
-        '/src/assets/atlas-rose-hero.jpg',
-        '/src/assets/neroli-sublime-hero.jpg',
-        '/src/assets/argan-mystique-hero.jpg'
+        '/images/atlas-rose-product.jpg',
+        '/images/neroli-sublime-product.jpg',
+        '/images/argan-mystique-product.jpg'
       ];
 
       setTimeout(() => {

@@ -21,7 +21,7 @@ const OptimizedImage = forwardRef<HTMLImageElement, OptimizedImageProps>(
     alt,
     aspectRatio = 'auto',
     priority = false,
-    fallbackSrc = '/src/assets/product-sample.jpg',
+    fallbackSrc = '/images/product-sample.jpg',
     placeholder = 'skeleton',
     sizes = '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw',
     quality = 85,

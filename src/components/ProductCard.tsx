@@ -19,7 +19,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   description = "Handcrafted with Moroccan botanicals"
 }) => {
   // Fallback to available product images
-  const productImage = image || '/src/assets/atlas-rose-product.jpg';
+  const productImage = image || '/images/atlas-rose-product.jpg';
 
   return (
     <div className="group relative bg-card overflow-hidden scale-on-hover image-hover-effect luxury-card">
@@ -29,7 +29,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
           src={productImage}
           alt={`${name} - ${category} bottle`}
           aspectRatio="3/4"
-          fallbackSrc="/src/assets/atlas-rose-product.jpg"
+          fallbackSrc="/images/atlas-rose-product.jpg"
           className="transition-transform duration-700 group-hover:scale-105 object-cover"
           sizes="(max-width: 768px) 80vw, (max-width: 1200px) 40vw, 25vw"
           placeholder="skeleton"

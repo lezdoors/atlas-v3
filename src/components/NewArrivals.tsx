@@ -7,28 +7,28 @@ const NewArrivals = () => {
     {
       name: "Golden Argan Oil",
       price: "From $48",
-      image: '/src/assets/product-sample.jpg',
+      image: '/images/product-sample.jpg',
       category: "Body Oil",
       description: "Pure Moroccan argan oil for radiant skin"
     },
     {
       name: "Rose Damascus Serum",
       price: "From $62",
-      image: '/src/assets/product-sample.jpg',
+      image: '/images/product-sample.jpg',
       category: "Face Serum",
       description: "Luxurious rose serum for luminous complexion"
     },
     {
       name: "Atlas Clay Mask",
       price: "From $38",
-      image: '/src/assets/product-sample.jpg',
+      image: '/images/product-sample.jpg',
       category: "Face Mask",
       description: "Purifying clay from the Atlas Mountains"
     },
     {
       name: "Oud Royal Perfume",
       price: "From $125",
-      image: '/src/assets/product-sample.jpg',
+      image: '/images/product-sample.jpg',
       category: "Parfum",
       description: "Precious oud with royal sophistication"
     }

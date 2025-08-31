@@ -8,49 +8,49 @@ const SignatureScents = () => {
     {
       name: "Atlas Rose",
       price: "From $185",
-      image: '/src/assets/atlas-rose-product.jpg',
+      image: '/images/atlas-rose-product.jpg',
       category: "Eau de Parfum",
       description: "Damask rose petals kissed by mountain air"
     },
     {
       name: "Argan Mystique",
       price: "From $220",
-      image: '/src/assets/argan-mystique-product.jpg',
+      image: '/images/argan-mystique-product.jpg',
       category: "Parfum",
       description: "Rich argan with precious amber"
     },
     {
       name: "Neroli Sublime",
       price: "From $195",
-      image: '/src/assets/neroli-sublime-product.jpg',
+      image: '/images/neroli-sublime-product.jpg',
       category: "Eau de Parfum",
       description: "Orange blossom in full bloom"
     },
     {
       name: "Atlas Rose",
       price: "From $185",
-      image: '/src/assets/atlas-rose-product.jpg',
+      image: '/images/atlas-rose-product.jpg',
       category: "Eau de Parfum",
       description: "Damask rose petals kissed by mountain air"
     },
     {
       name: "Argan Mystique",
       price: "From $240",
-      image: '/src/assets/argan-mystique-product.jpg',
+      image: '/images/argan-mystique-product.jpg',
       category: "Parfum",
       description: "Creamy argan with spiced incense"
     },
     {
       name: "Neroli Sublime",
       price: "From $195",
-      image: '/src/assets/neroli-sublime-product.jpg',
+      image: '/images/neroli-sublime-product.jpg',
       category: "Eau Fraîche",
       description: "Luminous citron with fresh herbs"
     }
   ];
 
   return (
-    <section className="py-8 md:py-16 lg:py-20 bg-background relative overflow-hidden">
+    <section className="py-8 md:py-12 lg:py-16 bg-background relative overflow-hidden">
       {/* Background botanical elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-10 left-10 opacity-20">
@@ -67,10 +67,10 @@ const SignatureScents = () => {
       <div className="container-luxury relative z-10">
         {/* Section Header */}
         <div className="text-center mb-8 lg:mb-12">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-playfair mb-3 lg:mb-4 text-foreground leading-tight">
+          <h2 className="text-2xl md:text-[32px] font-playfair mb-3 lg:mb-4 text-foreground leading-tight">
             Signature Scents
           </h2>
-          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p className="text-[15px] md:text-[17px] text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Each fragrance tells a story of Morocco's rich botanical heritage, 
             carefully crafted to transport you to the souks of Marrakech and the gardens of the Atlas Mountains.
           </p>

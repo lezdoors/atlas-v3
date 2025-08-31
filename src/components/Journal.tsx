@@ -11,7 +11,7 @@ const Journal = () => {
       title: "The Ancient Art of Moroccan Perfumery",
       description: "Discover the centuries-old techniques that define our craft",
       readTime: "5 min read",
-      image: '/src/assets/hero-fragrance.jpg',
+      image: '/images/hero-fragrance.jpg',
       alt: "Moroccan Perfumery Workshop"
     },
     {
@@ -20,7 +20,7 @@ const Journal = () => {
       title: "Journey Through the Atlas Mountains",
       description: "Exploring the source of our finest ingredients",
       readTime: "7 min read",
-      image: '/src/assets/collection-hero.jpg',
+      image: '/images/collection-hero.jpg',
       alt: "Atlas Mountains Landscape"
     }
   ];
