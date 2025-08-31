@@ -4,9 +4,7 @@ import Footer from '@/components/Footer';
 import OptimizedImage from '@/components/ui/OptimizedImage';
 import { Button } from '@/components/ui/button';
 import { Calendar, User } from 'lucide-react';
-import lavenderImg from '@/assets/lavender-hero.jpg';
-import atlasRoseImg from '@/assets/atlas-rose-hero.jpg';
-import neroliImg from '@/assets/neroli-sublime-hero.jpg';
+// Use the actual HD images provided
 
 const Journal = () => {
   const articles = [
@@ -14,7 +12,7 @@ const Journal = () => {
       id: 1,
       title: 'The Art of Rose Harvesting in the Dadès Valley',
       excerpt: 'Join us on a journey to the heart of Morocco\'s rose country, where dawn breaks over fields of Rosa damascena...',
-      image: atlasRoseImg,
+      image: '/lovable-uploads/554790ac-4ecb-477a-a077-e2d542af256e.png',
       author: 'Amina Benali',
       date: '2024-03-15',
       category: 'Ingredients'
@@ -23,7 +21,7 @@ const Journal = () => {
       id: 2,
       title: 'Neroli: The Golden Blossom of Morocco',
       excerpt: 'Discover the delicate process of extracting precious neroli oil from bitter orange blossoms in the Atlas foothills...',
-      image: neroliImg,
+      image: '/lovable-uploads/89035e52-743d-4dc4-9906-c9971cc9f755.png',
       author: 'Youssef Alaoui',
       date: '2024-03-08',
       category: 'Craftsmanship'
@@ -32,7 +30,7 @@ const Journal = () => {
       id: 3,
       title: 'Lavender Fields: A Sensory Journey',
       excerpt: 'Experience the purple landscapes of Morocco\'s lavender regions and the ancient distillation techniques...',
-      image: lavenderImg,
+      image: '/lovable-uploads/df92ee8c-5046-4a4a-9abe-a822b285b977.png',
       author: 'Fatima Zahra',
       date: '2024-02-28',
       category: 'Heritage'
@@ -48,7 +46,7 @@ const Journal = () => {
       {/* Hero Section */}
       <section className="relative h-[60vh] overflow-hidden">
         <OptimizedImage
-          src={lavenderImg}
+          src="/lovable-uploads/df92ee8c-5046-4a4a-9abe-a822b285b977.png"
           alt="Journal - Stories from Morocco"
           className="absolute inset-0 w-full h-full object-cover"
           priority

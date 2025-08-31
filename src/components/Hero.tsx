@@ -109,7 +109,7 @@ const Hero = () => {
             <BotanicalFrame variant="ornate" className="relative z-10">
               <div className="relative w-72 lg:w-80 xl:w-96 p-8">
                 <OptimizedImage
-                  src="/lovable-uploads/60d06635-5d04-4c29-9315-808addd9e2fd.png"
+                  src="/lovable-uploads/4dc12531-fd9f-4f1d-8fa3-b98940991529.png"
                   alt="Perle de l'Atlas Signature Fragrance"
                   aspectRatio="auto"
                   priority={true}

@@ -8,44 +8,44 @@ const SignatureScents = () => {
     {
       name: "Atlas Rose",
       price: "From $185",
-      image: '/src/assets/atlas-rose-product.jpg',
+      image: '/lovable-uploads/4dc12531-fd9f-4f1d-8fa3-b98940991529.png',
       category: "Eau de Parfum",
       description: "Damask rose petals kissed by mountain air"
     },
     {
       name: "Argan Mystique",
       price: "From $220",
-      image: '/src/assets/argan-mystique-product.jpg',
+      image: '/lovable-uploads/6555d9b8-8e4f-4254-bd4a-6f377627125f.png',
       category: "Parfum",
       description: "Rich argan with precious amber"
     },
     {
       name: "Neroli Sublime",
       price: "From $195",
-      image: '/src/assets/neroli-sublime-product.jpg',
+      image: '/lovable-uploads/89035e52-743d-4dc4-9906-c9971cc9f755.png',
       category: "Eau de Parfum",
       description: "Orange blossom in full bloom"
     },
     {
-      name: "Atlas Rose",
-      price: "From $185",
-      image: '/src/assets/atlas-rose-product.jpg',
+      name: "Cedar Dreams",
+      price: "From $210",
+      image: '/lovable-uploads/822029b6-119e-40b4-920c-7a398e0fa004.png',
       category: "Eau de Parfum",
-      description: "Damask rose petals kissed by mountain air"
+      description: "Moroccan cedar with amber warmth"
     },
     {
-      name: "Argan Mystique",
+      name: "Jasmine Royale",
       price: "From $240",
-      image: '/src/assets/argan-mystique-product.jpg',
+      image: '/lovable-uploads/df92ee8c-5046-4a4a-9abe-a822b285b977.png',
       category: "Parfum",
-      description: "Creamy argan with spiced incense"
+      description: "Royal jasmine with precious spices"
     },
     {
-      name: "Neroli Sublime",
+      name: "Rose Damascena",
       price: "From $195",
-      image: '/src/assets/neroli-sublime-product.jpg',
+      image: '/lovable-uploads/554790ac-4ecb-477a-a077-e2d542af256e.png',
       category: "Eau Fraîche",
-      description: "Luminous citron with fresh herbs"
+      description: "Pure damascene rose essence"
     }
   ];
 

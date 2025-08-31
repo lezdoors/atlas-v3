@@ -3,10 +3,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import OptimizedImage from '@/components/ui/OptimizedImage';
 import { Button } from '@/components/ui/button';
-import collectionHeroImg from '@/assets/collection-hero.jpg';
-import atlasRoseImg from '@/assets/atlas-rose-product.jpg';
-import neroliSublimeImg from '@/assets/neroli-sublime-product.jpg';
-import arganMystiqueImg from '@/assets/argan-mystique-product.jpg';
+// Use the actual HD perfume images provided
 
 const Collections = () => {
   const collections = [
@@ -14,7 +11,7 @@ const Collections = () => {
       id: 1,
       name: 'Heritage Line',
       description: 'Traditional Moroccan essences preserved through generations',
-      image: atlasRoseImg,
+      image: '/lovable-uploads/d72ea138-9b0d-49c1-81b7-c5b06670eb33.png',
       productCount: 8,
       href: '/collections/heritage'
     },
@@ -22,7 +19,7 @@ const Collections = () => {
       id: 2,
       name: 'Modern Classics',
       description: 'Contemporary interpretations of timeless fragrances',
-      image: neroliSublimeImg,
+      image: '/lovable-uploads/4dc12531-fd9f-4f1d-8fa3-b98940991529.png',
       productCount: 12,
       href: '/collections/modern'
     },
@@ -30,7 +27,7 @@ const Collections = () => {
       id: 3,
       name: 'Artisan Series',
       description: 'Limited editions crafted by master perfumers',
-      image: arganMystiqueImg,
+      image: '/lovable-uploads/6555d9b8-8e4f-4254-bd4a-6f377627125f.png',
       productCount: 6,
       href: '/collections/artisan'
     }
@@ -43,7 +40,7 @@ const Collections = () => {
       {/* Hero Section */}
       <section className="relative h-[60vh] md:h-[70vh] overflow-hidden">
         <OptimizedImage
-          src={collectionHeroImg}
+          src="/lovable-uploads/60d06635-5d04-4c29-9315-808addd9e2fd.png"
           alt="Perle de l'Atlas Collections"
           className="absolute inset-0 w-full h-full object-cover"
           priority

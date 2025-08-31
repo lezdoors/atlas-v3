@@ -2,20 +2,19 @@ import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import OptimizedImage from '@/components/ui/OptimizedImage';
-import atlasRoseImg from '@/assets/atlas-rose-hero.jpg';
-import artisanImg from '@/assets/testimonial-artisan-refined.jpg';
+// Use the actual HD images provided
 
 const Heritage = () => {
   const heritageStories = [
     {
       title: 'The Ancient Routes',
       content: 'For centuries, Morocco has been the crossroads of Africa, Europe, and the Middle East. Our perfumers follow the ancient spice routes, discovering rare ingredients that have scented palaces and markets for generations.',
-      image: atlasRoseImg
+      image: '/lovable-uploads/89035e52-743d-4dc4-9906-c9971cc9f755.png'
     },
     {
       title: 'Master Artisans',
       content: 'Our fragrances are crafted by master perfumers who have inherited techniques passed down through generations. Each bottle represents decades of knowledge and an unwavering commitment to excellence.',
-      image: artisanImg
+      image: '/lovable-uploads/a4899d22-a4d2-49d4-9ee4-b84038194ad7.png'
     }
   ];
 
@@ -26,7 +25,7 @@ const Heritage = () => {
       {/* Hero Section */}
       <section className="relative h-[70vh] overflow-hidden">
         <OptimizedImage
-          src={atlasRoseImg}
+          src="/lovable-uploads/d72ea138-9b0d-49c1-81b7-c5b06670eb33.png"
           alt="Moroccan Heritage"
           className="absolute inset-0 w-full h-full object-cover"
           priority
